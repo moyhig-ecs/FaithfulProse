@@ -1,5 +1,7 @@
 # Faithful on Prose, Unanchored on Reasoning — data and code
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21768365.svg)](https://doi.org/10.5281/zenodo.21768365)
+
 Companion release for the preprint
 
 > **Faithful on Prose, Unanchored on Reasoning:
@@ -141,6 +143,16 @@ The two hashes let anyone holding the original verify that nothing else moved.
    neither should you.
 4. The prose corpus is the lens's own fit dataset, which favours it.
 
+## Archive
+
+| | |
+|---|---|
+| this release (v1.0.0) | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins these exact bytes |
+| all versions | [`10.5281/zenodo.21768364`](https://doi.org/10.5281/zenodo.21768364) --- concept DOI, always resolves to the latest |
+
+The paper cites the version DOI, because what it needs to point at is the
+snapshot the numbers came from.
+
 ## Citation
 
 ```bibtex
@@ -149,7 +161,8 @@ The two hashes let anyone holding the original verify that nothing else moved.
   title  = {Faithful on Prose, Unanchored on Reasoning:
             A Position-Domain Calibration of the Jacobian Lens},
   year   = {2026},
-  note   = {arXiv preprint}
+  note   = {arXiv preprint. Data and code archived at
+            \url{https://doi.org/10.5281/zenodo.21768365}}
 }
 ```
 

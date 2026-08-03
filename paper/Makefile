@@ -10,7 +10,11 @@ all:
 #      non-English internal vocabulary, which is why no word list is needed
 #      here (a published word list would republish the words it excludes).
 check:
-	@! grep -n 'SLOT-' main.tex \
+	@# ⚠ measure what it means to measure: only occurrences that reach the
+	@# rendered document count. A `%` comment describing the placeholder is not
+	@# an unfilled slot --- an earlier version of this rule fired on its own
+	@# documentation.
+	@! grep -nE '^[^%]*SLOT-' main.tex \
 		|| (echo "FAIL: SLOT remains unfilled (repo URL / archive DOI)" && exit 1)
 	@! grep -nE 'TODO|FIXME|XXX' main.tex \
 		|| (echo "FAIL: placeholder remains" && exit 1)

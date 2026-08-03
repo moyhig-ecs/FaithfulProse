@@ -22,13 +22,17 @@
 
 \graphicspath{{figs/}}
 
-% 公開 repo。⚠ 投稿時に public であること（現在 private）。
+% Public repository. Must be public at submission time (the Data availability
+% URL would otherwise 404).
 \newcommand{\REPOURL}{\url{https://github.com/moyhig-ecs/FaithfulProse}}
-% ⛔ SLOT: Zenodo DOI は Release 後に埋める。`make check` が未充填を落とす。
-%   ⚠ 未発行のあいだは 本文に出さない —— 刷り込まれた "SLOT-…" が公開されるため。
-%   flip-day: 下の 2 行を入れ替える（DOI を定義し \DOICLAUSE を有効化）。
-\newcommand{\REPODOI}{SLOT-ZENODO-DOI}
-\newcommand{\DOICLAUSE}{}                     % ← DOI 発行後: { (archived at \REPODOI{})}
+% Archive DOI. Until it is minted, leave the macro at its placeholder AND keep
+% \DOICLAUSE empty: `make check` then refuses to pass, while the placeholder is
+% never rendered into the PDF. (An earlier build published the placeholder.)
+% Filled 2026-08-03. This is the VERSION DOI, which pins the bytes of v1.0.0.
+% The concept DOI --- all versions, always resolving to the latest --- is
+% 10.5281/zenodo.21768364 and is deliberately not the one cited here.
+\newcommand{\REPODOI}{10.5281/zenodo.21768365}
+\newcommand{\DOICLAUSE}{, archived at \href{https://doi.org/\REPODOI}{\texttt{\REPODOI}}}
 \captionsetup{font=small,labelfont=bf}
 
 \title{\bfseries Faithful on Prose, Unanchored on Reasoning:\\

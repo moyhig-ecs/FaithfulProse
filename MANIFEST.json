@@ -1,8 +1,8 @@
 {
  "package": "FaithfulProse — data and code",
  "paper": "Faithful on Prose, Unanchored on Reasoning: A Position-Domain Calibration of the Jacobian Lens",
- "built_utc": "2026-08-03T05:58:14+00:00",
- "source_repo_head": "438e44a1bf74910afeeba60f5bba3a5f682a9a1f",
+ "built_utc": "2026-08-03T06:04:06+00:00",
+ "source_repo_head": "3e3fbcfa61032938159cf25e4245deaa36d8e784",
  "source_repo_dirty": true,
  "transformation_policy": {
   "data": "verbatim; never transformed",
@@ -448,8 +448,8 @@
    "path": "README.md",
    "role": "package documentation",
    "source_in_repo": "FaithfulProse/release_src/README.md",
-   "sha256_as_run": "1f53823cb5d190f06f28e6e1c739e85d81eec9f09a90b32c25c115e51c426b29",
-   "sha256_released": "1f53823cb5d190f06f28e6e1c739e85d81eec9f09a90b32c25c115e51c426b29",
+   "sha256_as_run": "481b10fae70a78f1779fa9cf209712bc36b4eaa8d2800f78595760215009a766",
+   "sha256_released": "481b10fae70a78f1779fa9cf209712bc36b4eaa8d2800f78595760215009a766",
    "transformed": false,
    "changes": []
   },
