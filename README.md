@@ -145,6 +145,23 @@ The two hashes let anyone holding the original verify that nothing else moved.
    neither should you.
 4. The prose corpus is the lens's own fit dataset, which favours it.
 
+## Licensing
+
+| | |
+|---|---|
+| this package — code, data, frozen documents | **MIT** (see `LICENSE`; the Zenodo deposit carries the same) |
+| the paper, on arXiv | **CC BY 4.0** |
+
+MIT is a software licence, and it is what the Zenodo deposit inherited from the
+repository. To be unambiguous about the parts that are not software: **the
+measurements and the frozen documents in this package are released on the same
+permissive terms as the code** — reuse them, redistribute them, build on them;
+please cite the paper or the DOI.
+
+The paper argues that a calibration should be checkable by anyone who cares to
+check it. Licensing that gets in the way of checking would be a strange way to
+end it.
+
 ## Archive
 
 | | |
