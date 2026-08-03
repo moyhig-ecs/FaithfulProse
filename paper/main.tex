@@ -25,7 +25,10 @@
 % 公開 repo。⚠ 投稿時に public であること（現在 private）。
 \newcommand{\REPOURL}{\url{https://github.com/moyhig-ecs/FaithfulProse}}
 % ⛔ SLOT: Zenodo DOI は Release 後に埋める。`make check` が未充填を落とす。
+%   ⚠ 未発行のあいだは 本文に出さない —— 刷り込まれた "SLOT-…" が公開されるため。
+%   flip-day: 下の 2 行を入れ替える（DOI を定義し \DOICLAUSE を有効化）。
 \newcommand{\REPODOI}{SLOT-ZENODO-DOI}
+\newcommand{\DOICLAUSE}{}                     % ← DOI 発行後: { (archived at \REPODOI{})}
 \captionsetup{font=small,labelfont=bf}
 
 \title{\bfseries Faithful on Prose, Unanchored on Reasoning:\\
@@ -625,7 +628,7 @@ Japanese originals fixed by \texttt{sha256} (see \texttt{PROVENANCE.md} in the
 release). Figure scripts are included and produce an empty frame when no data
 file is present.
 
-The package is available at \REPOURL{} (archived at \REPODOI{}). Every file is listed in
+The package is available at \REPOURL{}\DOICLAUSE{}. Every file is listed in
 \texttt{MANIFEST.json} with its \texttt{sha256} both as it ran and as
 released, together with an enumeration of every substitution made for
 release.
