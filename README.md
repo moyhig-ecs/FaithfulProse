@@ -121,8 +121,10 @@ substitution. The policy:
 |---|---|
 | measurements | verbatim — never transformed |
 | absolute paths in code | replaced by environment-variable resolution |
+| docstrings | translated to English |
 | internal vocabulary in comments | replaced by the external register used in the paper |
-| Japanese comments | retained |
+| identifiers naming a separate, unpublished programme | replaced by neutral names |
+| inline comments | left in Japanese where they were |
 
 The two hashes let anyone holding the original verify that nothing else moved.
 
