@@ -1,0 +1,2299 @@
+{
+ "check": "R-1 統制再測（sdpa @ max_seq=8192・attn 単独項の分離）",
+ "adjudication": "ADJUDICATION_c_lens_pos_verdict_20260802.md 発注 1",
+ "max_seq": 8192,
+ "n_rows": 320,
+ "bridge_attn_only": [
+  {
+   "bucket": "B1",
+   "n": 64,
+   "delta_seatrank_median": 0.008117131979628045,
+   "delta_seatrank_max": 0.031433503820316844
+  },
+  {
+   "bucket": "B2",
+   "n": 64,
+   "delta_seatrank_median": 0.006317331890969502,
+   "delta_seatrank_max": 0.06299914347400115
+  },
+  {
+   "bucket": "B3",
+   "n": 64,
+   "delta_seatrank_median": 0.01092452706312974,
+   "delta_seatrank_max": 0.04396761390445114
+  },
+  {
+   "bucket": "B4",
+   "n": 64,
+   "delta_seatrank_median": 0.009549382809646012,
+   "delta_seatrank_max": 0.07691338459180308
+  },
+  {
+   "bucket": "B5",
+   "n": 64,
+   "delta_seatrank_median": 0.009483078839520598,
+   "delta_seatrank_max": 0.06194804223289796
+  }
+ ],
+ "bridge_attn_only_worst_median": 0.01092452706312974,
+ "reference": "c_lens_pos.json の eager 測定（同一 max_seq=8192・同一位置）",
+ "guard": 0.02,
+ "provenance": {
+  "commit": "c5a6075e57f7d35802d9ab1b0846999883d7d9ab",
+  "dirty": false,
+  "dirty_files": [],
+  "dirty_check_excluded": [],
+  "dirty_check_exclusion_rule": "untracked under probes/c-lens-pos/results/ only",
+  "run_kind": "main",
+  "probe": "C-lens-pos",
+  "design": "DESIGN_c_lens_pos_v2_20260802.md",
+  "adjudication": "ADJUDICATION_c_lens_pos_v2_effective_20260802.md",
+  "started_utc": "2026-08-02T05:58:49+00:00",
+  "versions": {
+   "python": "3.14.3",
+   "transformers": "5.14.1"
+  }
+ },
+ "rows": [
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 1,
+   "seatrank_hehi": 1.3412630873038416,
+   "seatrank_apex": 1.4249606303831088
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 19,
+   "seatrank_hehi": 1.7690584998179162,
+   "seatrank_apex": 2.8661100398443766
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 37,
+   "seatrank_hehi": 1.1255300157764245,
+   "seatrank_apex": 1.8376639648961572
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 55,
+   "seatrank_hehi": 0.7296564493325581,
+   "seatrank_apex": 1.326020583614068
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 74,
+   "seatrank_hehi": 0.9221104742049628,
+   "seatrank_apex": 1.3098456981905722
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 92,
+   "seatrank_hehi": 1.3659136247308212,
+   "seatrank_apex": 1.5346438028446863
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 110,
+   "seatrank_hehi": 0.06549452254403754,
+   "seatrank_apex": 0.9669596080497618
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 128,
+   "seatrank_hehi": 1.5468212593805002,
+   "seatrank_apex": 0.9739531256389999
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 129,
+   "seatrank_hehi": 1.1596007259266443,
+   "seatrank_apex": 1.1883374905552366
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 184,
+   "seatrank_hehi": 1.454719053085355,
+   "seatrank_apex": 1.1487940629694782
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 238,
+   "seatrank_hehi": 1.6504015364415152,
+   "seatrank_apex": 1.8417006734174648
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 293,
+   "seatrank_hehi": 0.49482865365224615,
+   "seatrank_apex": 0.8115044519784873
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 348,
+   "seatrank_hehi": 1.53896051638274,
+   "seatrank_apex": 2.2320205871063656
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 403,
+   "seatrank_hehi": 0.5883874723986331,
+   "seatrank_apex": 0.8557292493273292
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 457,
+   "seatrank_hehi": 0.5443746953652426,
+   "seatrank_apex": 0.9033843423007215
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 512,
+   "seatrank_hehi": 1.610899597708774,
+   "seatrank_apex": 1.4541729165773165
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 513,
+   "seatrank_hehi": 0.4018395331825815,
+   "seatrank_apex": 0.7443072623145728
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 732,
+   "seatrank_hehi": 0.3091686691660067,
+   "seatrank_apex": 0.9186308678041999
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 952,
+   "seatrank_hehi": 0.1214611521107436,
+   "seatrank_apex": 0.7020538847518796
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 1171,
+   "seatrank_hehi": 0.37679869529154697,
+   "seatrank_apex": 1.9374934281681977
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 1390,
+   "seatrank_hehi": 1.2955473009571388,
+   "seatrank_apex": 1.3409596934089567
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 1609,
+   "seatrank_hehi": 0.4123264938374862,
+   "seatrank_apex": 0.792461972926755
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 1829,
+   "seatrank_hehi": 0.5387156534510273,
+   "seatrank_apex": 0.38935602652380696
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 2048,
+   "seatrank_hehi": 0.2679680015323127,
+   "seatrank_apex": 0.4707108876813142
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 2049,
+   "seatrank_hehi": 0.38997107900076244,
+   "seatrank_apex": 1.0254604459682723
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 2341,
+   "seatrank_hehi": 0.07568560383001843,
+   "seatrank_apex": 0.6555555340042489
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 2634,
+   "seatrank_hehi": 1.2669275868710477,
+   "seatrank_apex": 2.2533947222638506
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 2926,
+   "seatrank_hehi": 0.18432079652872035,
+   "seatrank_apex": 0.7707838163589149
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 3219,
+   "seatrank_hehi": 0.07260174559405774,
+   "seatrank_apex": 0.39536469390241447
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 3511,
+   "seatrank_hehi": 0.42725338025210435,
+   "seatrank_apex": 0.1976665357716656
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 3804,
+   "seatrank_hehi": 1.7331599713625208,
+   "seatrank_apex": 1.9558673437094578
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 4096,
+   "seatrank_hehi": 0.34413659137271946,
+   "seatrank_apex": 0.1345859018299147
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 4097,
+   "seatrank_hehi": 0.9916071193509843,
+   "seatrank_apex": 1.213960237403306
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 4682,
+   "seatrank_hehi": 0.4375329810224833,
+   "seatrank_apex": 0.6931438028289212
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 5267,
+   "seatrank_hehi": 1.149958866239655,
+   "seatrank_apex": 0.614538584286286
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 5852,
+   "seatrank_hehi": 1.2716777527402137,
+   "seatrank_apex": 0.9764845331732994
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 6436,
+   "seatrank_hehi": 0.67028342690862,
+   "seatrank_apex": 0.6100289209992376
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 7021,
+   "seatrank_hehi": 0.6504853809089193,
+   "seatrank_apex": 1.5381314569026476
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 7606,
+   "seatrank_hehi": 1.19730463276638,
+   "seatrank_apex": 1.7956672495688208
+  },
+  {
+   "text": "wikitext-1",
+   "group": "W",
+   "position": 8191,
+   "seatrank_hehi": 0.6215119030477156,
+   "seatrank_apex": 0.5114892285605874
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 1,
+   "seatrank_hehi": 1.6200952109521056,
+   "seatrank_apex": 1.9725586929432426
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 19,
+   "seatrank_hehi": 1.6011974399383644,
+   "seatrank_apex": 0.6366526564856132
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 37,
+   "seatrank_hehi": 1.2972914261045791,
+   "seatrank_apex": 0.9734651495669917
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 55,
+   "seatrank_hehi": 0.9794386922040079,
+   "seatrank_apex": 0.03204967094083555
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 74,
+   "seatrank_hehi": 0.8776362733246068,
+   "seatrank_apex": 0.02743824834693953
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 92,
+   "seatrank_hehi": 1.351220929430264,
+   "seatrank_apex": 0.8683991174231074
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 110,
+   "seatrank_hehi": 1.3910550708542484,
+   "seatrank_apex": 1.169387857031729
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 128,
+   "seatrank_hehi": 0.9498033449095802,
+   "seatrank_apex": 0.5851460748850692
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 129,
+   "seatrank_hehi": 1.3775311550570084,
+   "seatrank_apex": 1.8197846085776224
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 184,
+   "seatrank_hehi": 0.9637495441199402,
+   "seatrank_apex": 0.8200855545159791
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 238,
+   "seatrank_hehi": 0.5591503436401135,
+   "seatrank_apex": 1.145453141242648
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 293,
+   "seatrank_hehi": 0.9255294549523985,
+   "seatrank_apex": 0.45516936637230376
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 348,
+   "seatrank_hehi": 0.34155112412384403,
+   "seatrank_apex": 0.28029732564884213
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 403,
+   "seatrank_hehi": 0.6539321402563241,
+   "seatrank_apex": 0.8017982499623937
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 457,
+   "seatrank_hehi": 0.17329995843082058,
+   "seatrank_apex": 0.045611328332523016
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 512,
+   "seatrank_hehi": 0.3999784219772682,
+   "seatrank_apex": 0.5674185056727485
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 513,
+   "seatrank_hehi": 0.4970633626796652,
+   "seatrank_apex": 0.5533775286663385
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 732,
+   "seatrank_hehi": 1.2049294786627107,
+   "seatrank_apex": 0.9925924988917667
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 952,
+   "seatrank_hehi": 0.3303701278557716,
+   "seatrank_apex": 0.6341412589394024
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 1171,
+   "seatrank_hehi": 1.1638090753479022,
+   "seatrank_apex": 0.026534359844935018
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 1390,
+   "seatrank_hehi": 1.4928149536205328,
+   "seatrank_apex": 0.3559613628017111
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 1609,
+   "seatrank_hehi": 1.1677854850508398,
+   "seatrank_apex": 1.081395909092159
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 1829,
+   "seatrank_hehi": 0.732970264510159,
+   "seatrank_apex": 0.9587646394158202
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 2048,
+   "seatrank_hehi": 1.14147051950382,
+   "seatrank_apex": 1.6952627228773405
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 2049,
+   "seatrank_hehi": 0.6359663446365911,
+   "seatrank_apex": 0.6707224374548013
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 2341,
+   "seatrank_hehi": 1.2040285040917316,
+   "seatrank_apex": 1.3655036495370414
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 2634,
+   "seatrank_hehi": 1.3506900264339299,
+   "seatrank_apex": 1.681103431732069
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 2926,
+   "seatrank_hehi": 0.7987077932158502,
+   "seatrank_apex": 0.6790666129463023
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 3219,
+   "seatrank_hehi": 2.0046541452555897,
+   "seatrank_apex": 0.7895016369087999
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 3511,
+   "seatrank_hehi": 0.5517649824098769,
+   "seatrank_apex": 0.9462235039045246
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 3804,
+   "seatrank_hehi": 0.2735853938490411,
+   "seatrank_apex": 0.6305086318535644
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 4096,
+   "seatrank_hehi": 0.7370859129640892,
+   "seatrank_apex": 1.8886921662913012
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 4097,
+   "seatrank_hehi": 0.6474780567194234,
+   "seatrank_apex": 1.122910521840025
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 4682,
+   "seatrank_hehi": 0.17810348424447087,
+   "seatrank_apex": 0.49692020699144557
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 5267,
+   "seatrank_hehi": 1.6211103096524861,
+   "seatrank_apex": 1.3342647924896958
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 5852,
+   "seatrank_hehi": 0.7603543641411488,
+   "seatrank_apex": 0.9504344026958975
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 6436,
+   "seatrank_hehi": 0.26004572880324694,
+   "seatrank_apex": 0.23695616787909834
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 7021,
+   "seatrank_hehi": 1.2140673173581105,
+   "seatrank_apex": 0.32220185704015813
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 7606,
+   "seatrank_hehi": 1.070531343062655,
+   "seatrank_apex": 1.966435075865284
+  },
+  {
+   "text": "wikitext-2",
+   "group": "W",
+   "position": 8191,
+   "seatrank_hehi": 0.7204628550270544,
+   "seatrank_apex": 0.3784266419751461
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 1,
+   "seatrank_hehi": 1.3244330341429702,
+   "seatrank_apex": 1.961684702257791
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 19,
+   "seatrank_hehi": 0.9847179689866556,
+   "seatrank_apex": 1.00912560509712
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 37,
+   "seatrank_hehi": 1.267949176169556,
+   "seatrank_apex": 1.680287791368265
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 55,
+   "seatrank_hehi": 0.3624938335306105,
+   "seatrank_apex": 1.1403234253191963
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 74,
+   "seatrank_hehi": 2.0598202729041994,
+   "seatrank_apex": 1.3002869766942005
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 92,
+   "seatrank_hehi": 1.0353670179261365,
+   "seatrank_apex": 2.6819515548785082
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 110,
+   "seatrank_hehi": 1.3842287956340638,
+   "seatrank_apex": 0.642785044560851
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 128,
+   "seatrank_hehi": 0.9756656588607111,
+   "seatrank_apex": 1.1778093836849308
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 129,
+   "seatrank_hehi": 0.2661583711891078,
+   "seatrank_apex": 0.5771123766205353
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 184,
+   "seatrank_hehi": 0.7883514660493498,
+   "seatrank_apex": 0.283530397184411
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 238,
+   "seatrank_hehi": 1.4733707783754117,
+   "seatrank_apex": 2.504357573206727
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 293,
+   "seatrank_hehi": 1.6499737814764028,
+   "seatrank_apex": 1.694851579198816
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 348,
+   "seatrank_hehi": 1.2052494877968947,
+   "seatrank_apex": 1.5209966427381536
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 403,
+   "seatrank_hehi": 0.8226285754750502,
+   "seatrank_apex": 0.8828379848359371
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 457,
+   "seatrank_hehi": 1.220340579738275,
+   "seatrank_apex": 0.01930515519538689
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 512,
+   "seatrank_hehi": 0.9244755773564788,
+   "seatrank_apex": 0.10757661760709025
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 513,
+   "seatrank_hehi": 1.157311558291739,
+   "seatrank_apex": 0.9886166300466299
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 732,
+   "seatrank_hehi": 1.3270419806764564,
+   "seatrank_apex": 1.0177054485098957
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 952,
+   "seatrank_hehi": 1.4483034240463195,
+   "seatrank_apex": 1.119052758085317
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 1171,
+   "seatrank_hehi": 0.8689165779884735,
+   "seatrank_apex": 1.3315990316880701
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 1390,
+   "seatrank_hehi": 0.8522260834101405,
+   "seatrank_apex": 1.1415063416275841
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 1609,
+   "seatrank_hehi": 0.9174805785478948,
+   "seatrank_apex": 1.4495054121237616
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 1829,
+   "seatrank_hehi": 1.0948797587421204,
+   "seatrank_apex": 1.2245021750500182
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 2048,
+   "seatrank_hehi": 1.38749823283309,
+   "seatrank_apex": 1.2200282316126274
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 2049,
+   "seatrank_hehi": 0.5827372663324022,
+   "seatrank_apex": 1.4307428316072688
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 2341,
+   "seatrank_hehi": 1.7289841683600402,
+   "seatrank_apex": 1.056677531529187
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 2634,
+   "seatrank_hehi": 1.939695401265082,
+   "seatrank_apex": 1.004888920091981
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 2926,
+   "seatrank_hehi": 1.2586665229750134,
+   "seatrank_apex": 1.3610406610610872
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 3219,
+   "seatrank_hehi": 1.0663118636730897,
+   "seatrank_apex": 0.4176518468946844
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 3511,
+   "seatrank_hehi": 1.7007037171450192,
+   "seatrank_apex": 1.9909490138126658
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 3804,
+   "seatrank_hehi": 0.9862987223226121,
+   "seatrank_apex": 1.001992180015785
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 4096,
+   "seatrank_hehi": 0.9582742669098829,
+   "seatrank_apex": 0.9787689799557362
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 4097,
+   "seatrank_hehi": 0.7110177805641129,
+   "seatrank_apex": 0.6562328755670306
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 4682,
+   "seatrank_hehi": 0.6186231530008839,
+   "seatrank_apex": 0.5425163360373242
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 5267,
+   "seatrank_hehi": 1.339433617528445,
+   "seatrank_apex": 0.3220022017616895
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 5852,
+   "seatrank_hehi": 0.7259864767806006,
+   "seatrank_apex": 0.888129135653843
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 6436,
+   "seatrank_hehi": 0.43885035018734664,
+   "seatrank_apex": 0.7311612132507004
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 7021,
+   "seatrank_hehi": 0.6668966509027077,
+   "seatrank_apex": 0.6057495110844591
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 7606,
+   "seatrank_hehi": 0.7109232794173059,
+   "seatrank_apex": 0.6263675957185875
+  },
+  {
+   "text": "wikitext-3",
+   "group": "W",
+   "position": 8191,
+   "seatrank_hehi": 1.9522676158117584,
+   "seatrank_apex": 1.9234433002755407
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 1,
+   "seatrank_hehi": 0.4458962971654614,
+   "seatrank_apex": 0.24230353628005918
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 19,
+   "seatrank_hehi": 0.930785723817459,
+   "seatrank_apex": 0.366862494800297
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 37,
+   "seatrank_hehi": 0.8850546167201063,
+   "seatrank_apex": 1.4467496679064862
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 55,
+   "seatrank_hehi": 0.8984290009558351,
+   "seatrank_apex": 1.2428172022630748
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 74,
+   "seatrank_hehi": 0.2556327659965518,
+   "seatrank_apex": 1.0263143653265354
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 92,
+   "seatrank_hehi": 0.8774223305066791,
+   "seatrank_apex": 1.1927719039547249
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 110,
+   "seatrank_hehi": 0.4063321104093345,
+   "seatrank_apex": 0.488377485259214
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 128,
+   "seatrank_hehi": 0.7985994324104158,
+   "seatrank_apex": 1.20083996241824
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 129,
+   "seatrank_hehi": 0.8661280082386473,
+   "seatrank_apex": 1.031950070727457
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 184,
+   "seatrank_hehi": 0.09781219530748819,
+   "seatrank_apex": 0.51358695597553
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 238,
+   "seatrank_hehi": 1.147010090984971,
+   "seatrank_apex": 1.3266720613256346
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 293,
+   "seatrank_hehi": 1.0317512457873885,
+   "seatrank_apex": 1.847045552165262
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 348,
+   "seatrank_hehi": 0.11613635823003143,
+   "seatrank_apex": 0.41522926694222084
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 403,
+   "seatrank_hehi": 0.3463003358854082,
+   "seatrank_apex": 0.1526786045398283
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 457,
+   "seatrank_hehi": 0.8005684040160164,
+   "seatrank_apex": 0.9505146369200816
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 512,
+   "seatrank_hehi": 1.1678166860709065,
+   "seatrank_apex": 1.0216354156802017
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 513,
+   "seatrank_hehi": 0.5843557268630604,
+   "seatrank_apex": 0.5139190265392379
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 732,
+   "seatrank_hehi": 0.8676857389514443,
+   "seatrank_apex": 1.4410625701325173
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 952,
+   "seatrank_hehi": 0.003451730790569929,
+   "seatrank_apex": 0.8112894867255371
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 1171,
+   "seatrank_hehi": 0.1543310715802928,
+   "seatrank_apex": 1.2991991821286129
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 1390,
+   "seatrank_hehi": 0.45697952403287667,
+   "seatrank_apex": 0.9002064276437567
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 1609,
+   "seatrank_hehi": 0.19752494194946912,
+   "seatrank_apex": 0.7535441104616973
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 1829,
+   "seatrank_hehi": 0.9852227247729419,
+   "seatrank_apex": 1.022010271869997
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 2048,
+   "seatrank_hehi": 0.8480222754191584,
+   "seatrank_apex": 0.9844082672055081
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 2049,
+   "seatrank_hehi": 0.9801254594211257,
+   "seatrank_apex": 0.592398215790213
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 2341,
+   "seatrank_hehi": 0.391208934904951,
+   "seatrank_apex": 0.04499823428005012
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 2634,
+   "seatrank_hehi": 0.20288034009067424,
+   "seatrank_apex": 0.749854360994143
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 2926,
+   "seatrank_hehi": 0.9128323085222836,
+   "seatrank_apex": 1.1758641175850726
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 3219,
+   "seatrank_hehi": 1.3646582957760112,
+   "seatrank_apex": 1.0768960270457124
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 3511,
+   "seatrank_hehi": 0.6275405203911282,
+   "seatrank_apex": 0.7597751176263015
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 3804,
+   "seatrank_hehi": 0.1350111749602383,
+   "seatrank_apex": 0.4021678953201242
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 4096,
+   "seatrank_hehi": 1.2884163454144621,
+   "seatrank_apex": 1.0596759705129766
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 4097,
+   "seatrank_hehi": 1.2463718874754433,
+   "seatrank_apex": 2.379107138591315
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 4682,
+   "seatrank_hehi": 0.5291936032546412,
+   "seatrank_apex": 0.9655295386700686
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 5267,
+   "seatrank_hehi": 0.33690724615710765,
+   "seatrank_apex": 0.4173516834538682
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 5852,
+   "seatrank_hehi": 1.2968408339379116,
+   "seatrank_apex": 1.6462636538200157
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 6436,
+   "seatrank_hehi": 0.5867772176628141,
+   "seatrank_apex": 1.1744383400473883
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 7021,
+   "seatrank_hehi": 0.18397519658327566,
+   "seatrank_apex": 0.6712073756388803
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 7606,
+   "seatrank_hehi": 1.0632861208792894,
+   "seatrank_apex": 1.3001787157797162
+  },
+  {
+   "text": "wikitext-4",
+   "group": "W",
+   "position": 8191,
+   "seatrank_hehi": 0.8346470965845594,
+   "seatrank_apex": 1.3203351508593681
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 1,
+   "seatrank_hehi": 0.14840075223543137,
+   "seatrank_apex": 0.9674322779509992
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 19,
+   "seatrank_hehi": 0.5918013238815418,
+   "seatrank_apex": 0.03241356057401257
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 37,
+   "seatrank_hehi": 0.4012187943370624,
+   "seatrank_apex": 0.6328267199890063
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 55,
+   "seatrank_hehi": 0.055164258832857804,
+   "seatrank_apex": 1.442703689915969
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 74,
+   "seatrank_hehi": 0.11990407679085369,
+   "seatrank_apex": 0.6516779027018753
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 92,
+   "seatrank_hehi": 0.3262300021444764,
+   "seatrank_apex": 0.30689100879915143
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 110,
+   "seatrank_hehi": 0.06352690964733565,
+   "seatrank_apex": 0.008244810643637024
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 128,
+   "seatrank_hehi": 0.534940279345113,
+   "seatrank_apex": 0.09747003175993463
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 129,
+   "seatrank_hehi": 0.6545822472499889,
+   "seatrank_apex": 0.9023025081145297
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 184,
+   "seatrank_hehi": 0.9777236052888476,
+   "seatrank_apex": 0.662757831681574
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 238,
+   "seatrank_hehi": 0.11963916527229035,
+   "seatrank_apex": 1.716003343634799
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 293,
+   "seatrank_hehi": 0.9260679241880041,
+   "seatrank_apex": 1.0881360887005513
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 348,
+   "seatrank_hehi": 0.6537110197030853,
+   "seatrank_apex": 1.0362543123925727
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 403,
+   "seatrank_hehi": 1.3146183408394077,
+   "seatrank_apex": 1.553961284952385
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 457,
+   "seatrank_hehi": 0.8742142903769285,
+   "seatrank_apex": 1.453008516968513
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 512,
+   "seatrank_hehi": 0.7731991501843911,
+   "seatrank_apex": 0.6886584016545099
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 513,
+   "seatrank_hehi": 1.3588060498641266,
+   "seatrank_apex": 1.4073136347468547
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 732,
+   "seatrank_hehi": 0.692855770739238,
+   "seatrank_apex": 0.292184588436077
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 952,
+   "seatrank_hehi": 0.033301122243051484,
+   "seatrank_apex": 0.6860050271716511
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 1171,
+   "seatrank_hehi": 0.029454979338275677,
+   "seatrank_apex": 0.7610144953249025
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 1390,
+   "seatrank_hehi": 0.8932884229487263,
+   "seatrank_apex": 0.5118833609788742
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 1609,
+   "seatrank_hehi": 0.4256428892044237,
+   "seatrank_apex": 0.3126522984149309
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 1829,
+   "seatrank_hehi": 0.9143709974016327,
+   "seatrank_apex": 0.09691001300805646
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 2048,
+   "seatrank_hehi": 0.2782868685254214,
+   "seatrank_apex": 0.39794000867203766
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 2049,
+   "seatrank_hehi": 2.0779731938586568,
+   "seatrank_apex": 0.0
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 2341,
+   "seatrank_hehi": 1.0017492305308697,
+   "seatrank_apex": 2.5132810331333992
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 2634,
+   "seatrank_hehi": 3.1000257301078626,
+   "seatrank_apex": 1.724275869600789
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 2926,
+   "seatrank_hehi": 0.36427101771910175,
+   "seatrank_apex": 0.3272077439646459
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 3219,
+   "seatrank_hehi": 0.9366846627930534,
+   "seatrank_apex": 2.009238370968467
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 3511,
+   "seatrank_hehi": 1.6522860891140243,
+   "seatrank_apex": 1.8568051199464226
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 3804,
+   "seatrank_hehi": 0.47861111718217364,
+   "seatrank_apex": 0.7596678446896306
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 4096,
+   "seatrank_hehi": 1.246628314778055,
+   "seatrank_apex": 0.8057117319095224
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 4097,
+   "seatrank_hehi": 0.935979122232161,
+   "seatrank_apex": 1.4573771965239053
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 4682,
+   "seatrank_hehi": 0.22650076253328155,
+   "seatrank_apex": 0.07525095241919244
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 5267,
+   "seatrank_hehi": 1.8311920126834118,
+   "seatrank_apex": 2.4935887379359114
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 5852,
+   "seatrank_hehi": 1.586868492432891,
+   "seatrank_apex": 2.4712917110589387
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 6436,
+   "seatrank_hehi": 1.0895834384121326,
+   "seatrank_apex": 0.8769531714675529
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 7021,
+   "seatrank_hehi": 0.3526631982732198,
+   "seatrank_apex": 1.195074893242932
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 7606,
+   "seatrank_hehi": 1.1329295511586097,
+   "seatrank_apex": 1.587336734507256
+  },
+  {
+   "text": "F5b-1:s6",
+   "group": "G",
+   "position": 8191,
+   "seatrank_hehi": 0.5474505721893839,
+   "seatrank_apex": 0.5947607525864629
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 1,
+   "seatrank_hehi": 0.14840075223543137,
+   "seatrank_apex": 0.9674322779509992
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 19,
+   "seatrank_hehi": 0.5918013238815418,
+   "seatrank_apex": 0.03241356057401257
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 37,
+   "seatrank_hehi": 0.4012187943370624,
+   "seatrank_apex": 0.6328267199890063
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 55,
+   "seatrank_hehi": 0.055164258832857804,
+   "seatrank_apex": 1.442703689915969
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 74,
+   "seatrank_hehi": 0.11990407679085369,
+   "seatrank_apex": 0.6516779027018753
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 92,
+   "seatrank_hehi": 0.3262300021444764,
+   "seatrank_apex": 0.30689100879915143
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 110,
+   "seatrank_hehi": 0.06352690964733565,
+   "seatrank_apex": 0.008244810643637024
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 128,
+   "seatrank_hehi": 0.534940279345113,
+   "seatrank_apex": 0.09747003175993463
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 129,
+   "seatrank_hehi": 0.6545822472499889,
+   "seatrank_apex": 0.9023025081145297
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 184,
+   "seatrank_hehi": 0.9777236052888476,
+   "seatrank_apex": 0.662757831681574
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 238,
+   "seatrank_hehi": 0.11963916527229035,
+   "seatrank_apex": 1.716003343634799
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 293,
+   "seatrank_hehi": 0.9260679241880041,
+   "seatrank_apex": 1.0881360887005513
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 348,
+   "seatrank_hehi": 0.6537110197030853,
+   "seatrank_apex": 1.0362543123925727
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 403,
+   "seatrank_hehi": 1.3146183408394077,
+   "seatrank_apex": 1.553961284952385
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 457,
+   "seatrank_hehi": 0.8742142903769285,
+   "seatrank_apex": 1.453008516968513
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 512,
+   "seatrank_hehi": 2.3837209027974806,
+   "seatrank_apex": 1.766381860384699
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 513,
+   "seatrank_hehi": 1.1464228123690519,
+   "seatrank_apex": 1.9586359937191178
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 732,
+   "seatrank_hehi": 0.24906403510296826,
+   "seatrank_apex": 0.6280734236928802
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 952,
+   "seatrank_hehi": 0.9101234195641825,
+   "seatrank_apex": 1.5542872095319618
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 1171,
+   "seatrank_hehi": 0.7851734887113273,
+   "seatrank_apex": 0.3415312104813326
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 1390,
+   "seatrank_hehi": 0.3165132690013839,
+   "seatrank_apex": 0.12493873660829996
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 1609,
+   "seatrank_hehi": 1.010723865391773,
+   "seatrank_apex": 0.8186979463016768
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 1829,
+   "seatrank_hehi": 1.8654001181793016,
+   "seatrank_apex": 1.0763091889358858
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 2048,
+   "seatrank_hehi": 0.44405115925380656,
+   "seatrank_apex": 0.38738982633872965
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 2049,
+   "seatrank_hehi": 0.6771630326378579,
+   "seatrank_apex": 0.03133975220624663
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 2341,
+   "seatrank_hehi": 0.9485565579379198,
+   "seatrank_apex": 1.309478076903629
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 2634,
+   "seatrank_hehi": 1.8888727302380532,
+   "seatrank_apex": 2.4248147181141775
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 2926,
+   "seatrank_hehi": 0.7317261278976321,
+   "seatrank_apex": 1.0549378821575979
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 3219,
+   "seatrank_hehi": 1.7953144240825685,
+   "seatrank_apex": 1.63199689303008
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 3511,
+   "seatrank_hehi": 0.8388490907372557,
+   "seatrank_apex": 1.3276277641577763
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 3804,
+   "seatrank_hehi": 0.18274214679904377,
+   "seatrank_apex": 0.8039121125280653
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 4096,
+   "seatrank_hehi": 1.3381284981505246,
+   "seatrank_apex": 1.4734020888990675
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 4097,
+   "seatrank_hehi": 1.7442220547406952,
+   "seatrank_apex": 1.934374400016587
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 4682,
+   "seatrank_hehi": 0.8801112561283415,
+   "seatrank_apex": 0.3756636139608853
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 5267,
+   "seatrank_hehi": 0.6767934130222732,
+   "seatrank_apex": 0.6989700043360189
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 5852,
+   "seatrank_hehi": 1.0875232932956118,
+   "seatrank_apex": 1.0122344564170116
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 6436,
+   "seatrank_hehi": 1.3951655086346206,
+   "seatrank_apex": 1.6808101758196987
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 7021,
+   "seatrank_hehi": 1.0314084642516241,
+   "seatrank_apex": 1.2948793809242283
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 7606,
+   "seatrank_hehi": 0.9764942206140299,
+   "seatrank_apex": 1.8754099542830958
+  },
+  {
+   "text": "F5b-1:s2",
+   "group": "G",
+   "position": 8191,
+   "seatrank_hehi": 0.482712400622753,
+   "seatrank_apex": 0.624723975963906
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 1,
+   "seatrank_hehi": 0.14840075223543137,
+   "seatrank_apex": 0.9674322779509992
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 19,
+   "seatrank_hehi": 0.5918013238815418,
+   "seatrank_apex": 0.03241356057401257
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 37,
+   "seatrank_hehi": 0.4012187943370624,
+   "seatrank_apex": 0.6328267199890063
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 55,
+   "seatrank_hehi": 0.055164258832857804,
+   "seatrank_apex": 1.442703689915969
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 74,
+   "seatrank_hehi": 0.11990407679085369,
+   "seatrank_apex": 0.6516779027018753
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 92,
+   "seatrank_hehi": 0.3262300021444764,
+   "seatrank_apex": 0.30689100879915143
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 110,
+   "seatrank_hehi": 0.06352690964733565,
+   "seatrank_apex": 0.008244810643637024
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 128,
+   "seatrank_hehi": 0.534940279345113,
+   "seatrank_apex": 0.09747003175993463
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 129,
+   "seatrank_hehi": 0.6545822472499889,
+   "seatrank_apex": 0.9023025081145297
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 184,
+   "seatrank_hehi": 0.9777236052888476,
+   "seatrank_apex": 0.662757831681574
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 238,
+   "seatrank_hehi": 0.11963916527229035,
+   "seatrank_apex": 1.716003343634799
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 293,
+   "seatrank_hehi": 0.9260679241880041,
+   "seatrank_apex": 1.0881360887005513
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 348,
+   "seatrank_hehi": 0.6537110197030853,
+   "seatrank_apex": 1.0362543123925727
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 403,
+   "seatrank_hehi": 1.3146183408394077,
+   "seatrank_apex": 1.553961284952385
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 457,
+   "seatrank_hehi": 0.8742142903769285,
+   "seatrank_apex": 1.453008516968513
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 512,
+   "seatrank_hehi": 2.3837209027974806,
+   "seatrank_apex": 1.766381860384699
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 513,
+   "seatrank_hehi": 1.3956554794641698,
+   "seatrank_apex": 0.5523893427888757
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 732,
+   "seatrank_hehi": 0.6406827315507124,
+   "seatrank_apex": 0.9200380953058751
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 952,
+   "seatrank_hehi": 0.25928942651784936,
+   "seatrank_apex": 0.3400063132512625
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 1171,
+   "seatrank_hehi": 1.7558748556724915,
+   "seatrank_apex": 1.2041199826559246
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 1390,
+   "seatrank_hehi": 1.4489214672580326,
+   "seatrank_apex": 1.2405117136486448
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 1609,
+   "seatrank_hehi": 0.8965894578997506,
+   "seatrank_apex": 0.5606673061697371
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 1829,
+   "seatrank_hehi": 0.035024440596335804,
+   "seatrank_apex": 1.128991280619497
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 2048,
+   "seatrank_hehi": 0.649210467279091,
+   "seatrank_apex": 0.11571770057780695
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 2049,
+   "seatrank_hehi": 0.8702980464947516,
+   "seatrank_apex": 0.5223286571993166
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 2341,
+   "seatrank_hehi": 1.1093390022309646,
+   "seatrank_apex": 1.0847137346475857
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 2634,
+   "seatrank_hehi": 0.634056399462573,
+   "seatrank_apex": 0.629001619286992
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 2926,
+   "seatrank_hehi": 0.2440182748923001,
+   "seatrank_apex": 0.0681858617461617
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 3219,
+   "seatrank_hehi": 0.3059745782810439,
+   "seatrank_apex": 0.6368220975871742
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 3511,
+   "seatrank_hehi": 1.7212309914308253,
+   "seatrank_apex": 1.3474150194239924
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 3804,
+   "seatrank_hehi": 1.76671895006756,
+   "seatrank_apex": 1.6812412373755872
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 4096,
+   "seatrank_hehi": 0.45229767099463025,
+   "seatrank_apex": 2.1475045645070416
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 4097,
+   "seatrank_hehi": 1.7955640519013252,
+   "seatrank_apex": 2.2699019227319654
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 4682,
+   "seatrank_hehi": 0.6057696677863711,
+   "seatrank_apex": 0.22342513785131146
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 5267,
+   "seatrank_hehi": 1.2222905059768379,
+   "seatrank_apex": 1.3031960574204886
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 5852,
+   "seatrank_hehi": 1.0692626463798396,
+   "seatrank_apex": 2.0875561878805917
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 6436,
+   "seatrank_hehi": 1.8384840606826462,
+   "seatrank_apex": 1.9489017609702137
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 7021,
+   "seatrank_hehi": 1.7340684563965558,
+   "seatrank_apex": 2.4434763475621772
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 7606,
+   "seatrank_hehi": 0.17055877045572032,
+   "seatrank_apex": 1.5175004167063355
+  },
+  {
+   "text": "F5b-1-ext:s14",
+   "group": "G",
+   "position": 8191,
+   "seatrank_hehi": 2.0685981014372032,
+   "seatrank_apex": 2.3527336533146457
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 1,
+   "seatrank_hehi": 0.14840075223543137,
+   "seatrank_apex": 0.9674322779509992
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 19,
+   "seatrank_hehi": 0.5918013238815418,
+   "seatrank_apex": 0.03241356057401257
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 37,
+   "seatrank_hehi": 0.4012187943370624,
+   "seatrank_apex": 0.6328267199890063
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 55,
+   "seatrank_hehi": 0.055164258832857804,
+   "seatrank_apex": 1.442703689915969
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 74,
+   "seatrank_hehi": 0.11990407679085369,
+   "seatrank_apex": 0.6516779027018753
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 92,
+   "seatrank_hehi": 0.3262300021444764,
+   "seatrank_apex": 0.30689100879915143
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 110,
+   "seatrank_hehi": 0.06352690964733565,
+   "seatrank_apex": 0.008244810643637024
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 128,
+   "seatrank_hehi": 0.534940279345113,
+   "seatrank_apex": 0.09747003175993463
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 129,
+   "seatrank_hehi": 0.6545822472499889,
+   "seatrank_apex": 0.9023025081145297
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 184,
+   "seatrank_hehi": 0.9777236052888476,
+   "seatrank_apex": 0.662757831681574
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 238,
+   "seatrank_hehi": 0.11963916527229035,
+   "seatrank_apex": 1.716003343634799
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 293,
+   "seatrank_hehi": 0.9260679241880041,
+   "seatrank_apex": 1.0881360887005513
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 348,
+   "seatrank_hehi": 0.6537110197030853,
+   "seatrank_apex": 1.0362543123925727
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 403,
+   "seatrank_hehi": 1.3146183408394077,
+   "seatrank_apex": 1.553961284952385
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 457,
+   "seatrank_hehi": 0.8742142903769285,
+   "seatrank_apex": 1.453008516968513
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 512,
+   "seatrank_hehi": 0.013979031596314861,
+   "seatrank_apex": 0.7893656741885944
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 513,
+   "seatrank_hehi": 0.4204795952123481,
+   "seatrank_apex": 0.712770460581631
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 732,
+   "seatrank_hehi": 0.0,
+   "seatrank_apex": 0.9588874144850883
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 952,
+   "seatrank_hehi": 0.17537400954186388,
+   "seatrank_apex": 0.47148621482358566
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 1171,
+   "seatrank_hehi": 1.7459010576249996,
+   "seatrank_apex": 0.08663712842721671
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 1390,
+   "seatrank_hehi": 0.4922364060774074,
+   "seatrank_apex": 2.408353048109495
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 1609,
+   "seatrank_hehi": 0.8251979712261068,
+   "seatrank_apex": 0.6169515467293076
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 1829,
+   "seatrank_hehi": 1.1288443705267688,
+   "seatrank_apex": 1.872156272748293
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 2048,
+   "seatrank_hehi": 1.4872519448605899,
+   "seatrank_apex": 0.04575749056067502
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 2049,
+   "seatrank_hehi": 0.5812979372328684,
+   "seatrank_apex": 0.07077319748366628
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 2341,
+   "seatrank_hehi": 0.6737864583177702,
+   "seatrank_apex": 0.8931057660853425
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 2634,
+   "seatrank_hehi": 1.9203842421783572,
+   "seatrank_apex": 0.39083966825409866
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 2926,
+   "seatrank_hehi": 2.0039174793687526,
+   "seatrank_apex": 1.387635259790813
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 3219,
+   "seatrank_hehi": 1.288361027472952,
+   "seatrank_apex": 1.2955670999624789
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 3511,
+   "seatrank_hehi": 0.11953026718444315,
+   "seatrank_apex": 0.8609886351299905
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 3804,
+   "seatrank_hehi": 0.5110515383114311,
+   "seatrank_apex": 0.8603380065709936
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 4096,
+   "seatrank_hehi": 1.1942440801970964,
+   "seatrank_apex": 1.1998691055022666
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 4097,
+   "seatrank_hehi": 0.253850917968512,
+   "seatrank_apex": 1.4812378209144945
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 4682,
+   "seatrank_hehi": 0.5284089240428513,
+   "seatrank_apex": 1.281191409665941
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 5267,
+   "seatrank_hehi": 0.44235914846045055,
+   "seatrank_apex": 0.6989700043360189
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 5852,
+   "seatrank_hehi": 0.8015200093256847,
+   "seatrank_apex": 1.3027990184028277
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 6436,
+   "seatrank_hehi": 0.9299779832665886,
+   "seatrank_apex": 0.414973347970818
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 7021,
+   "seatrank_hehi": 1.5858660440333963,
+   "seatrank_apex": 2.2698212199874215
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 7606,
+   "seatrank_hehi": 0.6816718715029912,
+   "seatrank_apex": 2.3825573219087857
+  },
+  {
+   "text": "F5b-1-ext:s18",
+   "group": "G",
+   "position": 8191,
+   "seatrank_hehi": 0.9623329030973808,
+   "seatrank_apex": 0.18258955209259797
+  }
+ ]
+}

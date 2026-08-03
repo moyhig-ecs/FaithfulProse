@@ -1,0 +1,673 @@
+% =====================================================================
+% FaithfulProse --- arXiv preprint
+% Faithful on Prose, Unanchored on Reasoning:
+%   A Position-Domain Calibration of the Jacobian Lens
+%
+% Canonical index : FaithfulProse/LINKS.md
+% Frozen sources  : DESIGN_c_lens_pos_v2 / PREREG_r2 / PREREG_r3
+% All numbers come from the released JSON artifacts; see Sec. Data.
+% =====================================================================
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+\graphicspath{{figs/}}
+
+% 公開 repo。⚠ 投稿時に public であること（現在 private）。
+\newcommand{\REPOURL}{\url{https://github.com/moyhig-ecs/FaithfulProse}}
+% ⛔ SLOT: Zenodo DOI は Release 後に埋める。`make check` が未充填を落とす。
+\newcommand{\REPODOI}{SLOT-ZENODO-DOI}
+\captionsetup{font=small,labelfont=bf}
+
+\title{\bfseries Faithful on Prose, Unanchored on Reasoning:\\
+A Position-Domain Calibration of the Jacobian Lens}
+
+\author{Manabu Higashida\\
+\small D3 Center, The University of Osaka, Osaka, Japan\\
+\small \texttt{manabu.higashida.cmc@osaka-u.ac.jp} \quad ORCID: 0009-0004-7393-2957}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+The Jacobian lens (J-lens) reads which tokens a language model is
+positioned to verbalize, and its released artifacts are being inherited
+as defaults. Those artifacts are fitted with a maximum sequence length of
+128 tokens, a setting that appears in the distributed configuration files
+and not in the main text of the canonical write-up; readers are applying the lens
+thousands of tokens deep. We calibrate fidelity against position on
+OLMo-3-32B, with the decision table, the thresholds, and the axes of both
+figures committed before any measurement existed. On prose --- the lens's
+home domain --- fidelity does not decay with depth. On reasoning traces
+it does, but the finding does not survive contact with its own
+coordinate system: the same measurements read as a degradation of
+$+0.82$ dex against one baseline cell and an improvement of $-0.14$ dex
+against another. We report both coordinates and treat that dependence as
+a primary result rather than a nuisance. Extending the prompt axis from
+one prompt to three, we find the deep-prompt degradation reproduces in
+all three, and that in two of them the decision is carried by a
+deep-rank measure alone while head-of-distribution rank correlation
+stays flat --- the failure mode we had named at design time in order to
+guard against it. We give the resulting problem a name: \emph{the
+calibration was anchored neither outside nor inside the instrument} ---
+no external oracle to check it against, and no internal origin to
+measure from. This is not a property of one lens. Anyone who inherits a
+disposition-reading instrument with its default settings inherits the
+same problem. Give us a ruler for the order of reasoning.
+\end{abstract}
+
+\vspace{0.4em}
+\noindent\textbf{Keywords:} interpretability; Jacobian lens; calibration;
+position domain; pre-registration; language models
+
+% =====================================================================
+\section{Introduction}
+\label{sec:intro}
+
+The Jacobian lens (J-lens) was introduced by Gurnee et al.\ as an
+instrument for identifying internal representations that are readily
+available for verbal report~\cite{gurnee2026workspace}. For each token in
+the vocabulary, ``the Jacobian lens identifies a vector representation
+that encodes the potential for the model to verbalize that token in the
+future''~\cite{gurnee2026workspace}. Collectively these vectors are
+termed the \emph{J-space}. Fitted lenses have been released publicly for
+several models, and downstream work --- ours included --- has begun to
+use them.
+
+An instrument that ships with defaults will be used with those defaults.
+This paper asks a question that the instrument's own documentation does
+not answer: \emph{over what range of token positions is the lens
+calibrated?}
+
+The canonical write-up describes the fit as an expectation ``over the
+source position $t$, all subsequent positions $t'$ within the context,
+and a corpus of one thousand prompts sampled from a pretraining-like
+distribution''~\cite{gurnee2026workspace}. Its main text states neither the
+sequence length used in fitting nor any dependence of fidelity on token
+position within the context.\footnote{The write-up does note that readouts
+are noisy in early \emph{layers}; that concerns depth in the network, not
+position within the sequence.}\footnote{We searched the published page on
+2026-08-03 for \texttt{max\_seq}, \texttt{max\_seq\_len}, ``sequence
+length'', ``context length'', ``context window'', ``token limit'', ``prompt
+length'', ``truncat'' and ``window size''; none occurs. We were not able to
+retrieve the appendices, so this is a statement about the main text only. The
+search predicates, the date and this limitation are recorded with the release.} The actual setting ---
+\texttt{max\_seq\_len} $=128$ --- appears only in the configuration files
+distributed alongside the fitted lenses, and it is the same across all
+six released lenses. A user therefore cannot learn the position domain
+from the paper; they learn it by opening a config file.
+
+We do not present this as a defect of the original work: a research note
+may reasonably omit such a parameter. We present it as a fact with a
+consequence. The position domain is inherited undocumented, and the
+distance between where the lens was fitted (128 tokens) and where it is
+applied (we ourselves had been reading at 8192) is a factor of 64; this
+study measures out to 16384, a factor of 128.
+
+This paper calibrates that gap and reports what calibration could and
+could not establish. Section~\ref{sec:method} describes a procedure whose
+central feature is that the decision table and both figure frames were
+frozen and committed before any measurement existed.
+Section~\ref{sec:results} reports the measurements.
+Section~\ref{sec:contribution} states what we take to be the main
+contribution, which is not a number.
+
+Our position is a calibration, not a rejection. The original authors are
+explicit that ``the Jacobian lens is an imperfect tool, which we believe
+only approximately and incompletely captures the model's underlying
+workspace structure''~\cite{gurnee2026workspace}. This work is in the
+same direction as that sentence.
+
+% =====================================================================
+\section{Method}
+\label{sec:method}
+
+\subsection{Calibration target}
+
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Lens & J-lens, public artifact (md5 \texttt{c73a32d1\ldots}) \\
+Model & OLMo-3-1125-32B, bfloat16, no chat template \\
+Read-out band & layers 26--56 (31 layers: 8 full-attention, 23 sliding) \\
+Fit setting & \texttt{max\_seq\_len} $=128$; \texttt{wikitext-103-raw-v1} \\
+Prior use & our earlier runs applied it at \texttt{max\_seq\_len} $=8192$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Quantities: calibrate on what the instrument consumes}
+
+A calibration is only as good as its choice of measured quantity. We
+report five.
+
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+$\mathrm{KL}$ & $\mathrm{KL}(\mathrm{softmax}(\text{model})\,\|\,\mathrm{softmax}(\text{lens}))$, band median \\
+top-1 & argmax agreement, band mean \\
+Rank correlation & Spearman on the model's top-$K$ ($K=1000$), band median \\
+\textbf{Word-group rank deviation} & $|\log_{10}\text{rank}_{\text{lens}} - \log_{10}\text{rank}_{\text{model}}|$, band median \\
+Baseline contrast & the same, against a vanilla logit lens~\cite{nostalgebraist2020logitlens} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The fourth quantity requires comment, because it is the one that
+ultimately decided this paper. Rank correlation over the model's top-1000
+measures fidelity at the \emph{head} of the distribution. The downstream
+use we care about --- reading which of two word groups is ranked higher
+--- consumes ranks that lie two to five orders of magnitude deep. Head
+fidelity does not guarantee depth fidelity: a lens whose head is faithful
+and whose flank is distorted could pass a decision table built on rank
+correlation alone. We therefore added \emph{word-group rank deviation} as
+a fifth quantity at design time, and made the decision the worst of
+$\{$rank correlation, word-group rank deviation$\}$, specifically to
+guard against that failure mode. Section~\ref{sec:pdepth} reports what
+happened.
+
+\subsection{The freezing procedure}
+\label{sec:freeze}
+
+The methodological commitment of this paper is procedural:
+
+\begin{enumerate}\itemsep2pt
+\item The decision table --- thresholds, decision group, baseline,
+  minimum cell sizes --- was frozen and committed \emph{before}
+  measurement.
+\item The figures' axes, bucket boundaries and decision lines were
+  frozen and committed while no data point existed: the plotting scripts
+  draw an empty frame if the results file is absent.
+\item When results arrived, the table was applied mechanically. The
+  operator moved neither a threshold nor a verdict.
+\item Where data did not fit the frozen frame, the frame was not widened.
+  Out-of-range points are marked with triangles and their values printed.
+\end{enumerate}
+
+Each commit timestamp is verifiable evidence that the freeze preceded the
+measurement. The procedure fired twice during this study. Once, the
+frozen figure axis (an absolute $\Delta$ in dex) caught a unit mismatch
+in the prose of the decision table (a ratio with a floor); the frame was
+right and the text was corrected to match it. Once, data exceeded the
+frozen limits in both directions and was received with triangles rather
+than a wider axis --- so that ``it did not fit'' survived as information.
+
+\subsection{Sample}
+\label{sec:sample}
+
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Prose corpus (W) & 4 concatenated \texttt{wikitext-103}~\cite{merity2017wikitext} texts, $\geq$16{,}400 tokens each \\
+ & (the lens's fit dataset; article boundaries recorded in provenance) \\
+Reasoning traces (G) & 8 generation traces over 3 prompts: \\
+ & \quad prompt 1 (458 tokens) --- 2 traces \\
+ & \quad prompt 2 (470 tokens) --- 2 traces \\
+ & \quad prompt 3 (501 tokens) --- 4 traces \\
+Positions & 8 evenly spaced per frozen bucket; one forward pass reads all \\
+Total & 924 measurements (700 initial $+$ 224 in the multi-prompt extension) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The three prompts are edit variants of one base task and therefore share
+prefixes: prompt 3 diverges from prompts 1 and 2 at token 86, and prompts
+1 and 2 diverge from each other at token 354. Limitation~3
+(\S\ref{sec:limits}) treats the consequences, which are substantial.
+
+The sampling rule for the extension was itself frozen before the run:
+scanning seeds in ascending order, take the first two traces with more
+than 512 tokens. The length cutoff is not arbitrary but a requirement of
+the position grid --- a shorter trace has its bucket ceilings truncated,
+so the same absolute positions can no longer be compared across prompts.
+One candidate trace was disqualified by this rule.
+
+\subsection{Reproducibility and positive controls}
+
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Two applications, identical settings & all values $\Delta = 0$; ranks 48/48 identical \\
+Same, with truncation active & all values $\Delta = 0$; ranks 47/47 identical \\
+Implementation difference at equal length & word-group rank deviation, median 0.0109 dex \\
+\textbf{Control A} (aggregator) & reproduces the published re-aggregation: 170 values, 0 differing \\
+\textbf{Control B} (measurement) & reproduces a certified trace: 520 values, 0 differing \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Read-out is deterministic, and the implementation difference is below
+half the decision threshold. For the multi-prompt extension we did not
+assume that the extension's instrument was a faithful copy of the frozen
+one; we measured it, with Controls A and B, before taking any new
+measurement. A mismatch in either was a pre-registered stopping condition
+that would have halted the run before it began.
+
+One caveat belongs here. Prompt-side read-outs agree \emph{exactly} only
+when the run configuration --- the set of positions read together, and
+the sequence length --- also agrees. Across pairs differing only in run
+configuration, with prompt and prefix identical, we observed a median of
+0.009 dex and a maximum of 0.031 dex, one tenth of the decision threshold
+($n = 15$ positions, single prompt pair). We do not identify a mechanism.
+
+% =====================================================================
+\section{Results}
+\label{sec:results}
+
+\subsection{Findings independent of the coordinate system}
+\label{sec:pillars}
+
+Some of what we measured does not depend on how positions are indexed. We
+state those first, and we state \emph{in what sense} each is independent,
+because the senses differ.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{5.6cm}p{3.4cm}p{4.6cm}@{}}
+\toprule
+Finding & Value & Kind of independence \\
+\midrule
+Prose improves across all buckets (eager) & rank corr.\ $-36.4$ to $-54.5\%$ & \textbf{Structural}: prose has no prompt/generation split, so it is not even a subject of the transform \\
+Rank-correlation degradation agrees across coordinates & $+11.6$/$+11.6$; $+18.3$/$+13.2$ & \textbf{Empirical}: it happened here; not a theorem \\
+Deepest bucket is out of domain & $+0.754$ dex $\wedge$ top-1 $-6.5$ pt & \textbf{Procedural}: two requirements, settled inside one attention implementation \\
+Fit \texttt{max\_seq\_len} shifts every reading uniformly & $\sim$0.2 dex, flat in position & Empirical --- a first-order warning for practitioners \\
+J-lens beats vanilla logit lens & $+0.063$ to $+0.195$ & Empirical (implementation sanity) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{On prose, the lens is at home --- in one universe.}
+The scope matters here, and dropping it would put the claim in conflict
+with our own ledger. Under \texttt{eager} attention (buckets B1--B5,
+\texttt{max\_seq} 8192), the prose corpus improves on \emph{both}
+measures at every bucket: rank correlation by $-36.4$ to $-54.5\%$, and
+word-group rank deviation by $-0.367$ to $-0.175$ dex. Under
+\texttt{sdpa} (B1--B6, \texttt{max\_seq} 16384), the deep buckets
+\emph{degrade}: word-group rank deviation reaches $+0.437$ dex at B5 and
+$+0.380$ dex at B6, crossing the 0.30 line, and rank correlation degrades
+$+22.6\%$ at B6.
+
+The first half of our title therefore holds \emph{in the eager universe}.
+We cannot write, without qualification, that prose improves at every
+bucket. Note also that the two runs vary attention implementation and
+\texttt{max\_seq\_len} together, by the frozen attention plan; the prose
+gap between them is therefore not attributable to position alone. The
+same confound is quantified below as $0.2089$ versus $0.0109$ dex. We do
+not identify a mechanism.
+
+Nor should this be read as ``position is fine.'' The prose corpus is the
+lens's own fit dataset (Limitation~4), which favors it. What the finding
+supports is narrower: \emph{in the eager universe, on prose, position
+itself does not destroy fidelity.}
+
+\paragraph{A configuration parameter moves every reading at once.}
+Comparing implementations at \emph{equal} sequence length gives a median
+word-group rank deviation of $0.0109$ dex, inside the frozen guard of
+$0.02$. The corresponding term in the main run was $0.2089$ dex. The
+difference --- a factor of nineteen --- is attributable to
+\texttt{max\_seq\_len}, not to the attention implementation. A user who
+inherits the default inherits a uniform shift of roughly 0.2 dex in every
+reading, without any signal that they have done so.
+
+\subsection{Both coordinates, and why the dependence is the result}
+\label{sec:coords}
+
+Figure~\ref{fig:c2} is a re-aggregation of measurements contained in
+Figure~\ref{fig:c1}; \textbf{no new model run was performed}. The
+juxtaposition holds for the 352 reasoning-trace measurements (the 348
+prose measurements have no prompt/generation split and remain in absolute
+coordinates, so they do not appear in Figure~\ref{fig:c2}). What differs
+between the two figures is the choice of baseline cell, and nothing else.
+
+\begin{center}
+\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+ & B4 / O4 & B5 / O5 \\
+\midrule
+Absolute coordinates (baseline B1, start of prompt) & $+0.618$ dex & $+0.820$ dex \\
+Relative coordinates (baseline O1, first generated tokens) & $+0.063$ dex & $-0.144$ dex \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{quote}
+\itshape The same points read as a degradation of $+0.82$ dex or an
+improvement of $-0.14$ dex depending on where the origin is placed.
+\end{quote}
+
+There is consequently no option to report only one coordinate: a
+single-coordinate report is refuted by one re-analysis. We do not decide
+which coordinate is correct. That we cannot decide is itself the result.
+
+Only one quantity is coordinate-dependent --- the word-group rank
+deviation; rank-correlation degradation agrees across coordinates at
+B4/O4 and stays close at B5/O5. Its shape is not a gradual decay with
+position but a step at the prompt/generation boundary (B1 $0.653 \to$ O1
+$1.425$, a step of $+0.77$ dex) followed by near-flatness within the
+generated region (O4 $+0.06$, O5 $-0.14$). Comparisons \emph{within} the
+generated region are thus made under nearly common conditions --- while
+the generated region as a whole floats free of any anchor.
+
+The relative buckets, and this figure's empty frame, were committed
+before the aggregation was computed. Re-slicing coordinates is the
+easiest operation to perform after seeing the data, which is exactly why
+it was frozen first.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_C1_fidelity_vs_position.pdf}
+\caption{\textbf{Lens fidelity against absolute position.} Degradation of
+two fidelity measures relative to the first bucket (B1, tokens 1--128),
+for the reasoning-trace corpus (G, decision group) and the prose corpus
+(W, attribution diagnostic). Left: head-of-distribution rank correlation,
+as a ratio to the B1 median. Right: word-group rank deviation, as an
+absolute difference in $\log_{10}$ rank. The decision is the worst of the
+two, on group G only. Dashed horizontal lines are the pre-registered
+thresholds; vertical guides mark the fit-domain edge (128), the sliding
+window (4096) and the native context length (8192). The axes, buckets and
+decision lines were committed before any measurement existed. Triangles
+mark points beyond the frozen limit with the value printed: \emph{the
+axis was not widened.}}
+\label{fig:c1}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{fig_C2_relative_coordinates.pdf}
+\caption{\textbf{The same measurements in relative coordinates.} The
+reasoning-trace measurements of Figure~\ref{fig:c1} (352 of the 700),
+re-bucketed by depth within the prompt (left column) and by offset from
+the first generated token (right column). \textbf{No new model run was
+performed.} The prose corpus has no prompt/generation split and stays in
+absolute coordinates, so it does not appear here. Baselines are the first
+bucket of each coordinate system, not B1. The 10\%/30\% lines are drawn
+for reference only; the decision table is not re-applied. Buckets and
+this frame were committed before the aggregation was computed.}
+\label{fig:c2}
+\end{figure}
+
+\subsection{Depth within the prompt, across three prompts}
+\label{sec:pdepth}
+
+Within the prompt, the deepest bucket degrades. The initial measurement
+saw this on a single prompt read four times, which licensed nothing about
+prompts in general. We added two prompts (eight traces over three
+prompts) and froze the reading table before the run: with the shallowest
+bucket P1 as baseline, ``degraded'' means a rank-correlation drop
+$\geq 30\%$ \emph{or} a word-group rank deviation $\geq +0.30$ dex ---
+the thresholds of Figure~\ref{fig:c1}, applied mechanically.
+
+\begin{center}
+\small
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+& & \multicolumn{2}{c}{Rank correlation} & \multicolumn{2}{c}{Word-group rank deviation} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Prompt & Length & P2 & \textbf{P3} & P2 & \textbf{P3} \\
+\midrule
+1 & 458 & $-72.1\%$ & $\mathbf{+0.4\%}$ & $+2.000$ & $\mathbf{+1.152}$ \\
+2 & 470 & $-72.1\%$ & $\mathbf{+0.4\%}$ & $+2.000$ & $\mathbf{+0.530}$ \\
+3 & 501 & $-12.0\%$ & $\mathbf{+51.6\%}$ & $+0.389$ & $\mathbf{+0.812}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\emph{Prompts 1 and 2 share their first 354 tokens; their P1
+baselines and P2 entries are therefore identical by construction, not
+independent replicates} (see Limitation~3). The repeated ``$-72.1\%$ /
+$+2.000$'' across the two rows is the visible symptom of this. The
+pre-registered comparison --- P3 against P1 --- is unaffected: P3 spans
+the divergence point at token 354, so all three rows differ there.
+
+The pre-registered comparison is P3 versus P1 (bold). The P2 column is
+reported as an observation \emph{outside} the pre-registered comparison:
+these are measurements on the same frozen grid, and withholding a
+non-monotone shape would be selective reporting.
+
+All three prompts fall in the degraded branch. The deep-prompt
+degradation is therefore not specific to a single prompt.
+
+\paragraph{Which measure carried the decision.}
+For prompts 1 and 2, rank correlation is flat at $+0.4\%$ --- it does not
+approach the $30\%$ threshold --- while word-group rank deviation crosses
+the $0.30$ dex threshold by factors of 1.8 to 3.8. For prompt 3 both
+measures fire. The scope of ``alone'' is therefore two of the three
+prompts, across both attention implementations (prompt 3 fires on both
+measures: $+51.6\%$ eager, $+42.8\%$ sdpa).
+
+Had we decided on rank correlation alone, two of the three prompts would
+have read as undegraded.
+
+The measure that carried the decision is the one added at design time
+against a named failure mode: \emph{a lens whose head is faithful and
+whose flank is distorted could pass a decision table}
+(\S\ref{sec:method}). That failure mode appeared in measurement. We
+report this as an occurrence of a hazard we had named, not as a
+prediction confirmed --- it was a design rationale, not a registered
+prediction with a stake attached.
+
+\paragraph{Shape.}
+In two of the three prompts the largest deviation lies in the
+\emph{middle} of the prompt (P2) and shrinks toward the end. We therefore
+do not use any localization slogan about degradation living at the
+prompt's tail; that shape belongs to one prompt. No mechanism is claimed.
+
+% =====================================================================
+\section{The contribution: a calibration with no anchor}
+\label{sec:contribution}
+
+\subsection{No external anchor}
+
+An instrument that reads dispositions has no external oracle.
+
+The lens is designed to read the \emph{potential to verbalize a token in
+the future}. The only quantity available to check it against is the
+model's final-layer logits --- the prediction of the \emph{next} token.
+These two are different by construction. Agreement can therefore be
+measured; disagreement cannot be converted into a verdict of failure. A
+divergence may be (i) unfaithful extrapolation by the lens or (ii) a
+widening --- correct, and expected --- gap between disposition and next
+token. This study cannot separate them, and the obstruction is not one of
+sample size or compute (Limitation~5).
+
+\subsection{No internal origin}
+
+Nor is there an origin inside.
+
+First, as \S\ref{sec:coords} shows, the choice of baseline cell reverses
+the sign of ``degradation'' ($+0.82$ against $-0.14$ dex). Second, as
+\S\ref{sec:pdepth} shows, agreement at the head of the distribution does
+not imply fidelity at the depth the instrument actually reads: cells
+exist in which head correlation is flat while deep ranks alone move the
+verdict. Where to place the origin, and at what depth to look, are not
+settled from inside the calibration.
+
+\subsection{The statement}
+
+\begin{quote}\Large\itshape
+The calibration was anchored neither outside nor inside the instrument.
+\end{quote}
+
+\noindent
+--- no external oracle to check it against, and no internal origin to
+measure from.
+
+This structure is not specific to this lens. Anyone who inherits a
+disposition-reading instrument together with its default settings
+inherits the same problem. The contribution of this paper is not a
+number; it is a name for that problem.
+
+We do not claim the lens is unusable. On prose it is faithful
+(\S\ref{sec:pillars}). The claim is narrower and, we think, more useful:
+\emph{readings taken deep inside a reasoning trace have no verifiable
+anchor.}
+
+\begin{quote}\large\itshape
+Give us a ruler for the order of reasoning.
+\end{quote}
+
+% =====================================================================
+\section{Limitations}
+\label{sec:limits}
+
+\begin{enumerate}\itemsep3pt
+\item Single model (OLMo-3-1125-32B), single stack (PyTorch, Apple MPS,
+  bfloat16).
+\item Single lens (md5 \texttt{c73a32d1\ldots}), single band (layers
+  26--56).
+\item \textbf{The reasoning-trace corpus is 3 prompts over 8 traces, but
+  these are not independent samples, for two reasons.} (a) In a causal
+  language model the state at a prompt position depends only on tokens up
+  to that position, so multiple traces of one prompt reproduce identical
+  values on the prompt side. (b) The three prompts are edit variants
+  sharing prefixes (divergence at tokens 86 and 354), so before a
+  divergence point, different prompts return \emph{exactly} the same
+  value --- we verified this: two pairs of prompts, 13 positions each,
+  gave $|\Delta| = 0.0000$ in word-group rank deviation. Consequently the
+  correct unit for counting independent values is
+  $(\text{prefix},\,\text{position})$, not $(\text{prompt},\,
+  \text{position})$ and not the number of rows. Across the three
+  prompt-internal buckets the counts are, respectively, rows
+  $64/32/24$; $(\text{prompt},\text{position})$ $24/12/9$;
+  $(\text{prefix},\text{position})$ $\mathbf{11/8/8}$. We therefore do
+  \emph{not} claim to have doubled $n$. The claim is only that positional
+  generalization widened from one prefix to three. \emph{Disclosure:} the
+  pre-registration froze the distinct count under
+  $(\text{prompt},\text{position})$, giving an expected 9; the sharper
+  predicate $(\text{prefix},\text{position})$, giving 8, was identified
+  after the run. Prefix sharing is a property of causal language models,
+  not a defect of the sample.
+\item The prose corpus is the lens's own fit dataset, which favors it.
+\item \textbf{Fidelity is checked against the model's final-layer logits,
+  i.e.\ the next-token prediction, while the lens is designed to read
+  near-future disposition.} The two differ by construction. A divergence
+  cannot be attributed to (i) unfaithful extrapolation rather than (ii) a
+  growing gap between disposition and next token. This is not a shortfall
+  of samples or compute: \emph{an instrument that reads disposition has
+  no external anchor for correctness.}
+\item Position buckets were frozen in absolute coordinates, and in
+  reasoning traces they straddle the prompt/generation boundary; the
+  re-aggregation in relative coordinates was frozen and committed before
+  it was computed.
+\item Readings depend slightly on run configuration: ``same prompt, same
+  value'' does not hold in general --- agreement requires the run
+  configuration to match as well. The magnitude is given in
+  \S\ref{sec:method} and is far below the decision threshold; the
+  decision is unaffected. Practitioners must fix not only the
+  configuration of the model but the configuration of the reading.
+\item Traces for the multi-prompt extension were selected by a length
+  rule ($>512$ tokens); the distribution over generation-side offsets is
+  therefore not an unbiased sample, and we do not read it.
+\end{enumerate}
+
+% =====================================================================
+\section{Research workflow and AI involvement}
+\label{sec:workflow}
+
+This calibration was carried out through a two-layer workflow of large
+language models~\cite{anthropic2026claude}, described here because parts
+of it are load-bearing for the paper's warrant. An \emph{execution layer}
+(agentic coding interface) implemented the harness, ran the measurements,
+and reported them in frozen documents. A separate \emph{judgment layer}
+(chat interface) performed adversarial review of every design and result
+document under a single-identified-fatal-flaw discipline, and froze the
+pre-registrations and reading tables. The two layers are separated by a
+deliberate information asymmetry: the judgment layer has no access to the
+codebase, the raw outputs, or the subject model, and reads only the
+frozen documents.
+
+Three boundaries fix responsibility. First, the subject of measurement is
+OLMo-3-32B and the released lens; no workflow model is a measurement
+subject. Second, no language model adjudicates an outcome: every
+quantitative verdict is taken against a threshold frozen before its
+measurement and applied mechanically. Third, every load-bearing decision
+--- thresholds, terminology, framing, and the final wording of the claim
+--- was reserved to and made by the human author, who reviewed all frozen
+documents and bears sole responsibility for every claim.
+
+The workflow's own errors are reported rather than removed. Two are
+material to this paper. The scope of the prose finding
+(\S\ref{sec:pillars}) was dropped by the execution layer in a draft and
+restored in review after collision with the ledger. The sharper counting
+predicate in Limitation~3 was identified only after the run, and is
+disclosed as such rather than presented as pre-registered.
+
+% =====================================================================
+\section*{Data and code availability}
+
+All measurements are released with per-position values retained: the main
+run (700 measurements), the control re-measurement, the relative-coordinate
+re-aggregation (no new run), and the multi-prompt extension (224
+measurements), together with the determinism and neutrality checks. The
+measurement code imports the lens, the word groups, the rank computation
+and the token mask verbatim from the upstream implementation. The frozen
+documents --- the decision table and the two pre-registrations --- are
+released with their commit timestamps, which are the evidence that the
+freeze preceded the measurement --- as post-hoc English renderings, with the
+Japanese originals fixed by \texttt{sha256} (see \texttt{PROVENANCE.md} in the
+release). Figure scripts are included and produce an empty frame when no data
+file is present.
+
+The package is available at \REPOURL{} (archived at \REPODOI{}). Every file is listed in
+\texttt{MANIFEST.json} with its \texttt{sha256} both as it ran and as
+released, together with an enumeration of every substitution made for
+release.
+
+% =====================================================================
+\section*{Acknowledgment}
+
+This work was supported by JSPS KAKENHI Grant Number JP26K06399.
+Manuscript text was drafted within the two-layer workflow described in
+\S\ref{sec:workflow}~\cite{anthropic2026claude}; all claims, thresholds
+and final wording are the author's.
+
+% =====================================================================
+\begin{thebibliography}{9}
+
+\bibitem{gurnee2026workspace}
+W.~Gurnee, N.~Sofroniew, A.~Pearce, M.~Piotrowski, I.~Kauvar, R.~Chen,
+A.~Soligo, P.~Bogdan, E.~Ong, R.~Wang, T.~B.~Thompson, D.~Abrahams,
+S.~Kantamneni, E.~Ameisen, J.~Batson, and J.~Lindsey,
+``Verbalizable representations form a global workspace in language
+models,'' \emph{Transformer Circuits Thread}, Jul.~6, 2026. [Online].
+Available: \url{https://transformer-circuits.pub/2026/workspace/}
+
+\bibitem{merity2017wikitext}
+S.~Merity, C.~Xiong, J.~Bradbury, and R.~Socher, ``Pointer sentinel mixture
+models,'' in \emph{Proc. ICLR}, 2017.
+
+\bibitem{nostalgebraist2020logitlens}
+nostalgebraist, ``Interpreting GPT: the logit lens,'' LessWrong, 2020.
+[Online]. Available:
+\url{https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens}
+
+\bibitem{olmo3}
+Allen Institute for AI, ``OLMo-3-1125-32B,'' 2025. [Online]. Available:
+\url{https://huggingface.co/allenai/Olmo-3-1125-32B}
+
+\bibitem{anthropic2026claude}
+Anthropic, ``Claude (large language model family),'' 2026. [Online].
+Available: \url{https://claude.ai}. Used as research-workflow execution
+and judgment layers and for manuscript drafting; see
+\S\ref{sec:workflow} and Acknowledgment.
+
+\end{thebibliography}
+
+\end{document}

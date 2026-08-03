@@ -1,0 +1,32 @@
+{
+  "check": "D-CHECK（同一プロセス・同一設定で apply 2 回）",
+  "attn": "sdpa",
+  "text": "wikitext-1",
+  "n_positions": 47,
+  "max_seq": 16384,
+  "max_abs_delta_model_logits": 0.0,
+  "max_abs_delta_lens_logits": 0.0,
+  "top1_agreement": "47/47",
+  "band_rank_identical": {
+    "hehi": "47/47",
+    "apex": "47/47",
+    "center": "47/47"
+  },
+  "verdict": "DETERMINISTIC",
+  "provenance": {
+    "commit": "577cbc60a48a75e785e9f0e9a66eda1c9528cc3d",
+    "dirty": false,
+    "dirty_files": [],
+    "dirty_check_excluded": [],
+    "dirty_check_exclusion_rule": "untracked under probes/c-lens-pos/results/ only",
+    "run_kind": "main",
+    "probe": "C-lens-pos",
+    "design": "DESIGN_c_lens_pos_v2_20260802.md",
+    "adjudication": "ADJUDICATION_c_lens_pos_v2_effective_20260802.md",
+    "started_utc": "2026-08-02T04:57:05+00:00",
+    "versions": {
+      "python": "3.14.3",
+      "transformers": "5.14.1"
+    }
+  }
+}

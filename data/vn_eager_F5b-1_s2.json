@@ -1,0 +1,46 @@
+{
+  "check": "V-N（中立性検証）",
+  "adjudication": "ADJUDICATION_runner_fix_and_vn_20260802.md §1",
+  "target": {
+    "attn": "eager",
+    "text": "F5b-1:s2"
+  },
+  "n_positions": 40,
+  "n_fields_per_position": 13,
+  "n_values_compared": 520,
+  "n_values_differing": 0,
+  "verdict": "IDENTICAL",
+  "fields": [
+    "kl",
+    "top1",
+    "rankcorr",
+    "kl_full",
+    "kl_slid",
+    "rankcorr_full",
+    "rankcorr_slid",
+    "seatrank_hehi",
+    "seatrank_apex",
+    "seatrank_center",
+    "kl_ll",
+    "top1_ll",
+    "rankcorr_ll"
+  ],
+  "mismatches": [],
+  "provenance": {
+    "commit": "64f8c90d01df6b0b738e7878b383bf1e7b47bea0",
+    "dirty": false,
+    "dirty_files": [],
+    "dirty_check_excluded": [],
+    "dirty_check_exclusion_rule": "untracked under probes/c-lens-pos/results/ only",
+    "run_kind": "main",
+    "probe": "C-lens-pos",
+    "design": "DESIGN_c_lens_pos_v2_20260802.md",
+    "adjudication": "ADJUDICATION_c_lens_pos_v2_effective_20260802.md",
+    "started_utc": "2026-08-02T04:24:33+00:00",
+    "versions": {
+      "python": "3.14.3",
+      "transformers": "5.14.1"
+    }
+  },
+  "note": "⛔ c_lens_pos.json は書き換えていない。測定ループ本体は本走行と同一 inline 経路。"
+}

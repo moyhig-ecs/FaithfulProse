@@ -1,0 +1,466 @@
+{
+ "package": "FaithfulProse — data and code",
+ "paper": "Faithful on Prose, Unanchored on Reasoning: A Position-Domain Calibration of the Jacobian Lens",
+ "built_utc": "2026-08-03T05:52:23+00:00",
+ "source_repo_head": "697408994c86a3e50e3b8774c4014bd52866ddbc",
+ "source_repo_dirty": true,
+ "transformation_policy": {
+  "data": "verbatim; never transformed",
+  "code_absolute_paths": "replaced by environment-variable resolution",
+  "code_internal_vocabulary": "replaced by the approved external register",
+  "code_comments_language": "Japanese comments retained (house precedent)",
+  "note": "every substitution is enumerated per file under 'changes'"
+ },
+ "files": [
+  {
+   "path": "data/c_lens_pos.json",
+   "role": "main run: 700 measurements, per-position values retained",
+   "sha256_as_run": "b2b5a1181b323e69eda373d8b2d4585fbebf6646941b26060417b654e0d644c8",
+   "sha256_released": "b2b5a1181b323e69eda373d8b2d4585fbebf6646941b26060417b654e0d644c8",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/c_lens_pos_r1.json",
+   "role": "control re-measurement (attention isolated at equal length)",
+   "sha256_as_run": "d9caaf78264bea2d6c685800b55c49debeec2f6063f69bb1d87d1f61525081a9",
+   "sha256_released": "d9caaf78264bea2d6c685800b55c49debeec2f6063f69bb1d87d1f61525081a9",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/c_lens_pos_r2.json",
+   "role": "relative-coordinate re-aggregation (no new model run)",
+   "sha256_as_run": "86eac495821e34a20361a870f4436799da8dde6e245a8a0cc86b51cb005b02cd",
+   "sha256_released": "86eac495821e34a20361a870f4436799da8dde6e245a8a0cc86b51cb005b02cd",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/c_lens_pos_r3.json",
+   "role": "multi-prompt extension: 224 measurements + controls A/B",
+   "sha256_as_run": "c927c40bc2d99d3500a2232bf0c84494f446079cbd807f27e65e7116058dd2b4",
+   "sha256_released": "c927c40bc2d99d3500a2232bf0c84494f446079cbd807f27e65e7116058dd2b4",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/det_check_sdpa.json",
+   "role": "determinism check",
+   "sha256_as_run": "baa9d66899c53108878e74daabb07679ef454249ca1337dee0cfab50890645e0",
+   "sha256_released": "baa9d66899c53108878e74daabb07679ef454249ca1337dee0cfab50890645e0",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/vn_eager_F5b-1_s2.json",
+   "role": "neutrality check (eager)",
+   "sha256_as_run": "53714e5849c5a82c348c5a48a4edb688e7172377aeecbe9d707a2fd25df2b66b",
+   "sha256_released": "53714e5849c5a82c348c5a48a4edb688e7172377aeecbe9d707a2fd25df2b66b",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/vn_sdpa_wikitext-1.json",
+   "role": "neutrality check (sdpa)",
+   "sha256_as_run": "38b9772efacd2a21e4b1e8d8b35b9d27e9cc1e981d3b379cb63a369678699997",
+   "sha256_released": "38b9772efacd2a21e4b1e8d8b35b9d27e9cc1e981d3b379cb63a369678699997",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/preflight.json",
+   "role": "preflight P1-P4",
+   "sha256_as_run": "708966441c7c3e8bb025cc4db03e1df2cf563e5cb229519c87f19d26ba5f83ec",
+   "sha256_released": "708966441c7c3e8bb025cc4db03e1df2cf563e5cb229519c87f19d26ba5f83ec",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/preflight_attn_compare.json",
+   "role": "preflight: attention comparison",
+   "sha256_as_run": "c4c696bcf692f7e8652c2b929b87062b15cc82e9147a29f673d791b632b9c062",
+   "sha256_released": "c4c696bcf692f7e8652c2b929b87062b15cc82e9147a29f673d791b632b9c062",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/c_lens_pos_prefix_mixed.json",
+   "role": "prefix-mixed diagnostic",
+   "sha256_as_run": "a2ebae15a7a518b9ad353fa2c2f9af51a2ced4763a29011184ed3524aecaae10",
+   "sha256_released": "a2ebae15a7a518b9ad353fa2c2f9af51a2ced4763a29011184ed3524aecaae10",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/wordlike_mask_olmo3_32b.json",
+   "role": "word-like token mask (derived from the tokenizer)",
+   "sha256_as_run": "6ded6374f048150fbad64bddefb1f60dd5935d5f3c8a46c5010df74bd04ec940",
+   "sha256_released": "6ded6374f048150fbad64bddefb1f60dd5935d5f3c8a46c5010df74bd04ec940",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "code/run_c_lens_pos.py",
+   "role": "measurement runner (frozen)",
+   "source_in_repo": "probes/c-lens-pos/run_c_lens_pos.py",
+   "sha256_as_run": "732a7e1b900f06f7795dc16cbcd3c789125764aa8988bc8db836129f686081fe",
+   "sha256_released": "3105cb8a98b66b902d8b442e3ae7c7bc523ac26062361cb5454b01e078c8a51d",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    },
+    {
+     "kind": "docstring",
+     "from": "<function docstrings, ja>",
+     "to": "english rendering",
+     "count": 5
+    },
+    {
+     "kind": "relink",
+     "from": "DESIGN_c_lens_pos_v2_20260802",
+     "to": "DECISION_TABLE.en",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "path": "code/run_r3.py",
+   "role": "multi-prompt extension runner",
+   "source_in_repo": "probes/c-lens-pos/run_r3.py",
+   "sha256_as_run": "71a7969b56ef98d070c3d3b63658127ca6a7a35366558395fde706a690cd4461",
+   "sha256_released": "18f01bc896252f18aeaf2d2bfd2b12ae7b6f56538da7336d7e8ae2fd23afef0b",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    },
+    {
+     "kind": "docstring",
+     "from": "<function docstrings, ja>",
+     "to": "english rendering",
+     "count": 4
+    },
+    {
+     "kind": "relink",
+     "from": "PREREG_r3_multi_prompt_p_axis_20260803",
+     "to": "PREREG_multi_prompt_p_axis.en",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "figs/fig_C1_fidelity_vs_position.py",
+   "role": "Figure 1 (empty frame if no data)",
+   "source_in_repo": "probes/c-lens-pos/figs/fig_C1_fidelity_vs_position.py",
+   "sha256_as_run": "174405c35fdfa55aa1adbf8f605d32b2ca440ad524a6a148c24ab75e6de3c3f9",
+   "sha256_released": "a5f9d82b278d14c644e9c0c0b3ec7d25b5399a3c9d91390a0fb1fd522fc6f18a",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "figs/fig_C2_relative_coordinates.py",
+   "role": "Figure 2 (empty frame if no data)",
+   "source_in_repo": "probes/c-lens-pos/figs/fig_C2_relative_coordinates.py",
+   "sha256_as_run": "b6f089d2c043e2b1b3e891b06da05c4808d396fc9b3ebaae79a64f91d67c1baf",
+   "sha256_released": "979ac581fe9a1c938b3bfc2410547acda82fb0f82bd20b17fb062bcf5649829d",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    },
+    {
+     "kind": "relink",
+     "from": "PREREG_r2_relative_coordinates_20260802",
+     "to": "PREREG_relative_coordinates.en",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "figs/figstyle.py",
+   "role": "shared figure style / footer",
+   "source_in_repo": "probes/olmo3-f5-think-prefix/figs/figstyle.py",
+   "sha256_as_run": "dfc6a85bd28afa05c2dd3e95a79c92cca37c4efabffd5e2fb168399252a97262",
+   "sha256_released": "da6e58c60805c128cb04a031b6899f7c4a6ce5505ea25d0b5a99600603e7e684",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    },
+    {
+     "kind": "docstring",
+     "from": "<function docstrings, ja>",
+     "to": "english rendering",
+     "count": 2
+    },
+    {
+     "kind": "vocab",
+     "from": "<internal term, redacted>",
+     "to": "word-group readout",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "code/run_pc2.py",
+   "role": "frozen constants: band, lens path, model",
+   "source_in_repo": "probes/olmo3-pc2-seat-cue/run_pc2.py",
+   "sha256_as_run": "40ff9194eb31aa21ffc26dd2ffecbbb29e1380c70615722251e0f6502003754c",
+   "sha256_released": "1a04f5b8c86060021ff70d2fc449396a2183001251b4686722c3709bc513d0ae",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    },
+    {
+     "kind": "docstring",
+     "from": "<function docstrings, ja>",
+     "to": "english rendering",
+     "count": 3
+    },
+    {
+     "kind": "abspath",
+     "from": "Path(\"$HOME/lancedb-rag\")",
+     "to": "Path(os.environ.get(\"REPO_ROOT\", Path(__file__).resolve().parents[2]))",
+     "count": 1
+    },
+    {
+     "kind": "abspath",
+     "from": "Path(\"$HOME/work/jacobian-lens\")",
+     "to": "Path(os.environ.get(\"JACOBIAN_LENS_ROOT\", \"jacobian-lens\"))",
+     "count": 1
+    },
+    {
+     "kind": "vocab",
+     "from": "<internal term, redacted>",
+     "to": "modal readout category",
+     "count": 1
+    },
+    {
+     "kind": "vocab",
+     "from": "<internal term, redacted>",
+     "to": "word-group readout",
+     "count": 1
+    },
+    {
+     "kind": "import",
+     "from": "-",
+     "to": "import os",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "code/run_f5.py",
+   "role": "prompt construction (variants, cue)",
+   "source_in_repo": "probes/olmo3-f5-think-prefix/run_f5.py",
+   "sha256_as_run": "e7bb4c59442310f9786f66f5842ba8a756af369f348c97c80b3ec65282a55f5b",
+   "sha256_released": "8b25bf28f5dc9b3c44a4b5ffd1427c1439ab639c04dbbecf2fa2eca969b5a0b8",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    },
+    {
+     "kind": "docstring",
+     "from": "<function docstrings, ja>",
+     "to": "english rendering",
+     "count": 3
+    },
+    {
+     "kind": "lineage",
+     "from": "<lineage identifier, redacted>",
+     "to": "established_group",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "code/screen_base.py",
+   "role": "base prompt loader (md5-asserted)",
+   "source_in_repo": "probes/olmo3-base-bf16-screen/screen_base.py",
+   "sha256_as_run": "35f2f8c25cb4d045219fb6b44c02c3da54d5c01916a921cf619381c4b6dc40b2",
+   "sha256_released": "107d00407423ec35d73aeeaa6ccc9400185505f7193873d9c65a9c47899e6d57",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    },
+    {
+     "kind": "abspath",
+     "from": "Path(\"$HOME/lancedb-rag\")",
+     "to": "Path(os.environ.get(\"REPO_ROOT\", Path(__file__).resolve().parents[2]))",
+     "count": 1
+    },
+    {
+     "kind": "import",
+     "from": "-",
+     "to": "import os",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "code/step3_pass2.py",
+   "role": "word groups, rank computation, token mask",
+   "source_in_repo": "experiments/jlens-pilot/step3_pass2.py",
+   "sha256_as_run": "5403dcbddd2d907a78830eab68ecf6f48fc05ce75cb92f244174c06f7f267829",
+   "sha256_released": "a6d829db9e86b33832e43aa5d54daa4232c3c433c115c60857fd1e485a04ce1c",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    },
+    {
+     "kind": "docstring",
+     "from": "<function docstrings, ja>",
+     "to": "english rendering",
+     "count": 3
+    },
+    {
+     "kind": "abspath",
+     "from": "Path(\"$HOME/lancedb-rag/ConstructGap\")",
+     "to": "Path(os.environ.get(\"CONSTRUCTGAP_ROOT\", \"ConstructGap\"))",
+     "count": 1
+    },
+    {
+     "kind": "abspath",
+     "from": "Path(\"$HOME/lancedb-rag/experiments/galileo-screening\")",
+     "to": "Path(os.environ.get(\"GALILEO_ROOT\", \"experiments/galileo-screening\"))",
+     "count": 1
+    },
+    {
+     "kind": "abspath",
+     "from": "Path(\"$HOME/work/jacobian-lens\")",
+     "to": "Path(os.environ.get(\"JACOBIAN_LENS_ROOT\", \"jacobian-lens\"))",
+     "count": 1
+    },
+    {
+     "kind": "import",
+     "from": "-",
+     "to": "import os",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "frozen/PROVENANCE.md",
+   "role": "freeze evidence: commit hashes, timestamps, sha256 of the Japanese originals",
+   "source_in_repo": "FaithfulProse/frozen_en/PROVENANCE.md",
+   "sha256_as_run": "025d4ad986dddfd6bab1dc2d1f40960c4ca69b56c3942408774498f9f689e8c7",
+   "sha256_released": "025d4ad986dddfd6bab1dc2d1f40960c4ca69b56c3942408774498f9f689e8c7",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "frozen/DECISION_TABLE.en.md",
+   "role": "the frozen decision table (extract, English rendering)",
+   "source_in_repo": "FaithfulProse/frozen_en/DECISION_TABLE.en.md",
+   "sha256_as_run": "45069d40fea50731ae79ed826e30dbd0ffc8985210b32b60d12a620014b92313",
+   "sha256_released": "45069d40fea50731ae79ed826e30dbd0ffc8985210b32b60d12a620014b92313",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "frozen/PREREG_relative_coordinates.en.md",
+   "role": "pre-registration: relative-coordinate re-aggregation (English rendering)",
+   "source_in_repo": "FaithfulProse/frozen_en/PREREG_relative_coordinates.en.md",
+   "sha256_as_run": "1dc1427e4a24367e83b95dc2e420be55cb630dbd4b2658bb82f8ee4449ed9ed0",
+   "sha256_released": "1dc1427e4a24367e83b95dc2e420be55cb630dbd4b2658bb82f8ee4449ed9ed0",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "frozen/PREREG_multi_prompt_p_axis.en.md",
+   "role": "pre-registration: multi-prompt extension (English rendering)",
+   "source_in_repo": "FaithfulProse/frozen_en/PREREG_multi_prompt_p_axis.en.md",
+   "sha256_as_run": "e98aaa74f8b6fe39f4d1c864648f87e952692ab680680b8792e63f371c64f138",
+   "sha256_released": "e98aaa74f8b6fe39f4d1c864648f87e952692ab680680b8792e63f371c64f138",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "figs/fig_C1_fidelity_vs_position.pdf",
+   "role": "figure artifact",
+   "sha256_as_run": "cefbb3671be2702d5aa8a3bcb42c85f237ac6a3d69753ff7e6f6099cccf9ccb8",
+   "sha256_released": "cefbb3671be2702d5aa8a3bcb42c85f237ac6a3d69753ff7e6f6099cccf9ccb8",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "figs/fig_C1_fidelity_vs_position.png",
+   "role": "figure artifact",
+   "sha256_as_run": "d3ab774b2f1a187217f8ebd6b3eaaa33b0d91ea6a483a6ff04acb8816c057e01",
+   "sha256_released": "d3ab774b2f1a187217f8ebd6b3eaaa33b0d91ea6a483a6ff04acb8816c057e01",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "figs/fig_C2_relative_coordinates.pdf",
+   "role": "figure artifact",
+   "sha256_as_run": "de356c9e3b3dda942385a97c5c0ac54186a3eae62c04581d4aebb7a71f441165",
+   "sha256_released": "de356c9e3b3dda942385a97c5c0ac54186a3eae62c04581d4aebb7a71f441165",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "figs/fig_C2_relative_coordinates.png",
+   "role": "figure artifact",
+   "sha256_as_run": "30c9126e8d816f69ea51aaa58acb3eb7ae6340322ddd50c8d6ccb7b77c1ed912",
+   "sha256_released": "30c9126e8d816f69ea51aaa58acb3eb7ae6340322ddd50c8d6ccb7b77c1ed912",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "README.md",
+   "role": "package documentation",
+   "source_in_repo": "FaithfulProse/release_src/README.md",
+   "sha256_as_run": "1f53823cb5d190f06f28e6e1c739e85d81eec9f09a90b32c25c115e51c426b29",
+   "sha256_released": "1f53823cb5d190f06f28e6e1c739e85d81eec9f09a90b32c25c115e51c426b29",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "LICENSE",
+   "role": "licence",
+   "source_in_repo": "FaithfulProse/release_src/LICENSE",
+   "sha256_as_run": "9fb6ed30ef9695bdc24950716e1c50b8922f703f5f8f8da1f891543c3aeea4fa",
+   "sha256_released": "9fb6ed30ef9695bdc24950716e1c50b8922f703f5f8f8da1f891543c3aeea4fa",
+   "transformed": false,
+   "changes": []
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+  "provenance": {
+    "commit": "5f8d5360ca891553289ad5a1837a733497804ba8",
+    "dirty": false,
+    "dirty_files": [],
+    "dirty_check_excluded": [
+      "?? probes/c-lens-pos/results/"
+    ],
+    "dirty_check_exclusion_rule": "untracked under probes/c-lens-pos/results/ only",
+    "run_kind": "main",
+    "probe": "C-lens-pos",
+    "design": "DESIGN_c_lens_pos_v2_20260802.md",
+    "adjudication": "ADJUDICATION_c_lens_pos_v2_effective_20260802.md",
+    "started_utc": "2026-08-02T01:30:59+00:00",
+    "versions": {
+      "python": "3.14.3",
+      "transformers": "5.14.1"
+    }
+  },
+  "max_seq": 8192,
+  "n_positions": 40,
+  "text": "wikitext-1",
+  "max_abs_delta_model_logits": 0.375,
+  "max_abs_delta_lens_logits": 0.4375,
+  "top1_agreement": "40/40",
+  "seatrank_delta_eager_vs_sdpa": {
+    "hehi": {
+      "median_delta_log10": 0.00457105834764171,
+      "max_delta_log10": 0.0202033860882862,
+      "n": 40,
+      "identical_rank": 0
+    },
+    "apex": {
+      "median_delta_log10": 0.0034238426551658208,
+      "max_delta_log10": 0.04315691703014979,
+      "n": 40,
+      "identical_rank": 1
+    }
+  },
+  "wall_s": {
+    "eager": 72.9,
+    "sdpa": 73.3
+  },
+  "mps_gib": {
+    "eager": 96.02,
+    "sdpa": 158.01
+  },
+  "note_mps": "mps_gib は driver 累積であり 2 つ目の値は 1 つ目のモデル解放前を含みうる。⛔ 単独走行の値と比較しない。"
+}
