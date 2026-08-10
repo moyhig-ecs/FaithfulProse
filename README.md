@@ -150,7 +150,7 @@ The two hashes let anyone holding the original verify that nothing else moved.
 | | |
 |---|---|
 | this package — code, data, frozen documents | **MIT** (see `LICENSE`; the Zenodo deposit carries the same) |
-| the paper, on arXiv | **CC BY 4.0** |
+| the paper, as a preprint on Zenodo | **CC BY 4.0** |
 
 MIT is a software licence, and it is what the Zenodo deposit inherited from the
 repository. To be unambiguous about the parts that are not software: **the
@@ -168,9 +168,17 @@ end it.
 |---|---|
 | this release (v1.0.0) | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins these exact bytes |
 | all versions | [`10.5281/zenodo.21768364`](https://doi.org/10.5281/zenodo.21768364) --- concept DOI, always resolves to the latest |
+| the paper (v1.1) | [`10.5281/zenodo.21867046`](https://doi.org/10.5281/zenodo.21867046) --- **version DOI**, pins that exact PDF. Cite this one |
+| the paper (v1) | [`10.5281/zenodo.21800315`](https://doi.org/10.5281/zenodo.21800315) --- **version DOI**, superseded by v1.1 |
+| the paper, all versions | [`10.5281/zenodo.21800314`](https://doi.org/10.5281/zenodo.21800314) --- concept DOI, always resolves to the latest |
+
+v1.1 revises the abstract and one sentence of Section 7-2. The results,
+figures, frozen artifacts and verdicts are unchanged from v1.0, and no claim
+was withdrawn; the code and data in this release are untouched by it.
 
 The paper cites the version DOI, because what it needs to point at is the
-snapshot the numbers came from.
+snapshot the numbers came from. Cite the paper the same way, for the same
+reason.
 
 ## Citation
 
@@ -180,7 +188,9 @@ snapshot the numbers came from.
   title  = {Faithful on Prose, Unanchored on Reasoning:
             A Position-Domain Calibration of the Jacobian Lens},
   year   = {2026},
-  note   = {arXiv preprint. Data and code archived at
+  note   = {Preprint (v1.1), Zenodo.
+            \url{https://doi.org/10.5281/zenodo.21867046}.
+            Data and code archived at
             \url{https://doi.org/10.5281/zenodo.21768365}}
 }
 ```
