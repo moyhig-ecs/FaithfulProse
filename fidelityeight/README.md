@@ -1,8 +1,9 @@
 # FidelityEight — companion artifacts
 
 Companion artifacts for **"FidelityEight: Frozen-Protocol Fidelity Measurements of the
-Distributed Jacobian-Lens Checkpoints"** (Zenodo, FaithfulProse track; the record links
-back to this tree via `isSupplementedBy`).
+Distributed Jacobian-Lens Checkpoints"** — Zenodo, FaithfulProse track:
+**DOI [10.5281/zenodo.21990390](https://doi.org/10.5281/zenodo.21990390)**
+(published 2026-08-18; the record links back to this tree via `isSupplementedBy`).
 
 Eight `wgrd` measurement cells over the pre-fitted Jacobian-lens checkpoints
 distributed at `neuronpedia/jacobian-lens`: three distributed lenses (OLMo-3-7B,
