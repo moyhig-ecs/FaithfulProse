@@ -1,0 +1,78 @@
+{
+ "built": "2026-08-18T06:34:51.094999+00:00",
+ "builder": "lancedb-rag/scripts/build_fidelityeight.py",
+ "transform_rule": "released = as-run with the absolute source-tree prefix removed from strings (JSON meta paths only); evaluators are byte-identical (transform: none)",
+ "files": [
+  {
+   "path": "evaluators/eval_wgrd.py",
+   "transform": "none",
+   "md5": "44e9c695dcd789a963ae5d43727901e1"
+  },
+  {
+   "path": "evaluators/eval_wgrd_v2.py",
+   "transform": "none",
+   "md5": "b6990588b7478b1bfa28ebf40a5dd94f"
+  },
+  {
+   "path": "evaluators/eval_wgrd_q.py",
+   "transform": "none",
+   "md5": "b2ffbc809487f4ebbb048251d2158053"
+  },
+  {
+   "path": "outputs/p0_Lpublic_Eprose.json",
+   "description": "distributed OLMo-3-7B lens (n=616), binding v1",
+   "transform": "none",
+   "as_run_md5": "dcba6a24117d6f235a5631617c52fce2",
+   "released_md5": "dcba6a24117d6f235a5631617c52fce2"
+  },
+  {
+   "path": "outputs/p0prime_Lpublic32b_Eprose.json",
+   "description": "distributed OLMo-3-32B lens (n=470), binding v1",
+   "transform": "abs-path relativized",
+   "as_run_md5": "49b6354eae6ca036fb521a976ac8a097",
+   "released_md5": "4fa8ba98c4778317550f9c1960dabf0a"
+  },
+  {
+   "path": "outputs/c_Lgarbage_Eprose.json",
+   "description": "chance floor: sign-flipped 7B lens, binding v1",
+   "transform": "abs-path relativized",
+   "as_run_md5": "181b6d0195c6b53483d627587133a246",
+   "released_md5": "d25194e8428ba71e85ade8246ffa3710"
+  },
+  {
+   "path": "outputs/c_Llogitlens_Eprose.json",
+   "description": "baseline floor: J=I (vanilla logit-lens), binding v1",
+   "transform": "abs-path relativized",
+   "as_run_md5": "dd559bdebfc03613493c7b9c80f75c52",
+   "released_md5": "d4e9a5ee4d978afe35356891c5f75deb"
+  },
+  {
+   "path": "outputs/e_L7b_Eprose_v2.json",
+   "description": "distributed OLMo-3-7B lens, binding v2 (p>=16)",
+   "transform": "abs-path relativized",
+   "as_run_md5": "f9a401500452ae485dff5d31bbab41b4",
+   "released_md5": "951d2ec57779a56597709d02bd2e51a8"
+  },
+  {
+   "path": "outputs/e_L32b_Eprose_v2.json",
+   "description": "distributed OLMo-3-32B lens, binding v2 (p>=16)",
+   "transform": "abs-path relativized",
+   "as_run_md5": "f813fe8b24c8c9f9f9aac64910d960c0",
+   "released_md5": "c53b3c8f847ffe3d65a86693f125a06d"
+  },
+  {
+   "path": "outputs/q_Lqwen8b_Eprose_v1.json",
+   "description": "distributed Qwen3-8B lens (n=461), binding v1 (own scale)",
+   "transform": "abs-path relativized",
+   "as_run_md5": "af61b229a22e313972f2bb1dd81b0e00",
+   "released_md5": "5927313e4834537ac8dd7a247437ac38"
+  },
+  {
+   "path": "outputs/q_Lqwen8b_Eprose_v2.json",
+   "description": "distributed Qwen3-8B lens, binding v2 (own scale)",
+   "transform": "abs-path relativized",
+   "as_run_md5": "ccfbbe87ca477fbf90f063af7763a248",
+   "released_md5": "68cfd8e4209f3dad677118637a4ab909"
+  }
+ ]
+}

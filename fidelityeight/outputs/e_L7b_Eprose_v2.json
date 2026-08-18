@@ -1,0 +1,1355 @@
+{
+ "meta": {
+  "lens_checkpoint": "exports/olmo-3-7b-base/jlens/public_n616/Olmo-3-1025-7B_checkpoint.pt",
+  "items_file": "exports/sfit_eval_prose.jsonl",
+  "items_md5": "285074052bcb4082d8ad50bf7de9079e",
+  "model": "allenai/Olmo-3-1025-7B",
+  "revision": "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+  "max_seq_len": 128,
+  "n_items": 266,
+  "n_excluded_zero_valid": 0,
+  "mask_size": 70812,
+  "mechanism_pins": {
+   "eval_wgrd_v1_md5": "44e9c695dcd789a963ae5d43727901e1",
+   "step3_pass2.py_md5": "ccfe1dd8623c5e5f8d8b52fed8f01cba",
+   "DECISION_TABLE.en.md_md5": "0755fca65b15b26159fb276818d79a22",
+   "WORDLIKE": "^[A-Za-z0-9]{2,}$",
+   "variant_convention": "{w, \" \"+w} first-token (HEHI_WORDS \u898f\u7d04)",
+   "skip_first_positions": 16,
+   "skip_first_source": "jlens.fitting.SKIP_FIRST_N_POSITIONS (import)"
+  },
+  "binding": "v2 (p >= 16) \u2014 ADJUDICATION_sfit2_roadmap_and_publication_20260818 \u00a72-E on top of ADJUDICATION_sfit_wgrd_binding_20260813"
+ },
+ "items": [
+  {
+   "idx": 0,
+   "n_valid": 94,
+   "wgrd_item": 1.396429211
+  },
+  {
+   "idx": 1,
+   "n_valid": 94,
+   "wgrd_item": 1.858814451
+  },
+  {
+   "idx": 2,
+   "n_valid": 94,
+   "wgrd_item": 1.3106169996
+  },
+  {
+   "idx": 3,
+   "n_valid": 86,
+   "wgrd_item": 1.4481067604
+  },
+  {
+   "idx": 4,
+   "n_valid": 93,
+   "wgrd_item": 2.0827853703
+  },
+  {
+   "idx": 5,
+   "n_valid": 82,
+   "wgrd_item": 1.6465735058
+  },
+  {
+   "idx": 6,
+   "n_valid": 91,
+   "wgrd_item": 1.7993405495
+  },
+  {
+   "idx": 7,
+   "n_valid": 82,
+   "wgrd_item": 1.4787274534
+  },
+  {
+   "idx": 8,
+   "n_valid": 77,
+   "wgrd_item": 1.3565473235
+  },
+  {
+   "idx": 9,
+   "n_valid": 90,
+   "wgrd_item": 1.7170448192
+  },
+  {
+   "idx": 10,
+   "n_valid": 83,
+   "wgrd_item": 1.2936078527
+  },
+  {
+   "idx": 11,
+   "n_valid": 94,
+   "wgrd_item": 1.4623524282
+  },
+  {
+   "idx": 12,
+   "n_valid": 92,
+   "wgrd_item": 1.4021606013
+  },
+  {
+   "idx": 13,
+   "n_valid": 83,
+   "wgrd_item": 1.4007171504
+  },
+  {
+   "idx": 14,
+   "n_valid": 94,
+   "wgrd_item": 1.2523408681
+  },
+  {
+   "idx": 15,
+   "n_valid": 85,
+   "wgrd_item": 1.525044807
+  },
+  {
+   "idx": 16,
+   "n_valid": 79,
+   "wgrd_item": 1.7323937598
+  },
+  {
+   "idx": 17,
+   "n_valid": 99,
+   "wgrd_item": 1.3353145928
+  },
+  {
+   "idx": 18,
+   "n_valid": 96,
+   "wgrd_item": 1.4134906685
+  },
+  {
+   "idx": 19,
+   "n_valid": 81,
+   "wgrd_item": 1.3424226808
+  },
+  {
+   "idx": 20,
+   "n_valid": 90,
+   "wgrd_item": 1.5345564257
+  },
+  {
+   "idx": 21,
+   "n_valid": 85,
+   "wgrd_item": 1.361727836
+  },
+  {
+   "idx": 22,
+   "n_valid": 86,
+   "wgrd_item": 1.490197614
+  },
+  {
+   "idx": 23,
+   "n_valid": 87,
+   "wgrd_item": 1.4471580313
+  },
+  {
+   "idx": 24,
+   "n_valid": 99,
+   "wgrd_item": 1.2552725051
+  },
+  {
+   "idx": 25,
+   "n_valid": 93,
+   "wgrd_item": 1.1842857377
+  },
+  {
+   "idx": 26,
+   "n_valid": 102,
+   "wgrd_item": 1.203148405
+  },
+  {
+   "idx": 27,
+   "n_valid": 100,
+   "wgrd_item": 1.4255527006
+  },
+  {
+   "idx": 28,
+   "n_valid": 76,
+   "wgrd_item": 1.6011078879
+  },
+  {
+   "idx": 29,
+   "n_valid": 84,
+   "wgrd_item": 1.4373496002
+  },
+  {
+   "idx": 30,
+   "n_valid": 84,
+   "wgrd_item": 1.8512152682
+  },
+  {
+   "idx": 31,
+   "n_valid": 93,
+   "wgrd_item": 1.8808135923
+  },
+  {
+   "idx": 32,
+   "n_valid": 94,
+   "wgrd_item": 1.4107960633
+  },
+  {
+   "idx": 33,
+   "n_valid": 92,
+   "wgrd_item": 1.4759115177
+  },
+  {
+   "idx": 34,
+   "n_valid": 78,
+   "wgrd_item": 1.3054516986
+  },
+  {
+   "idx": 35,
+   "n_valid": 97,
+   "wgrd_item": 1.5674185057
+  },
+  {
+   "idx": 36,
+   "n_valid": 92,
+   "wgrd_item": 1.5017302661
+  },
+  {
+   "idx": 37,
+   "n_valid": 89,
+   "wgrd_item": 1.4065401804
+  },
+  {
+   "idx": 38,
+   "n_valid": 90,
+   "wgrd_item": 1.1204082943
+  },
+  {
+   "idx": 39,
+   "n_valid": 87,
+   "wgrd_item": 1.303735889
+  },
+  {
+   "idx": 40,
+   "n_valid": 82,
+   "wgrd_item": 1.5183144477
+  },
+  {
+   "idx": 41,
+   "n_valid": 93,
+   "wgrd_item": 1.5532760461
+  },
+  {
+   "idx": 42,
+   "n_valid": 84,
+   "wgrd_item": 1.6433404847
+  },
+  {
+   "idx": 43,
+   "n_valid": 89,
+   "wgrd_item": 1.1461280357
+  },
+  {
+   "idx": 44,
+   "n_valid": 87,
+   "wgrd_item": 1.1760912591
+  },
+  {
+   "idx": 45,
+   "n_valid": 78,
+   "wgrd_item": 1.1372048923
+  },
+  {
+   "idx": 46,
+   "n_valid": 86,
+   "wgrd_item": 1.2832611731
+  },
+  {
+   "idx": 47,
+   "n_valid": 92,
+   "wgrd_item": 1.361727836
+  },
+  {
+   "idx": 48,
+   "n_valid": 81,
+   "wgrd_item": 1.2304489214
+  },
+  {
+   "idx": 49,
+   "n_valid": 83,
+   "wgrd_item": 1.728140107
+  },
+  {
+   "idx": 50,
+   "n_valid": 91,
+   "wgrd_item": 1.4865200107
+  },
+  {
+   "idx": 51,
+   "n_valid": 94,
+   "wgrd_item": 1.3406206187
+  },
+  {
+   "idx": 52,
+   "n_valid": 94,
+   "wgrd_item": 1.5524142018
+  },
+  {
+   "idx": 53,
+   "n_valid": 97,
+   "wgrd_item": 1.7781512504
+  },
+  {
+   "idx": 54,
+   "n_valid": 98,
+   "wgrd_item": 1.6434526765
+  },
+  {
+   "idx": 55,
+   "n_valid": 87,
+   "wgrd_item": 1.4325993112
+  },
+  {
+   "idx": 56,
+   "n_valid": 89,
+   "wgrd_item": 1.84509804
+  },
+  {
+   "idx": 57,
+   "n_valid": 98,
+   "wgrd_item": 1.6578685836
+  },
+  {
+   "idx": 58,
+   "n_valid": 91,
+   "wgrd_item": 1.6857417386
+  },
+  {
+   "idx": 59,
+   "n_valid": 92,
+   "wgrd_item": 1.4216479928
+  },
+  {
+   "idx": 60,
+   "n_valid": 97,
+   "wgrd_item": 1.2710667723
+  },
+  {
+   "idx": 61,
+   "n_valid": 83,
+   "wgrd_item": 1.5051499783
+  },
+  {
+   "idx": 62,
+   "n_valid": 87,
+   "wgrd_item": 1.3979400087
+  },
+  {
+   "idx": 63,
+   "n_valid": 90,
+   "wgrd_item": 1.3116246452
+  },
+  {
+   "idx": 64,
+   "n_valid": 83,
+   "wgrd_item": 1.3979400087
+  },
+  {
+   "idx": 65,
+   "n_valid": 92,
+   "wgrd_item": 1.3613169613
+  },
+  {
+   "idx": 66,
+   "n_valid": 92,
+   "wgrd_item": 1.1996445248
+  },
+  {
+   "idx": 67,
+   "n_valid": 98,
+   "wgrd_item": 1.7441343077
+  },
+  {
+   "idx": 68,
+   "n_valid": 83,
+   "wgrd_item": 1.2388820889
+  },
+  {
+   "idx": 69,
+   "n_valid": 101,
+   "wgrd_item": 1.2741578493
+  },
+  {
+   "idx": 70,
+   "n_valid": 87,
+   "wgrd_item": 1.0808231931
+  },
+  {
+   "idx": 71,
+   "n_valid": 89,
+   "wgrd_item": 1.079181246
+  },
+  {
+   "idx": 72,
+   "n_valid": 100,
+   "wgrd_item": 1.1054266827
+  },
+  {
+   "idx": 73,
+   "n_valid": 98,
+   "wgrd_item": 1.0965622992
+  },
+  {
+   "idx": 74,
+   "n_valid": 92,
+   "wgrd_item": 1.2235790157
+  },
+  {
+   "idx": 75,
+   "n_valid": 101,
+   "wgrd_item": 1.3930875059
+  },
+  {
+   "idx": 76,
+   "n_valid": 75,
+   "wgrd_item": 1.3454670871
+  },
+  {
+   "idx": 77,
+   "n_valid": 88,
+   "wgrd_item": 1.4526675452
+  },
+  {
+   "idx": 78,
+   "n_valid": 82,
+   "wgrd_item": 1.419109611
+  },
+  {
+   "idx": 79,
+   "n_valid": 89,
+   "wgrd_item": 1.6720978579
+  },
+  {
+   "idx": 80,
+   "n_valid": 80,
+   "wgrd_item": 1.2566334594
+  },
+  {
+   "idx": 81,
+   "n_valid": 91,
+   "wgrd_item": 1.4983105538
+  },
+  {
+   "idx": 82,
+   "n_valid": 86,
+   "wgrd_item": 1.6400775461
+  },
+  {
+   "idx": 83,
+   "n_valid": 90,
+   "wgrd_item": 1.5312909921
+  },
+  {
+   "idx": 84,
+   "n_valid": 82,
+   "wgrd_item": 1.6961183732
+  },
+  {
+   "idx": 85,
+   "n_valid": 92,
+   "wgrd_item": 1.3386647364
+  },
+  {
+   "idx": 86,
+   "n_valid": 91,
+   "wgrd_item": 0.903089987
+  },
+  {
+   "idx": 87,
+   "n_valid": 61,
+   "wgrd_item": 1.3424226808
+  },
+  {
+   "idx": 88,
+   "n_valid": 79,
+   "wgrd_item": 1.3452336582
+  },
+  {
+   "idx": 89,
+   "n_valid": 84,
+   "wgrd_item": 1.1237411303
+  },
+  {
+   "idx": 90,
+   "n_valid": 89,
+   "wgrd_item": 1.5545756815
+  },
+  {
+   "idx": 91,
+   "n_valid": 80,
+   "wgrd_item": 1.4672272683
+  },
+  {
+   "idx": 92,
+   "n_valid": 78,
+   "wgrd_item": 1.2033759795
+  },
+  {
+   "idx": 93,
+   "n_valid": 86,
+   "wgrd_item": 1.2887458999
+  },
+  {
+   "idx": 94,
+   "n_valid": 79,
+   "wgrd_item": 1.5096504795
+  },
+  {
+   "idx": 95,
+   "n_valid": 82,
+   "wgrd_item": 1.3637706285
+  },
+  {
+   "idx": 96,
+   "n_valid": 75,
+   "wgrd_item": 1.8129133566
+  },
+  {
+   "idx": 97,
+   "n_valid": 80,
+   "wgrd_item": 1.8386665757
+  },
+  {
+   "idx": 98,
+   "n_valid": 84,
+   "wgrd_item": 1.2552725051
+  },
+  {
+   "idx": 99,
+   "n_valid": 77,
+   "wgrd_item": 1.4623979979
+  },
+  {
+   "idx": 100,
+   "n_valid": 79,
+   "wgrd_item": 1.706351958
+  },
+  {
+   "idx": 101,
+   "n_valid": 76,
+   "wgrd_item": 1.5694143985
+  },
+  {
+   "idx": 102,
+   "n_valid": 76,
+   "wgrd_item": 1.4010874377
+  },
+  {
+   "idx": 103,
+   "n_valid": 69,
+   "wgrd_item": 1.4936903562
+  },
+  {
+   "idx": 104,
+   "n_valid": 78,
+   "wgrd_item": 1.3993975673
+  },
+  {
+   "idx": 105,
+   "n_valid": 87,
+   "wgrd_item": 1.5185139399
+  },
+  {
+   "idx": 106,
+   "n_valid": 95,
+   "wgrd_item": 1.6368220976
+  },
+  {
+   "idx": 107,
+   "n_valid": 84,
+   "wgrd_item": 1.3460708047
+  },
+  {
+   "idx": 108,
+   "n_valid": 87,
+   "wgrd_item": 1.903089987
+  },
+  {
+   "idx": 109,
+   "n_valid": 85,
+   "wgrd_item": 1.5185139399
+  },
+  {
+   "idx": 110,
+   "n_valid": 87,
+   "wgrd_item": 1.3010299957
+  },
+  {
+   "idx": 111,
+   "n_valid": 93,
+   "wgrd_item": 1.4302901061
+  },
+  {
+   "idx": 112,
+   "n_valid": 92,
+   "wgrd_item": 1.0962833176
+  },
+  {
+   "idx": 113,
+   "n_valid": 88,
+   "wgrd_item": 1.3779374278
+  },
+  {
+   "idx": 114,
+   "n_valid": 75,
+   "wgrd_item": 1.5916119221
+  },
+  {
+   "idx": 115,
+   "n_valid": 80,
+   "wgrd_item": 1.2068593825
+  },
+  {
+   "idx": 116,
+   "n_valid": 84,
+   "wgrd_item": 1.0786322009
+  },
+  {
+   "idx": 117,
+   "n_valid": 84,
+   "wgrd_item": 1.3309372838
+  },
+  {
+   "idx": 118,
+   "n_valid": 89,
+   "wgrd_item": 1.0413926852
+  },
+  {
+   "idx": 119,
+   "n_valid": 93,
+   "wgrd_item": 1.4471580313
+  },
+  {
+   "idx": 120,
+   "n_valid": 84,
+   "wgrd_item": 1.3776515196
+  },
+  {
+   "idx": 121,
+   "n_valid": 87,
+   "wgrd_item": 1.4237776415
+  },
+  {
+   "idx": 122,
+   "n_valid": 85,
+   "wgrd_item": 1.3979400087
+  },
+  {
+   "idx": 123,
+   "n_valid": 86,
+   "wgrd_item": 1.3908639876
+  },
+  {
+   "idx": 124,
+   "n_valid": 87,
+   "wgrd_item": 1.1972805581
+  },
+  {
+   "idx": 125,
+   "n_valid": 93,
+   "wgrd_item": 1.6333154003
+  },
+  {
+   "idx": 126,
+   "n_valid": 88,
+   "wgrd_item": 1.9885415602
+  },
+  {
+   "idx": 127,
+   "n_valid": 89,
+   "wgrd_item": 1.7242758696
+  },
+  {
+   "idx": 128,
+   "n_valid": 87,
+   "wgrd_item": 1.3010299957
+  },
+  {
+   "idx": 129,
+   "n_valid": 87,
+   "wgrd_item": 1.6031443726
+  },
+  {
+   "idx": 130,
+   "n_valid": 84,
+   "wgrd_item": 1.4369507989
+  },
+  {
+   "idx": 131,
+   "n_valid": 75,
+   "wgrd_item": 1.1846914308
+  },
+  {
+   "idx": 132,
+   "n_valid": 83,
+   "wgrd_item": 1.185636577
+  },
+  {
+   "idx": 133,
+   "n_valid": 92,
+   "wgrd_item": 1.6923737798
+  },
+  {
+   "idx": 134,
+   "n_valid": 88,
+   "wgrd_item": 1.5822979529
+  },
+  {
+   "idx": 135,
+   "n_valid": 78,
+   "wgrd_item": 1.1668717696
+  },
+  {
+   "idx": 136,
+   "n_valid": 92,
+   "wgrd_item": 1.217284452
+  },
+  {
+   "idx": 137,
+   "n_valid": 89,
+   "wgrd_item": 1.2304489214
+  },
+  {
+   "idx": 138,
+   "n_valid": 93,
+   "wgrd_item": 1.079181246
+  },
+  {
+   "idx": 139,
+   "n_valid": 87,
+   "wgrd_item": 1.2304489214
+  },
+  {
+   "idx": 140,
+   "n_valid": 92,
+   "wgrd_item": 1.1234196688
+  },
+  {
+   "idx": 141,
+   "n_valid": 80,
+   "wgrd_item": 1.5471481987
+  },
+  {
+   "idx": 142,
+   "n_valid": 89,
+   "wgrd_item": 1.5440680444
+  },
+  {
+   "idx": 143,
+   "n_valid": 78,
+   "wgrd_item": 1.4248325277
+  },
+  {
+   "idx": 144,
+   "n_valid": 92,
+   "wgrd_item": 1.1690289377
+  },
+  {
+   "idx": 145,
+   "n_valid": 91,
+   "wgrd_item": 1.3214930496
+  },
+  {
+   "idx": 146,
+   "n_valid": 91,
+   "wgrd_item": 1.2552725051
+  },
+  {
+   "idx": 147,
+   "n_valid": 90,
+   "wgrd_item": 1.0802639545
+  },
+  {
+   "idx": 148,
+   "n_valid": 92,
+   "wgrd_item": 1.2002073139
+  },
+  {
+   "idx": 149,
+   "n_valid": 102,
+   "wgrd_item": 1.1264345207
+  },
+  {
+   "idx": 150,
+   "n_valid": 94,
+   "wgrd_item": 1.1268593385
+  },
+  {
+   "idx": 151,
+   "n_valid": 92,
+   "wgrd_item": 1.2674842418
+  },
+  {
+   "idx": 152,
+   "n_valid": 95,
+   "wgrd_item": 1.1479853207
+  },
+  {
+   "idx": 153,
+   "n_valid": 93,
+   "wgrd_item": 1.1760912591
+  },
+  {
+   "idx": 154,
+   "n_valid": 80,
+   "wgrd_item": 1.7816218506
+  },
+  {
+   "idx": 155,
+   "n_valid": 76,
+   "wgrd_item": 1.7829239093
+  },
+  {
+   "idx": 156,
+   "n_valid": 72,
+   "wgrd_item": 1.5497043911
+  },
+  {
+   "idx": 157,
+   "n_valid": 86,
+   "wgrd_item": 1.5473104212
+  },
+  {
+   "idx": 158,
+   "n_valid": 71,
+   "wgrd_item": 1.7160033436
+  },
+  {
+   "idx": 159,
+   "n_valid": 72,
+   "wgrd_item": 1.7718167663
+  },
+  {
+   "idx": 160,
+   "n_valid": 78,
+   "wgrd_item": 1.858171336
+  },
+  {
+   "idx": 161,
+   "n_valid": 84,
+   "wgrd_item": 1.6568050968
+  },
+  {
+   "idx": 162,
+   "n_valid": 91,
+   "wgrd_item": 1.3979400087
+  },
+  {
+   "idx": 163,
+   "n_valid": 88,
+   "wgrd_item": 1.8079415645
+  },
+  {
+   "idx": 164,
+   "n_valid": 70,
+   "wgrd_item": 1.7050088041
+  },
+  {
+   "idx": 165,
+   "n_valid": 82,
+   "wgrd_item": 1.8489051694
+  },
+  {
+   "idx": 166,
+   "n_valid": 86,
+   "wgrd_item": 1.5354145858
+  },
+  {
+   "idx": 167,
+   "n_valid": 62,
+   "wgrd_item": 1.3744814306
+  },
+  {
+   "idx": 168,
+   "n_valid": 81,
+   "wgrd_item": 1.785699526
+  },
+  {
+   "idx": 169,
+   "n_valid": 86,
+   "wgrd_item": 1.9945765335
+  },
+  {
+   "idx": 170,
+   "n_valid": 81,
+   "wgrd_item": 1.8692317197
+  },
+  {
+   "idx": 171,
+   "n_valid": 81,
+   "wgrd_item": 1.531478917
+  },
+  {
+   "idx": 172,
+   "n_valid": 90,
+   "wgrd_item": 1.4812438602
+  },
+  {
+   "idx": 173,
+   "n_valid": 84,
+   "wgrd_item": 1.6454808005
+  },
+  {
+   "idx": 174,
+   "n_valid": 83,
+   "wgrd_item": 1.5682017241
+  },
+  {
+   "idx": 175,
+   "n_valid": 89,
+   "wgrd_item": 1.5563025008
+  },
+  {
+   "idx": 176,
+   "n_valid": 81,
+   "wgrd_item": 1.4313637642
+  },
+  {
+   "idx": 177,
+   "n_valid": 78,
+   "wgrd_item": 1.6177642235
+  },
+  {
+   "idx": 178,
+   "n_valid": 91,
+   "wgrd_item": 1.3424226808
+  },
+  {
+   "idx": 179,
+   "n_valid": 91,
+   "wgrd_item": 1.2552725051
+  },
+  {
+   "idx": 180,
+   "n_valid": 90,
+   "wgrd_item": 1.5008668564
+  },
+  {
+   "idx": 181,
+   "n_valid": 89,
+   "wgrd_item": 1.4771212547
+  },
+  {
+   "idx": 182,
+   "n_valid": 95,
+   "wgrd_item": 1.4623979979
+  },
+  {
+   "idx": 183,
+   "n_valid": 82,
+   "wgrd_item": 1.3671600679
+  },
+  {
+   "idx": 184,
+   "n_valid": 81,
+   "wgrd_item": 1.3733718172
+  },
+  {
+   "idx": 185,
+   "n_valid": 88,
+   "wgrd_item": 1.1611096474
+  },
+  {
+   "idx": 186,
+   "n_valid": 90,
+   "wgrd_item": 1.1756242929
+  },
+  {
+   "idx": 187,
+   "n_valid": 94,
+   "wgrd_item": 1.3876838449
+  },
+  {
+   "idx": 188,
+   "n_valid": 84,
+   "wgrd_item": 1.2260495711
+  },
+  {
+   "idx": 189,
+   "n_valid": 83,
+   "wgrd_item": 1.3222192947
+  },
+  {
+   "idx": 190,
+   "n_valid": 70,
+   "wgrd_item": 1.9107567642
+  },
+  {
+   "idx": 191,
+   "n_valid": 91,
+   "wgrd_item": 1.2827107535
+  },
+  {
+   "idx": 192,
+   "n_valid": 82,
+   "wgrd_item": 1.3120952329
+  },
+  {
+   "idx": 193,
+   "n_valid": 83,
+   "wgrd_item": 1.5568505065
+  },
+  {
+   "idx": 194,
+   "n_valid": 86,
+   "wgrd_item": 1.3534538452
+  },
+  {
+   "idx": 195,
+   "n_valid": 68,
+   "wgrd_item": 1.4590151684
+  },
+  {
+   "idx": 196,
+   "n_valid": 88,
+   "wgrd_item": 1.2808487663
+  },
+  {
+   "idx": 197,
+   "n_valid": 89,
+   "wgrd_item": 1.5908055587
+  },
+  {
+   "idx": 198,
+   "n_valid": 63,
+   "wgrd_item": 2.57863921
+  },
+  {
+   "idx": 199,
+   "n_valid": 86,
+   "wgrd_item": 1.2629541079
+  },
+  {
+   "idx": 200,
+   "n_valid": 81,
+   "wgrd_item": 1.1736717849
+  },
+  {
+   "idx": 201,
+   "n_valid": 83,
+   "wgrd_item": 1.6532125138
+  },
+  {
+   "idx": 202,
+   "n_valid": 98,
+   "wgrd_item": 1.2354065045
+  },
+  {
+   "idx": 203,
+   "n_valid": 86,
+   "wgrd_item": 1.6215190243
+  },
+  {
+   "idx": 204,
+   "n_valid": 94,
+   "wgrd_item": 1.1503792384
+  },
+  {
+   "idx": 205,
+   "n_valid": 77,
+   "wgrd_item": 1.3710678623
+  },
+  {
+   "idx": 206,
+   "n_valid": 87,
+   "wgrd_item": 1.3222192947
+  },
+  {
+   "idx": 207,
+   "n_valid": 83,
+   "wgrd_item": 1.4623979979
+  },
+  {
+   "idx": 208,
+   "n_valid": 89,
+   "wgrd_item": 2.1731862684
+  },
+  {
+   "idx": 209,
+   "n_valid": 82,
+   "wgrd_item": 2.1461169565
+  },
+  {
+   "idx": 210,
+   "n_valid": 95,
+   "wgrd_item": 1.8717076214
+  },
+  {
+   "idx": 211,
+   "n_valid": 85,
+   "wgrd_item": 1.5835765856
+  },
+  {
+   "idx": 212,
+   "n_valid": 95,
+   "wgrd_item": 1.6232492904
+  },
+  {
+   "idx": 213,
+   "n_valid": 84,
+   "wgrd_item": 1.5608209513
+  },
+  {
+   "idx": 214,
+   "n_valid": 85,
+   "wgrd_item": 1.4771212547
+  },
+  {
+   "idx": 215,
+   "n_valid": 91,
+   "wgrd_item": 1.8808135923
+  },
+  {
+   "idx": 216,
+   "n_valid": 84,
+   "wgrd_item": 1.388350592
+  },
+  {
+   "idx": 217,
+   "n_valid": 91,
+   "wgrd_item": 1.7993405495
+  },
+  {
+   "idx": 218,
+   "n_valid": 88,
+   "wgrd_item": 1.7869990887
+  },
+  {
+   "idx": 219,
+   "n_valid": 96,
+   "wgrd_item": 1.2542627179
+  },
+  {
+   "idx": 220,
+   "n_valid": 92,
+   "wgrd_item": 1.384688663
+  },
+  {
+   "idx": 221,
+   "n_valid": 91,
+   "wgrd_item": 1.5479786764
+  },
+  {
+   "idx": 222,
+   "n_valid": 95,
+   "wgrd_item": 1.4232458739
+  },
+  {
+   "idx": 223,
+   "n_valid": 90,
+   "wgrd_item": 1.2831205117
+  },
+  {
+   "idx": 224,
+   "n_valid": 70,
+   "wgrd_item": 1.5471481987
+  },
+  {
+   "idx": 225,
+   "n_valid": 87,
+   "wgrd_item": 1.2304489214
+  },
+  {
+   "idx": 226,
+   "n_valid": 96,
+   "wgrd_item": 1.2203837206
+  },
+  {
+   "idx": 227,
+   "n_valid": 90,
+   "wgrd_item": 1.153748019
+  },
+  {
+   "idx": 228,
+   "n_valid": 90,
+   "wgrd_item": 1.1909392005
+  },
+  {
+   "idx": 229,
+   "n_valid": 101,
+   "wgrd_item": 1.8512583487
+  },
+  {
+   "idx": 230,
+   "n_valid": 92,
+   "wgrd_item": 1.8260264241
+  },
+  {
+   "idx": 231,
+   "n_valid": 86,
+   "wgrd_item": 1.4978175973
+  },
+  {
+   "idx": 232,
+   "n_valid": 84,
+   "wgrd_item": 1.079181246
+  },
+  {
+   "idx": 233,
+   "n_valid": 84,
+   "wgrd_item": 1.1501527838
+  },
+  {
+   "idx": 234,
+   "n_valid": 90,
+   "wgrd_item": 1.5745115309
+  },
+  {
+   "idx": 235,
+   "n_valid": 96,
+   "wgrd_item": 1.0449525557
+  },
+  {
+   "idx": 236,
+   "n_valid": 76,
+   "wgrd_item": 1.6459063437
+  },
+  {
+   "idx": 237,
+   "n_valid": 61,
+   "wgrd_item": 1.69019608
+  },
+  {
+   "idx": 238,
+   "n_valid": 89,
+   "wgrd_item": 1.7708520116
+  },
+  {
+   "idx": 239,
+   "n_valid": 87,
+   "wgrd_item": 1.6434526765
+  },
+  {
+   "idx": 240,
+   "n_valid": 63,
+   "wgrd_item": 1.1335389084
+  },
+  {
+   "idx": 241,
+   "n_valid": 79,
+   "wgrd_item": 1.591064607
+  },
+  {
+   "idx": 242,
+   "n_valid": 66,
+   "wgrd_item": 1.4231685561
+  },
+  {
+   "idx": 243,
+   "n_valid": 72,
+   "wgrd_item": 1.2898917983
+  },
+  {
+   "idx": 244,
+   "n_valid": 80,
+   "wgrd_item": 1.2160943464
+  },
+  {
+   "idx": 245,
+   "n_valid": 78,
+   "wgrd_item": 1.3825188855
+  },
+  {
+   "idx": 246,
+   "n_valid": 61,
+   "wgrd_item": 1.7981900998
+  },
+  {
+   "idx": 247,
+   "n_valid": 82,
+   "wgrd_item": 1.130035694
+  },
+  {
+   "idx": 248,
+   "n_valid": 87,
+   "wgrd_item": 1.6020599913
+  },
+  {
+   "idx": 249,
+   "n_valid": 90,
+   "wgrd_item": 1.2709975179
+  },
+  {
+   "idx": 250,
+   "n_valid": 77,
+   "wgrd_item": 1.4313637642
+  },
+  {
+   "idx": 251,
+   "n_valid": 90,
+   "wgrd_item": 1.5374082203
+  },
+  {
+   "idx": 252,
+   "n_valid": 74,
+   "wgrd_item": 1.7185580465
+  },
+  {
+   "idx": 253,
+   "n_valid": 87,
+   "wgrd_item": 1.2632414348
+  },
+  {
+   "idx": 254,
+   "n_valid": 84,
+   "wgrd_item": 1.3691523965
+  },
+  {
+   "idx": 255,
+   "n_valid": 83,
+   "wgrd_item": 1.6197887583
+  },
+  {
+   "idx": 256,
+   "n_valid": 71,
+   "wgrd_item": 1.5965970956
+  },
+  {
+   "idx": 257,
+   "n_valid": 86,
+   "wgrd_item": 1.5126273241
+  },
+  {
+   "idx": 258,
+   "n_valid": 75,
+   "wgrd_item": 1.3813218408
+  },
+  {
+   "idx": 259,
+   "n_valid": 83,
+   "wgrd_item": 1.7160033436
+  },
+  {
+   "idx": 260,
+   "n_valid": 80,
+   "wgrd_item": 1.3996702747
+  },
+  {
+   "idx": 261,
+   "n_valid": 86,
+   "wgrd_item": 1.2041199827
+  },
+  {
+   "idx": 262,
+   "n_valid": 90,
+   "wgrd_item": 1.4205582254
+  },
+  {
+   "idx": 263,
+   "n_valid": 86,
+   "wgrd_item": 1.4399609516
+  },
+  {
+   "idx": 264,
+   "n_valid": 79,
+   "wgrd_item": 1.3117538611
+  },
+  {
+   "idx": 265,
+   "n_valid": 92,
+   "wgrd_item": 1.4432453626
+  }
+ ]
+}
