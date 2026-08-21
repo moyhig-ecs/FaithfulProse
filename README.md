@@ -196,11 +196,11 @@ end it.
 
 | | |
 |---|---|
-| this release (v2.0.0) | version DOI minted when this release is archived (the concept DOI below resolves to it); the paper v2 cites it |
+| this release (v2.0.0) | [`10.5281/zenodo.22041132`](https://doi.org/10.5281/zenodo.22041132) --- **version DOI**, pins these exact bytes; the paper v2 cites it |
 | v1.0.0 | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins the bytes that accompanied paper v1.0 / v1.1 |
 | all versions | [`10.5281/zenodo.21768364`](https://doi.org/10.5281/zenodo.21768364) --- concept DOI, always resolves to the latest |
-| the paper (v2) | in preparation (Aug. 2026); its version DOI is minted on publication under the concept DOI below |
-| the paper (v1.1) | [`10.5281/zenodo.21867046`](https://doi.org/10.5281/zenodo.21867046) --- **version DOI**, pins that exact PDF. Cite this one until v2 is published |
+| the paper (v2) | [`10.5281/zenodo.22041724`](https://doi.org/10.5281/zenodo.22041724) --- **version DOI**, pins that exact PDF (16 pages, 2026-08-21). Cite this one |
+| the paper (v1.1) | [`10.5281/zenodo.21867046`](https://doi.org/10.5281/zenodo.21867046) --- **version DOI**, superseded by v2 |
 | the paper (v1) | [`10.5281/zenodo.21800315`](https://doi.org/10.5281/zenodo.21800315) --- **version DOI**, superseded by v1.1 |
 | the paper, all versions | [`10.5281/zenodo.21800314`](https://doi.org/10.5281/zenodo.21800314) --- concept DOI, always resolves to the latest |
 
@@ -224,10 +224,10 @@ reason.
   title  = {Faithful on Prose, Unanchored on Reasoning:
             A Position-Domain Calibration of the Jacobian Lens},
   year   = {2026},
-  note   = {Preprint (v1.1; v2 forthcoming), Zenodo.
-            \url{https://doi.org/10.5281/zenodo.21867046}.
+  note   = {Preprint (v2), Zenodo.
+            \url{https://doi.org/10.5281/zenodo.22041724}.
             Data and code archived at
-            \url{https://doi.org/10.5281/zenodo.21768365}}
+            \url{https://doi.org/10.5281/zenodo.22041132}}
 }
 ```
 
