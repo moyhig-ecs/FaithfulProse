@@ -1,0 +1,166 @@
+{
+ "units_declared": [
+  "Please stay focused and keep reading this text with care. ",
+  "There is nothing important in this sentence so just move along. ",
+  "We will get to the main part of this message very soon now. "
+ ],
+ "repeats": {
+  "f0": 0,
+  "fmid": 3,
+  "fbig": 8
+ },
+ "final_unit": "Please stay focused and keep reading this text with care. ",
+ "per_row": {
+  "P1": {
+   "f0": {
+    "n_tok": 10,
+    "landmark_start": 0
+   },
+   "fmid": {
+    "n_tok": 43,
+    "landmark_start": 33
+   },
+   "fbig": {
+    "n_tok": 98,
+    "landmark_start": 88
+   }
+  },
+  "P2": {
+   "f0": {
+    "n_tok": 11,
+    "landmark_start": 0
+   },
+   "fmid": {
+    "n_tok": 44,
+    "landmark_start": 33
+   },
+   "fbig": {
+    "n_tok": 99,
+    "landmark_start": 88
+   }
+  },
+  "P3": {
+   "f0": {
+    "n_tok": 13,
+    "landmark_start": 0
+   },
+   "fmid": {
+    "n_tok": 46,
+    "landmark_start": 33
+   },
+   "fbig": {
+    "n_tok": 101,
+    "landmark_start": 88
+   }
+  },
+  "B1": {
+   "f0": {
+    "n_tok": 14,
+    "landmark_start": 0
+   },
+   "fmid": {
+    "n_tok": 47,
+    "landmark_start": 33
+   },
+   "fbig": {
+    "n_tok": 102,
+    "landmark_start": 88
+   }
+  },
+  "P5": {
+   "f0": {
+    "n_tok": 12,
+    "landmark_start": 0
+   },
+   "fmid": {
+    "n_tok": 45,
+    "landmark_start": 33
+   },
+   "fbig": {
+    "n_tok": 100,
+    "landmark_start": 88
+   }
+  }
+ },
+ "boundary_token_note": "f0 landmark 先頭は裸 'The'・fmid/fbig は ' The' (first-token id 相違・token 構造の登記のみ・値は未見)",
+ "swaps": [],
+ "reports": [
+  {
+   "unit": "Please stay focused and keep reading this text with care. ",
+   "fails": [],
+   "per_row": {
+    "P1": {
+     "f0": {
+      "n_tok": 10,
+      "landmark_start": 0
+     },
+     "fmid": {
+      "n_tok": 43,
+      "landmark_start": 33
+     },
+     "fbig": {
+      "n_tok": 98,
+      "landmark_start": 88
+     }
+    },
+    "P2": {
+     "f0": {
+      "n_tok": 11,
+      "landmark_start": 0
+     },
+     "fmid": {
+      "n_tok": 44,
+      "landmark_start": 33
+     },
+     "fbig": {
+      "n_tok": 99,
+      "landmark_start": 88
+     }
+    },
+    "P3": {
+     "f0": {
+      "n_tok": 13,
+      "landmark_start": 0
+     },
+     "fmid": {
+      "n_tok": 46,
+      "landmark_start": 33
+     },
+     "fbig": {
+      "n_tok": 101,
+      "landmark_start": 88
+     }
+    },
+    "B1": {
+     "f0": {
+      "n_tok": 14,
+      "landmark_start": 0
+     },
+     "fmid": {
+      "n_tok": 47,
+      "landmark_start": 33
+     },
+     "fbig": {
+      "n_tok": 102,
+      "landmark_start": 88
+     }
+    },
+    "P5": {
+     "f0": {
+      "n_tok": 12,
+      "landmark_start": 0
+     },
+     "fmid": {
+      "n_tok": 45,
+      "landmark_start": 33
+     },
+     "fbig": {
+      "n_tok": 100,
+      "landmark_start": 88
+     }
+    }
+   }
+  }
+ ],
+ "verdict": "PASS"
+}

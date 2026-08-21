@@ -1,0 +1,652 @@
+{
+ "model": "allenai/Olmo-3-1125-32B",
+ "final_set": [
+  "P1",
+  "P2",
+  "P3",
+  "B1",
+  "P5"
+ ],
+ "swaps": [
+  {
+   "out": "P4",
+   "in": "B1",
+   "reason": [
+    "ans:Hg: distinctive set empty"
+   ]
+  }
+ ],
+ "n_missing": 0,
+ "reports": [
+  {
+   "id": "P1",
+   "prompt_tokens": 10,
+   "detail": {
+    "mid": {
+     "word": "Mars",
+     "first_tokens": [
+      [
+       44,
+       "M"
+      ],
+      [
+       21725,
+       " Mars"
+      ]
+     ],
+     "distinctive": [
+      [
+       21725,
+       " Mars"
+      ]
+     ]
+    },
+    "ans": {
+     "word": "red",
+     "first_tokens": [
+      [
+       1171,
+       "red"
+      ],
+      [
+       2579,
+       " red"
+      ]
+     ],
+     "distinctive": [
+      [
+       1171,
+       "red"
+      ],
+      [
+       2579,
+       " red"
+      ]
+     ]
+    },
+    "d1": {
+     "word": "Jupiter",
+     "first_tokens": [
+      [
+       41,
+       "J"
+      ],
+      [
+       50789,
+       " Jupiter"
+      ]
+     ],
+     "distinctive": [
+      [
+       50789,
+       " Jupiter"
+      ]
+     ]
+    },
+    "d2": {
+     "word": "blue",
+     "first_tokens": [
+      [
+       12481,
+       "blue"
+      ],
+      [
+       6437,
+       " blue"
+      ]
+     ],
+     "distinctive": [
+      [
+       12481,
+       "blue"
+      ],
+      [
+       6437,
+       " blue"
+      ]
+     ]
+    }
+   },
+   "fail": [],
+   "pass": true
+  },
+  {
+   "id": "P2",
+   "prompt_tokens": 11,
+   "detail": {
+    "mid": {
+     "word": "spider",
+     "first_tokens": [
+      [
+       2203,
+       "sp"
+      ],
+      [
+       35454,
+       " spider"
+      ]
+     ],
+     "distinctive": [
+      [
+       2203,
+       "sp"
+      ],
+      [
+       35454,
+       " spider"
+      ]
+     ]
+    },
+    "ans": {
+     "word": "eight",
+     "first_tokens": [
+      [
+       68632,
+       "eight"
+      ],
+      [
+       8223,
+       " eight"
+      ]
+     ],
+     "distinctive": [
+      [
+       68632,
+       "eight"
+      ],
+      [
+       8223,
+       " eight"
+      ]
+     ]
+    },
+    "d1": {
+     "word": "insect",
+     "first_tokens": [
+      [
+       258,
+       "in"
+      ],
+      [
+       27080,
+       " insect"
+      ]
+     ],
+     "distinctive": [
+      [
+       258,
+       "in"
+      ],
+      [
+       27080,
+       " insect"
+      ]
+     ]
+    },
+    "d2": {
+     "word": "six",
+     "first_tokens": [
+      [
+       51464,
+       "six"
+      ],
+      [
+       4848,
+       " six"
+      ]
+     ],
+     "distinctive": [
+      [
+       51464,
+       "six"
+      ],
+      [
+       4848,
+       " six"
+      ]
+     ]
+    }
+   },
+   "fail": [],
+   "pass": true
+  },
+  {
+   "id": "P3",
+   "prompt_tokens": 13,
+   "detail": {
+    "mid": {
+     "word": "Canada",
+     "first_tokens": [
+      [
+       37031,
+       "Canada"
+      ],
+      [
+       7008,
+       " Canada"
+      ]
+     ],
+     "distinctive": [
+      [
+       37031,
+       "Canada"
+      ],
+      [
+       7008,
+       " Canada"
+      ]
+     ]
+    },
+    "ans": {
+     "word": "Ottawa",
+     "first_tokens": [
+      [
+       46,
+       "O"
+      ],
+      [
+       33266,
+       " Ottawa"
+      ]
+     ],
+     "distinctive": [
+      [
+       33266,
+       " Ottawa"
+      ]
+     ]
+    },
+    "d1": {
+     "word": "Toronto",
+     "first_tokens": [
+      [
+       72437,
+       "Toronto"
+      ],
+      [
+       14974,
+       " Toronto"
+      ]
+     ],
+     "distinctive": [
+      [
+       72437,
+       "Toronto"
+      ],
+      [
+       14974,
+       " Toronto"
+      ]
+     ]
+    },
+    "d2": {
+     "word": "Washington",
+     "first_tokens": [
+      [
+       39231,
+       "Washington"
+      ],
+      [
+       6652,
+       " Washington"
+      ]
+     ],
+     "distinctive": [
+      [
+       39231,
+       "Washington"
+      ],
+      [
+       6652,
+       " Washington"
+      ]
+     ]
+    }
+   },
+   "fail": [],
+   "pass": true
+  },
+  {
+   "id": "P4",
+   "prompt_tokens": 12,
+   "detail": {
+    "mid": {
+     "word": "mercury",
+     "first_tokens": [
+      [
+       1195,
+       "mer"
+      ],
+      [
+       51852,
+       " mercury"
+      ]
+     ],
+     "distinctive": [
+      [
+       1195,
+       "mer"
+      ],
+      [
+       51852,
+       " mercury"
+      ]
+     ]
+    },
+    "ans": {
+     "word": "Hg",
+     "first_tokens": [
+      [
+       39,
+       "H"
+      ],
+      [
+       473,
+       " H"
+      ]
+     ],
+     "distinctive": []
+    },
+    "d1": {
+     "word": "iron",
+     "first_tokens": [
+      [
+       2534,
+       "iron"
+      ],
+      [
+       11245,
+       " iron"
+      ]
+     ],
+     "distinctive": [
+      [
+       2534,
+       "iron"
+      ],
+      [
+       11245,
+       " iron"
+      ]
+     ]
+    },
+    "d2": {
+     "word": "silver",
+     "first_tokens": [
+      [
+       83014,
+       "silver"
+      ],
+      [
+       15310,
+       " silver"
+      ]
+     ],
+     "distinctive": [
+      [
+       83014,
+       "silver"
+      ],
+      [
+       15310,
+       " silver"
+      ]
+     ]
+    }
+   },
+   "fail": [
+    "ans:Hg: distinctive set empty"
+   ],
+   "pass": false
+  },
+  {
+   "id": "B1",
+   "prompt_tokens": 14,
+   "detail": {
+    "mid": {
+     "word": "France",
+     "first_tokens": [
+      [
+       50100,
+       "France"
+      ],
+      [
+       9822,
+       " France"
+      ]
+     ],
+     "distinctive": [
+      [
+       50100,
+       "France"
+      ],
+      [
+       9822,
+       " France"
+      ]
+     ]
+    },
+    "ans": {
+     "word": "Paris",
+     "first_tokens": [
+      [
+       60704,
+       "Paris"
+      ],
+      [
+       12366,
+       " Paris"
+      ]
+     ],
+     "distinctive": [
+      [
+       60704,
+       "Paris"
+      ],
+      [
+       12366,
+       " Paris"
+      ]
+     ]
+    },
+    "d1": {
+     "word": "Italy",
+     "first_tokens": [
+      [
+       71603,
+       "Italy"
+      ],
+      [
+       15704,
+       " Italy"
+      ]
+     ],
+     "distinctive": [
+      [
+       71603,
+       "Italy"
+      ],
+      [
+       15704,
+       " Italy"
+      ]
+     ]
+    },
+    "d2": {
+     "word": "London",
+     "first_tokens": [
+      [
+       40672,
+       "London"
+      ],
+      [
+       7295,
+       " London"
+      ]
+     ],
+     "distinctive": [
+      [
+       40672,
+       "London"
+      ],
+      [
+       7295,
+       " London"
+      ]
+     ]
+    }
+   },
+   "fail": [],
+   "pass": true
+  },
+  {
+   "id": "P5",
+   "prompt_tokens": 12,
+   "detail": {
+    "mid": {
+     "word": "Shakespeare",
+     "first_tokens": [
+      [
+       2059,
+       "Sh"
+      ],
+      [
+       42482,
+       " Shakespeare"
+      ]
+     ],
+     "distinctive": [
+      [
+       2059,
+       "Sh"
+      ],
+      [
+       42482,
+       " Shakespeare"
+      ]
+     ]
+    },
+    "ans": {
+     "word": "William",
+     "first_tokens": [
+      [
+       45887,
+       "William"
+      ],
+      [
+       12656,
+       " William"
+      ]
+     ],
+     "distinctive": [
+      [
+       45887,
+       "William"
+      ],
+      [
+       12656,
+       " William"
+      ]
+     ]
+    },
+    "d1": {
+     "word": "Romeo",
+     "first_tokens": [
+      [
+       49,
+       "R"
+      ],
+      [
+       71292,
+       " Romeo"
+      ]
+     ],
+     "distinctive": [
+      [
+       71292,
+       " Romeo"
+      ]
+     ]
+    },
+    "d2": {
+     "word": "Charles",
+     "first_tokens": [
+      [
+       54567,
+       "Charles"
+      ],
+      [
+       15274,
+       " Charles"
+      ]
+     ],
+     "distinctive": [
+      [
+       54567,
+       "Charles"
+      ],
+      [
+       15274,
+       " Charles"
+      ]
+     ]
+    }
+   },
+   "fail": [],
+   "pass": true
+  }
+ ],
+ "verdict": "PASS",
+ "final_rows": [
+  {
+   "id": "P1",
+   "prompt": "The color of the planet fourth from the sun is",
+   "mid": "Mars",
+   "ans": "red",
+   "distractors": [
+    "Jupiter",
+    "blue"
+   ]
+  },
+  {
+   "id": "P2",
+   "prompt": "The number of legs on the animal that spins webs is",
+   "mid": "spider",
+   "ans": "eight",
+   "distractors": [
+    "insect",
+    "six"
+   ]
+  },
+  {
+   "id": "P3",
+   "prompt": "The capital of the country whose flag has a red maple leaf is",
+   "mid": "Canada",
+   "ans": "Ottawa",
+   "distractors": [
+    "Toronto",
+    "Washington"
+   ]
+  },
+  {
+   "id": "B1",
+   "prompt": "The capital city of the country famous for the Eiffel Tower is",
+   "mid": "France",
+   "ans": "Paris",
+   "distractors": [
+    "Italy",
+    "London"
+   ]
+  },
+  {
+   "id": "P5",
+   "prompt": "The first name of the author of the play Hamlet is",
+   "mid": "Shakespeare",
+   "ans": "William",
+   "distractors": [
+    "Romeo",
+    "Charles"
+   ]
+  }
+ ]
+}

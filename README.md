@@ -15,6 +15,36 @@ that the decision table, the thresholds, and both figure frames were frozen
 and committed **before** any measurement existed. This package is what makes
 that claim checkable.
 
+## What is new in v2.0.0 (2026-08-21)
+
+Version 2 of the paper reports a second campaign, and this package release adds its
+artifacts. Nothing from v1.0.0 was changed or removed; the additions are:
+
+* `data/arms/` — the per-cell read-outs of **Arm A, Arm B and Arm C** (`arm_a.json`,
+  `arm_b.json`, `arm_c.json`) and of the two **MapFirst** ladders (`cii.json` = ladder 1,
+  corridors 88–242 tokens; `cii_c2.json` = ladder 2, corridors 286–484), the **halted** first
+  attempt of ladder 1 (`cii_v1_m7.json`, stopped in its calibration phase — no measurement), and
+  the pre-run gate artifacts (`gate_*.json`). Data is never transformed.
+* `code/arms/` — the runners and gates of the second campaign, plus the shared helper
+  (`run_f5_lens.py`) they import for provenance, logging and the frozen lens / band constants.
+  The rise predicate, the behavioral-invariance gate and the floor statistics live in
+  `run_arm_a.py` / `run_arm_b.py` / `run_arm_c.py` and are imported verbatim by the MapFirst
+  runners (single source).
+* `frozen/PREREG_arms_a_b_c.en.md`, `frozen/PREREG_mapfirst_ladder.en.md` — English renderings
+  of the two pre-registrations (each frozen in successive states), and rows 4–9 of
+  `frozen/PROVENANCE.md` with the commit timestamps and `sha256` of the Japanese originals.
+
+**Names.** Internal identifiers are kept in the code and data: `GT-A/GT-B/GT-C` = Arm A/B/C;
+`C-ii` = MapFirst; rung ids `r8 … r44` = corridor length / 11; row ids `P1/P2/P3/B1/P5` =
+Mars / spider / Canada / France / Shakespeare (the intermediate entity of each prompt). The
+paper uses the external names.
+
+**Two cautions specific to v2.** (i) The fitting script of the lens excludes positions below
+16 as well as capping the sequence at 128; every read-out of Arm A lies inside that excluded
+band, and its validity rests on the controls that passed in the same run, not on the fit.
+(ii) Beyond 128, an unchanged onset is recorded under the frozen reading rule (branch B4) as
+descriptive only — "it did not break out of domain" is not a calibration.
+
 ## What is here
 
 ```
@@ -166,15 +196,21 @@ end it.
 
 | | |
 |---|---|
-| this release (v1.0.0) | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins these exact bytes |
+| this release (v2.0.0) | version DOI minted when this release is archived (the concept DOI below resolves to it); the paper v2 cites it |
+| v1.0.0 | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins the bytes that accompanied paper v1.0 / v1.1 |
 | all versions | [`10.5281/zenodo.21768364`](https://doi.org/10.5281/zenodo.21768364) --- concept DOI, always resolves to the latest |
-| the paper (v1.1) | [`10.5281/zenodo.21867046`](https://doi.org/10.5281/zenodo.21867046) --- **version DOI**, pins that exact PDF. Cite this one |
+| the paper (v2) | in preparation (Aug. 2026); its version DOI is minted on publication under the concept DOI below |
+| the paper (v1.1) | [`10.5281/zenodo.21867046`](https://doi.org/10.5281/zenodo.21867046) --- **version DOI**, pins that exact PDF. Cite this one until v2 is published |
 | the paper (v1) | [`10.5281/zenodo.21800315`](https://doi.org/10.5281/zenodo.21800315) --- **version DOI**, superseded by v1.1 |
 | the paper, all versions | [`10.5281/zenodo.21800314`](https://doi.org/10.5281/zenodo.21800314) --- concept DOI, always resolves to the latest |
 
 v1.1 revises the abstract and one sentence of Section 7-2. The results,
 figures, frozen artifacts and verdicts are unchanged from v1.0, and no claim
 was withdrawn; the code and data in this release are untouched by it.
+
+v2 (paper) and v2.0.0 (this package) add the second campaign --- see "What is
+new in v2.0.0" above. Everything from v1.0.0 is still here, byte for byte; the
+additions are under `data/arms/`, `code/arms/` and `frozen/`.
 
 The paper cites the version DOI, because what it needs to point at is the
 snapshot the numbers came from. Cite the paper the same way, for the same
@@ -188,7 +224,7 @@ reason.
   title  = {Faithful on Prose, Unanchored on Reasoning:
             A Position-Domain Calibration of the Jacobian Lens},
   year   = {2026},
-  note   = {Preprint (v1.1), Zenodo.
+  note   = {Preprint (v1.1; v2 forthcoming), Zenodo.
             \url{https://doi.org/10.5281/zenodo.21867046}.
             Data and code archived at
             \url{https://doi.org/10.5281/zenodo.21768365}}

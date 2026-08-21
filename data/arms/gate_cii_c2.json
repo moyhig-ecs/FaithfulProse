@@ -1,0 +1,123 @@
+{
+ "rungs": {
+  "r26": 286,
+  "r32": 352,
+  "r38": 418,
+  "r44": 484
+ },
+ "unit": "Please stay focused and keep reading this text with care. ",
+ "per_row": {
+  "P1": {
+   "r26": {
+    "n_tok": 296,
+    "landmark_start": 286,
+    "repeats": 26
+   },
+   "r32": {
+    "n_tok": 362,
+    "landmark_start": 352,
+    "repeats": 32
+   },
+   "r38": {
+    "n_tok": 428,
+    "landmark_start": 418,
+    "repeats": 38
+   },
+   "r44": {
+    "n_tok": 494,
+    "landmark_start": 484,
+    "repeats": 44
+   }
+  },
+  "P2": {
+   "r26": {
+    "n_tok": 297,
+    "landmark_start": 286,
+    "repeats": 26
+   },
+   "r32": {
+    "n_tok": 363,
+    "landmark_start": 352,
+    "repeats": 32
+   },
+   "r38": {
+    "n_tok": 429,
+    "landmark_start": 418,
+    "repeats": 38
+   },
+   "r44": {
+    "n_tok": 495,
+    "landmark_start": 484,
+    "repeats": 44
+   }
+  },
+  "P3": {
+   "r26": {
+    "n_tok": 299,
+    "landmark_start": 286,
+    "repeats": 26
+   },
+   "r32": {
+    "n_tok": 365,
+    "landmark_start": 352,
+    "repeats": 32
+   },
+   "r38": {
+    "n_tok": 431,
+    "landmark_start": 418,
+    "repeats": 38
+   },
+   "r44": {
+    "n_tok": 497,
+    "landmark_start": 484,
+    "repeats": 44
+   }
+  },
+  "B1": {
+   "r26": {
+    "n_tok": 300,
+    "landmark_start": 286,
+    "repeats": 26
+   },
+   "r32": {
+    "n_tok": 366,
+    "landmark_start": 352,
+    "repeats": 32
+   },
+   "r38": {
+    "n_tok": 432,
+    "landmark_start": 418,
+    "repeats": 38
+   },
+   "r44": {
+    "n_tok": 498,
+    "landmark_start": 484,
+    "repeats": 44
+   }
+  },
+  "P5": {
+   "r26": {
+    "n_tok": 298,
+    "landmark_start": 286,
+    "repeats": 26
+   },
+   "r32": {
+    "n_tok": 364,
+    "landmark_start": 352,
+    "repeats": 32
+   },
+   "r38": {
+    "n_tok": 430,
+    "landmark_start": 418,
+    "repeats": 38
+   },
+   "r44": {
+    "n_tok": 496,
+    "landmark_start": 484,
+    "repeats": 44
+   }
+  }
+ },
+ "fails": [],
+ "verdict": "PASS"
+}

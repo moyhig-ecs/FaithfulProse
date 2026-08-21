@@ -106,3 +106,40 @@ so we do not write it. If the appendices do state a fitting sequence length,
 the paper's scoped claim remains correct and the point it supports — that a
 user meets the parameter first in a configuration file — is unaffected, since
 the configuration files are where we ourselves found it.
+
+---
+
+## The second campaign (package v2.0.0, paper v2 — added 2026-08-21)
+
+The same evidence, for the arms and the MapFirst ladder. Two documents were frozen, each in
+successive states; each state governs one run. A state that governs a **halted** run is listed
+too: a halt is a measurement that did not happen, and the stop is part of the record.
+
+| # | frozen document (state) | commit | committed (JST) | governs | run started (JST) | measurement committed | interval |
+|---|---|---|---|---|---|---|---|
+| 4 | pre-registration, Arms A–C (v3) | `fd06b032` | 2026-08-19 16:50:53 | Arm A | 16:51:02 (+9 s) | `ce5a4032` 2026-08-19 16:54:02 | **+3 m 09 s** |
+| 5 | the same document (v5) | `2be30a73` | 2026-08-20 10:37:08 | Arm B | 10:37:15 (+7 s) | `1cbecffd` 2026-08-20 10:40:19 | **+3 m 11 s** |
+| 5′ | the same state (v5) | `2be30a73` | 2026-08-20 10:37:08 | Arm C, first attempt — **halted** by its run-time control (sign-flipped minimum 3,648 < 10^4); no value reported | — | halt committed `8f9cee1e` 10:43:47 | — |
+| 6 | the same document (v6: calibrated control) | `a865958c` | 2026-08-20 11:09:17 | Arm C | 11:09:22 (+5 s) | `4fdf1861` 2026-08-20 11:13:18 | **+4 m 01 s** |
+| 7 | pre-registration, MapFirst ladder (v1) | `df889be7` | 2026-08-20 12:30:36 | ladder 1, first attempt — **halted** in its calibration phase (M-7); no measurement | 12:32:25 | halt committed `60edb995` 12:35:19 | — |
+| 8 | the same document (v2: calibration re-frozen) | `35f0d072` | 2026-08-20 12:50:17 | ladder 1 (corridors 88–242) | 12:50:25 (+8 s) | `7634c452` 2026-08-20 12:58:01 | **+7 m 44 s** |
+| 9 | the same document (v3: ladder 2) | `a6beb711` | 2026-08-20 13:22:25 | ladder 2 (corridors 286–484) | 13:22:32 (+7 s) | `dba48230` 2026-08-20 13:31:28 | **+9 m 03 s** |
+
+The "run started" times are the `started_utc` field of each run's own JSON (converted to JST);
+every run also records the freeze commit it ran under and `dirty = False`.
+
+### `sha256` of the frozen originals (second campaign)
+
+```
+35b0cbb2d717e85b614c99815b25d0f854c54dc3eeec06de42a9c903ad78caf6   Arms A–C, state v3   (DRAFT_PREREG_arms_graspthink_20260819.md @ fd06b032)
+6aaa0408bacbe790ca819d2408041e30fef63a138a00f7ee383352f32f97577f   Arms A–C, state v5   (same file @ 2be30a73)
+db9faf6945b398ac420cb1772e071daeef6210271093097df4890e819132e76f   Arms A–C, state v6   (same file @ a865958c)
+9f21e9f4006fe570c6655fa3dd161188932fd0e9a879db05fbb3d0432063a1b3   MapFirst ladder, v1  (PREREG_cii_ladder_20260820.md @ df889be7)
+0a8111c997f0e0f3ae20be1764887dc3beb9b8c8a82e2075d85579ecefdb103a   MapFirst ladder, v2  (same file @ 35f0d072)
+185d5bb0bad19a418abb8d27274d62c79dc7f18f5246c09c3fc0034bf0563990   MapFirst ladder, v3  (same file @ a6beb711)
+```
+
+The English renderings `PREREG_arms_a_b_c.en.md` and `PREREG_mapfirst_ladder.en.md` were
+prepared on 2026-08-21, after all runs, and are not themselves frozen artifacts; the Japanese
+originals, fixed by the hashes above, are the authority. A reader who wants to check the freeze
+claim needs only the commit timestamps and the hashes, not the prose.

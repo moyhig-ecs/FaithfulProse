@@ -1,0 +1,224 @@
+{
+ "preface": "Here is a {adj} question for you to answer: ",
+ "adjs_declared": [
+  "simple",
+  "little",
+  "tricky",
+  "second",
+  "final"
+ ],
+ "backups": [
+  "quick",
+  "small"
+ ],
+ "final_adjs": [
+  "simple",
+  "little",
+  "tricky",
+  "second",
+  "final"
+ ],
+ "reference_adj": "simple",
+ "per_row": {
+  "P1": {
+   "n_tok": 20,
+   "landmark_start": 10,
+   "n_landmark": 10
+  },
+  "P2": {
+   "n_tok": 21,
+   "landmark_start": 10,
+   "n_landmark": 11
+  },
+  "P3": {
+   "n_tok": 23,
+   "landmark_start": 10,
+   "n_landmark": 13
+  },
+  "B1": {
+   "n_tok": 24,
+   "landmark_start": 10,
+   "n_landmark": 14
+  },
+  "P5": {
+   "n_tok": 22,
+   "landmark_start": 10,
+   "n_landmark": 12
+  }
+ },
+ "swaps": [],
+ "dropped_by_length": [],
+ "reports": [
+  {
+   "adj": "simple",
+   "adj_ids": [
+    4382
+   ],
+   "fails": [],
+   "per_row": {
+    "P1": {
+     "n_tok": 20,
+     "landmark_start": 10,
+     "n_landmark": 10
+    },
+    "P2": {
+     "n_tok": 21,
+     "landmark_start": 10,
+     "n_landmark": 11
+    },
+    "P3": {
+     "n_tok": 23,
+     "landmark_start": 10,
+     "n_landmark": 13
+    },
+    "B1": {
+     "n_tok": 24,
+     "landmark_start": 10,
+     "n_landmark": 14
+    },
+    "P5": {
+     "n_tok": 22,
+     "landmark_start": 10,
+     "n_landmark": 12
+    }
+   }
+  },
+  {
+   "adj": "little",
+   "adj_ids": [
+    2697
+   ],
+   "fails": [],
+   "per_row": {
+    "P1": {
+     "n_tok": 20,
+     "landmark_start": 10,
+     "n_landmark": 10
+    },
+    "P2": {
+     "n_tok": 21,
+     "landmark_start": 10,
+     "n_landmark": 11
+    },
+    "P3": {
+     "n_tok": 23,
+     "landmark_start": 10,
+     "n_landmark": 13
+    },
+    "B1": {
+     "n_tok": 24,
+     "landmark_start": 10,
+     "n_landmark": 14
+    },
+    "P5": {
+     "n_tok": 22,
+     "landmark_start": 10,
+     "n_landmark": 12
+    }
+   }
+  },
+  {
+   "adj": "tricky",
+   "adj_ids": [
+    34553
+   ],
+   "fails": [],
+   "per_row": {
+    "P1": {
+     "n_tok": 20,
+     "landmark_start": 10,
+     "n_landmark": 10
+    },
+    "P2": {
+     "n_tok": 21,
+     "landmark_start": 10,
+     "n_landmark": 11
+    },
+    "P3": {
+     "n_tok": 23,
+     "landmark_start": 10,
+     "n_landmark": 13
+    },
+    "B1": {
+     "n_tok": 24,
+     "landmark_start": 10,
+     "n_landmark": 14
+    },
+    "P5": {
+     "n_tok": 22,
+     "landmark_start": 10,
+     "n_landmark": 12
+    }
+   }
+  },
+  {
+   "adj": "second",
+   "adj_ids": [
+    2132
+   ],
+   "fails": [],
+   "per_row": {
+    "P1": {
+     "n_tok": 20,
+     "landmark_start": 10,
+     "n_landmark": 10
+    },
+    "P2": {
+     "n_tok": 21,
+     "landmark_start": 10,
+     "n_landmark": 11
+    },
+    "P3": {
+     "n_tok": 23,
+     "landmark_start": 10,
+     "n_landmark": 13
+    },
+    "B1": {
+     "n_tok": 24,
+     "landmark_start": 10,
+     "n_landmark": 14
+    },
+    "P5": {
+     "n_tok": 22,
+     "landmark_start": 10,
+     "n_landmark": 12
+    }
+   }
+  },
+  {
+   "adj": "final",
+   "adj_ids": [
+    1620
+   ],
+   "fails": [],
+   "per_row": {
+    "P1": {
+     "n_tok": 20,
+     "landmark_start": 10,
+     "n_landmark": 10
+    },
+    "P2": {
+     "n_tok": 21,
+     "landmark_start": 10,
+     "n_landmark": 11
+    },
+    "P3": {
+     "n_tok": 23,
+     "landmark_start": 10,
+     "n_landmark": 13
+    },
+    "B1": {
+     "n_tok": 24,
+     "landmark_start": 10,
+     "n_landmark": 14
+    },
+    "P5": {
+     "n_tok": 22,
+     "landmark_start": 10,
+     "n_landmark": 12
+    }
+   }
+  }
+ ],
+ "verdict": "PASS"
+}
