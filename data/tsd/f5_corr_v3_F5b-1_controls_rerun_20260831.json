@@ -1,0 +1,131 @@
+{
+ "stage": "f5_corr_v3_controls_rerun",
+ "date": "2026-08-31",
+ "variant": "F5b-1",
+ "reason": "persist の controls に flip_identity 無し・verdict STOP_controls 残存(runner の統制 skip 条件)",
+ "seed_used": 1,
+ "chunk_len": 96,
+ "band": [
+  26,
+  56
+ ],
+ "controls": {
+  "determinism_pass": true,
+  "flip_identity": {
+   "eta_chunk": 0.5263157894736842,
+   "eta_flip": 0.47368421052631576,
+   "n_used": 95,
+   "n_tie": 1,
+   "pass": true
+  },
+  "vn_min_descriptive": 1682
+ },
+ "replication_vs_persisted_series_maxabs": {
+  "hehi": 0.0,
+  "apex": 0.0,
+  "hehi_L": 0.0,
+  "apex_L": 0.0
+ },
+ "diagnosis_singleton_sets": {
+  "single_0": {
+   "ids": [
+    [
+     1283
+    ],
+    [
+     23899
+    ]
+   ],
+   "eta": 0.6,
+   "eta_flip": 0.4,
+   "n_used": [
+    95,
+    95
+   ],
+   "n_tie": [
+    1,
+    1
+   ],
+   "identity_holds": true
+  },
+  "single_1": {
+   "ids": [
+    [
+     21694
+    ],
+    [
+     83063
+    ]
+   ],
+   "eta": 0.648936170212766,
+   "eta_flip": 0.35106382978723405,
+   "n_used": [
+    94,
+    94
+   ],
+   "n_tie": [
+    2,
+    2
+   ],
+   "identity_holds": true
+  },
+  "single_x": {
+   "ids": [
+    [
+     1283
+    ],
+    [
+     83063
+    ]
+   ],
+   "eta": 0.5208333333333334,
+   "eta_flip": 0.4791666666666667,
+   "n_used": [
+    96,
+    96
+   ],
+   "n_tie": [
+    0,
+    0
+   ],
+   "identity_holds": true
+  },
+  "single_y": {
+   "ids": [
+    [
+     21694
+    ],
+    [
+     23899
+    ]
+   ],
+   "eta": 0.6382978723404256,
+   "eta_flip": 0.3617021276595745,
+   "n_used": [
+    94,
+    94
+   ],
+   "n_tie": [
+    2,
+    2
+   ],
+   "identity_holds": true
+  }
+ },
+ "persisted_controls_as_found": {
+  "determinism_pass": true,
+  "flip_identity": {
+   "eta_chunk": 0.5263157894736842,
+   "eta_flip": 0.47368421052631576,
+   "n_used": 95,
+   "n_tie": 1,
+   "pass": true
+  },
+  "vn_min_descriptive": 1682,
+  "anchor_note": "初版 top-k V-N(>10⁴)は lane 不適合で 562 停止(登記)→ flip 恒等(η_flip = 1 − η)に差し替え(順序レーンの読む統計と同対)"
+ },
+ "persisted_verdict_as_found": null,
+ "pass": true,
+ "wall_s": 33.2,
+ "started": "2026-08-31T16:20:01"
+}

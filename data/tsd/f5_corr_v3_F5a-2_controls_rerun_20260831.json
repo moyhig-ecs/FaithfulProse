@@ -1,0 +1,124 @@
+{
+ "stage": "f5_corr_v3_controls_rerun",
+ "date": "2026-08-31",
+ "variant": "F5a-2",
+ "reason": "persist の controls に flip_identity 無し・verdict STOP_controls 残存(runner の統制 skip 条件)",
+ "seed_used": 1,
+ "chunk_len": 96,
+ "band": [
+  26,
+  56
+ ],
+ "controls": {
+  "determinism_pass": true,
+  "flip_identity": {
+   "eta_chunk": 0.4421052631578947,
+   "eta_flip": 0.43157894736842106,
+   "n_used": 95,
+   "n_tie": 1,
+   "pass": false
+  },
+  "vn_min_descriptive": 562
+ },
+ "replication_vs_persisted_series_maxabs": {
+  "hehi": 0.0,
+  "apex": 0.0,
+  "hehi_L": 0.0,
+  "apex_L": 0.0
+ },
+ "diagnosis_singleton_sets": {
+  "single_0": {
+   "ids": [
+    [
+     1283
+    ],
+    [
+     23899
+    ]
+   ],
+   "eta": 0.574468085106383,
+   "eta_flip": 0.425531914893617,
+   "n_used": [
+    94,
+    94
+   ],
+   "n_tie": [
+    2,
+    2
+   ],
+   "identity_holds": true
+  },
+  "single_1": {
+   "ids": [
+    [
+     21694
+    ],
+    [
+     83063
+    ]
+   ],
+   "eta": 0.6105263157894737,
+   "eta_flip": 0.3894736842105263,
+   "n_used": [
+    95,
+    95
+   ],
+   "n_tie": [
+    1,
+    1
+   ],
+   "identity_holds": true
+  },
+  "single_x": {
+   "ids": [
+    [
+     1283
+    ],
+    [
+     83063
+    ]
+   ],
+   "eta": 0.45263157894736844,
+   "eta_flip": 0.5473684210526316,
+   "n_used": [
+    95,
+    95
+   ],
+   "n_tie": [
+    1,
+    1
+   ],
+   "identity_holds": true
+  },
+  "single_y": {
+   "ids": [
+    [
+     21694
+    ],
+    [
+     23899
+    ]
+   ],
+   "eta": 0.625,
+   "eta_flip": 0.375,
+   "n_used": [
+    96,
+    96
+   ],
+   "n_tie": [
+    0,
+    0
+   ],
+   "identity_holds": true
+  }
+ },
+ "persisted_controls_as_found": {
+  "determinism_pass": true,
+  "vn_signflip_min": 562,
+  "vn_pass": false
+ },
+ "persisted_verdict_as_found": "STOP_controls",
+ "pass": false,
+ "wall_s": 51.3,
+ "started": "2026-08-31T16:18:18"
+}

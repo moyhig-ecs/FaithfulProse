@@ -15,6 +15,49 @@ that the decision table, the thresholds, and both figure frames were frozen
 and committed **before** any measurement existed. This package is what makes
 that claim checkable.
 
+## What is new in v3.0.0 (2026-09-01) --- REVISION-ID: TSD-20260826
+
+Version 3 of the paper re-acquires every reading-set measurement of the second campaign under a
+repaired token-set acceptance, and this release adds the artifacts of that re-acquisition.
+Nothing from v1.0.0 or v2.0.0 was changed or removed (both are checked byte for byte at build
+time); the additions are:
+
+* `data/tsd/` --- the re-acquired read-outs: Arms A and C (`arm_a_v3.json`, `arm_c_v3.json`), both
+  MapFirst ladders (`cii_l1_v3.json`, `cii_l2_v3.json`) with the re-derived null ledgers
+  (`cii_nulls_v3.json`) and the population-null bound of the SameSeat two-stage reading
+  (`r2b_derivation.json`), the ShapeJitter floor re-derived with every series persisted
+  (`r211_v3.json`), and the order-agreement lanes (`f5_corr_v3_F5a-2.json`, `f5_corr_v3_F5b-1.json`)
+  with the controls re-run after the fact (`*_controls_rerun_20260831.json`). Every file carries
+  the legacy (version-2) lane beside the repaired one. Data is never transformed.
+* `code/tsd/` --- the v3 runners (`run_arms_v3.py`, `run_r211_v3.py`, `run_f5_corr_v3.py`, its
+  controls-only companion) and the frozen order-agreement stage they import verbatim
+  (`run_f5_corr.py`). The rise predicate, the gate and the floor statistics are still imported
+  from `code/arms/` (single source). The runners require the acceptance instrument **joshaku
+  v1.2.0**, which is *not* vendored here: it is its own record,
+  [`10.5281/zenodo.22218669`](https://doi.org/10.5281/zenodo.22218669) (seven modules, combined
+  md5 `89b194be...`, 20 tests; SPEC v1.2 included). Unpack it next to this package or install it
+  from the archive; the runners import `joshaku.pgrain` and `joshaku.ranks`.
+* `frozen/PROVENANCE_v3.md` --- the hashes and commit timestamps of the three frozen reading cards
+  of the re-acquisition (Japanese originals, not reproduced) and of SPEC v1.2.
+
+**What the defect was.** The version-2 reading sets represented a multi-token word by its first
+token (spider -> `sp`, Shakespeare -> `Sh`, insect -> `in`), a rule that had been pre-registered
+and is now registered as defect T1. The repaired acceptance admits a surface variant only if it
+encodes as exactly one token and records every drop. Under it, Arm A is (a)-type (the same
+integers newly observed), the SameSeat onset (3, 2, 3, 3) is newly observed under a
+population-null bound, the order-agreement clause of the paper is converted from a supporting
+clause to a limitation (0.456--0.692, median 0.544; 0.5 is the sign-independent reference), and
+the ShapeJitter floor is re-registered (max 0.3372 dex at the deepest rung). The version-2
+values are marked in the paper, not deleted, and are not counted as evidence. The paper's
+Revision History section is the full statement.
+
+**Calibration record (order agreement).** The controls of the F5a-2 half were re-run after the
+fact (determinism; per-trace replication d = 0.0; sign-flip identity on single-id sets, exact for
+both variants). The two-id identity control originally specified is non-informative by
+construction (best-of over two ids turns a minimum into a maximum under negation) and is
+replaced; the values are unchanged. `run_f5_corr_v3.py` v3.1 carries the three standing fixes
+(no resume from a STOP file; versioned controls; set-level controls stated for the aggregation).
+
 ## What is new in v2.0.0 (2026-08-21)
 
 Version 2 of the paper reports a second campaign, and this package release adds its
@@ -196,10 +239,12 @@ end it.
 
 | | |
 |---|---|
-| this release (v2.0.0) | [`10.5281/zenodo.22041132`](https://doi.org/10.5281/zenodo.22041132) --- **version DOI**, pins these exact bytes; the paper v2 cites it |
+| this release (v3.0.0) | version DOI minted by Zenodo at the GitHub release `v3.0.0` (see the Versions panel of the concept DOI below); the paper v3 cites it |
+| v2.0.0 | [`10.5281/zenodo.22041132`](https://doi.org/10.5281/zenodo.22041132) --- **version DOI**, pins the bytes that accompanied paper v2 |
 | v1.0.0 | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins the bytes that accompanied paper v1.0 / v1.1 |
 | all versions | [`10.5281/zenodo.21768364`](https://doi.org/10.5281/zenodo.21768364) --- concept DOI, always resolves to the latest |
-| the paper (v2) | [`10.5281/zenodo.22041724`](https://doi.org/10.5281/zenodo.22041724) --- **version DOI**, pins that exact PDF (16 pages, 2026-08-21). Cite this one |
+| the paper (v3) | version DOI of the v3.0 record (published after this package; see the paper's Versions panel). Cite this one |
+| the paper (v2) | [`10.5281/zenodo.22041724`](https://doi.org/10.5281/zenodo.22041724) --- **version DOI**, pins that exact PDF (16 pages, 2026-08-21); its readout-side values are superseded by v3 |
 | the paper (v1.1) | [`10.5281/zenodo.21867046`](https://doi.org/10.5281/zenodo.21867046) --- **version DOI**, superseded by v2 |
 | the paper (v1) | [`10.5281/zenodo.21800315`](https://doi.org/10.5281/zenodo.21800315) --- **version DOI**, superseded by v1.1 |
 | the paper, all versions | [`10.5281/zenodo.21800314`](https://doi.org/10.5281/zenodo.21800314) --- concept DOI, always resolves to the latest |
@@ -208,9 +253,11 @@ v1.1 revises the abstract and one sentence of Section 7-2. The results,
 figures, frozen artifacts and verdicts are unchanged from v1.0, and no claim
 was withdrawn; the code and data in this release are untouched by it.
 
-v2 (paper) and v2.0.0 (this package) add the second campaign --- see "What is
-new in v2.0.0" above. Everything from v1.0.0 is still here, byte for byte; the
-additions are under `data/arms/`, `code/arms/` and `frozen/`.
+v2 (paper) and v2.0.0 add the second campaign --- see "What is new in v2.0.0"
+above. v3 (paper) and v3.0.0 (this package) add the TSD-20260826 re-acquisition
+--- see "What is new in v3.0.0" above. Everything from v1.0.0 and v2.0.0 is still
+here, byte for byte; the v3 additions are under `data/tsd/`, `code/tsd/` and
+`frozen/PROVENANCE_v3.md`.
 
 The paper cites the version DOI, because what it needs to point at is the
 snapshot the numbers came from. Cite the paper the same way, for the same

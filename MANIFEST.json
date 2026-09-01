@@ -1,16 +1,18 @@
 {
  "package": "FaithfulProse — data and code",
- "package_version": "v2.0.0",
- "paper_version": "v2 (v1.0.0 of this package accompanied paper v1.0 / v1.1; v2.0.0 adds the second campaign)",
+ "package_version": "v3.0.0",
+ "paper_version": "v3 (v1.0.0 of this package accompanied paper v1.0 / v1.1; v2.0.0 added the second campaign; v3.0.0 adds the TSD-20260826 re-acquisition under the repaired token-set acceptance)",
  "paper": "Faithful on Prose, Unanchored on Reasoning: A Position-Domain Calibration of the Jacobian Lens",
- "built_utc": "2026-08-21T07:16:58+00:00",
- "source_repo_head": "4c896768609da5ae2aacd687256c7acdc85818ad",
+ "built_utc": "2026-09-01T02:59:41+00:00",
+ "source_repo_head": "d59b4bf8f129bfcf6d14be7d2fda664b4b433058",
  "source_repo_dirty": false,
  "transformation_policy": {
   "data": "verbatim; never transformed",
   "code_absolute_paths": "replaced by environment-variable resolution",
   "code_internal_vocabulary": "replaced by the approved external register",
   "v1_files": "read from the v1.0.0 source snapshot 9a742ca03c11 (byte-identical to v1.0.0), not from the working tree",
+  "v2_files": "byte-identical to the v2.0.0 release (checked against release_src/v2.0.0_released_sha256.json)",
+  "v3_instrument": "joshaku is not vendored; it is its own record (doi:10.5281/zenodo.22218669)",
   "clause_banners": "leading '# !!' comment banners pasted after v1.0.0 are removed (counted per file)",
   "code_comments_language": "Japanese comments retained (house precedent)",
   "note": "every substitution is enumerated per file under 'changes'"
@@ -645,6 +647,216 @@
    ]
   },
   {
+   "path": "data/tsd/arm_a_v3.json",
+   "role": "Arm A re-acquired (v3 sets; legacy lane beside)",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/graspthink-arms/results/tsd_r2/arm_a_v3.json",
+   "sha256_as_run": "298ef3ee7ad366a21b20d89f395547f4cd2d87ad9054be1651a6cd11cee3ca5d",
+   "sha256_released": "298ef3ee7ad366a21b20d89f395547f4cd2d87ad9054be1651a6cd11cee3ca5d",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/tsd/arm_c_v3.json",
+   "role": "Arm C re-acquired (v3 sets; legacy lane beside)",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/graspthink-arms/results/tsd_r2/arm_c_v3.json",
+   "sha256_as_run": "858473caa460f64cece124542dcf4a43c4f173681c147c7a14032013139f1321",
+   "sha256_released": "858473caa460f64cece124542dcf4a43c4f173681c147c7a14032013139f1321",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/tsd/cii_l1_v3.json",
+   "role": "MapFirst ladder 1 re-acquired",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/graspthink-arms/results/tsd_r2/cii_l1_v3.json",
+   "sha256_as_run": "b929e6f0d23c57bcac605d90989284cb8c9543aef4e093a839bb893e746d172a",
+   "sha256_released": "b929e6f0d23c57bcac605d90989284cb8c9543aef4e093a839bb893e746d172a",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/tsd/cii_l2_v3.json",
+   "role": "MapFirst ladder 2 re-acquired",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/graspthink-arms/results/tsd_r2/cii_l2_v3.json",
+   "sha256_as_run": "62c9108393d04c9976089e92697ee04ea638493926bdfcee4923feee40870c88",
+   "sha256_released": "62c9108393d04c9976089e92697ee04ea638493926bdfcee4923feee40870c88",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/tsd/cii_nulls_v3.json",
+   "role": "null ledgers re-derived (both ladders)",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/graspthink-arms/results/tsd_r2/cii_nulls_v3.json",
+   "sha256_as_run": "4bd8ef5b4db16e47d32a5e0b4764d6d66a5fe957d3f0dd652988b79180ca58f4",
+   "sha256_released": "4bd8ef5b4db16e47d32a5e0b4764d6d66a5fe957d3f0dd652988b79180ca58f4",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/tsd/r2b_derivation.json",
+   "role": "population-null bound B_A (SameSeat stage two)",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/graspthink-arms/results/tsd_r2/r2b_derivation.json",
+   "sha256_as_run": "0a3329836f877a36f0eb638fd0a98c092455ebfab8616750e3b3eb216724c9c4",
+   "sha256_released": "0a3329836f877a36f0eb638fd0a98c092455ebfab8616750e3b3eb216724c9c4",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/tsd/r211_v3.json",
+   "role": "ShapeJitter floor re-derived (all rung pairs; series persisted)",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/graspthink-arms/results/tsd_r2/r211_v3.json",
+   "sha256_as_run": "e108cf881becc8f0104a20eb8aa8ad9b88a363e5207e7f18f1236f2ee14d366a",
+   "sha256_released": "e108cf881becc8f0104a20eb8aa8ad9b88a363e5207e7f18f1236f2ee14d366a",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/tsd/f5_corr_v3_F5a-2.json",
+   "role": "order agreement eta v3, variant F5a-2 (9 traces; per-position series)",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/olmo3-f5-think-prefix/results/tsd_r4/f5_corr_v3_F5a-2.json",
+   "sha256_as_run": "2fee5a108ea726e686145fb3689d48eaa8a071f298187117c9df805bd98f74c0",
+   "sha256_released": "2fee5a108ea726e686145fb3689d48eaa8a071f298187117c9df805bd98f74c0",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/tsd/f5_corr_v3_F5b-1.json",
+   "role": "order agreement eta v3, variant F5b-1 (9 traces; per-position series)",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/olmo3-f5-think-prefix/results/tsd_r4/f5_corr_v3_F5b-1.json",
+   "sha256_as_run": "8e997bbba1c8b0c2c5230aa7a44d16fd375f7ec9bf029a2b16a109125b822ba2",
+   "sha256_released": "8e997bbba1c8b0c2c5230aa7a44d16fd375f7ec9bf029a2b16a109125b822ba2",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/tsd/f5_corr_v3_F5a-2_controls_rerun_20260831.json",
+   "role": "controls re-run after the fact (F5a-2): determinism, replication, single-id sign-flip identity",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/olmo3-f5-think-prefix/results/tsd_r4/f5_corr_v3_F5a-2_controls_rerun_20260831.json",
+   "sha256_as_run": "f92bcfe1c49210ea8a9f41409eb7ed109e89f751d845ec430e494ce8fd565cc2",
+   "sha256_released": "f92bcfe1c49210ea8a9f41409eb7ed109e89f751d845ec430e494ce8fd565cc2",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "data/tsd/f5_corr_v3_F5b-1_controls_rerun_20260831.json",
+   "role": "controls re-run after the fact (F5b-1): same",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/olmo3-f5-think-prefix/results/tsd_r4/f5_corr_v3_F5b-1_controls_rerun_20260831.json",
+   "sha256_as_run": "93b860a54b21d337cac1876d6b831f072eb2d40a2ed1a9cbe11f4f0a223b2a45",
+   "sha256_released": "93b860a54b21d337cac1876d6b831f072eb2d40a2ed1a9cbe11f4f0a223b2a45",
+   "transformed": false,
+   "changes": []
+  },
+  {
+   "path": "code/tsd/run_arms_v3.py",
+   "role": "v3 runner: Arms A/C and both ladders under the repaired sets (legacy lane beside)",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/graspthink-arms/run_arms_v3.py",
+   "sha256_as_run": "893c9e8c837a62d3e047862a6e7f2efd2ed3f11810dc2d35d174f681ac9083e4",
+   "sha256_released": "420876c3b52d4a93fe8c2fe8bdaa0d79cc1a2e6e17903390465bb75ee07ed50f",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "code/tsd/run_r211_v3.py",
+   "role": "v3 runner: ShapeJitter floor re-derivation",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/graspthink-arms/run_r211_v3.py",
+   "sha256_as_run": "9ada24b269587108164435fce854039b3ee2c7b8ae443935201b37e3ec8c58c8",
+   "sha256_released": "92ee26e446c1e824a5ffba151ff6535c05cb0f5a4a480c4cb29abfb4a70612cd",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "code/tsd/run_f5_corr.py",
+   "role": "order-agreement stage (frozen; imported verbatim by the v3 runner)",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/olmo3-f5-think-prefix/run_f5_corr.py",
+   "sha256_as_run": "196878dd7391cef71c8365d953d3f418198589d618b069a18307d1e5469a74db",
+   "sha256_released": "03d9d95cb5d040af25f4afa7eb0887fd8a5cd6886348411d39971b0e1084596a",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    },
+    {
+     "kind": "relink",
+     "from": "<internal record pointer, redacted>",
+     "to": "adjudication record 2026-08-19 (branch c)",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "code/tsd/run_f5_corr_v3.py",
+   "role": "v3.1 runner: order agreement under the repaired sets; controls versioned",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/olmo3-f5-think-prefix/run_f5_corr_v3.py",
+   "sha256_as_run": "6735f4f342506406e6045952527dc3010ff4303ca33fb7d4c29e71d2e29284aa",
+   "sha256_released": "e7cdd5916ab49899921810858bdb87628d3755de4b33536af4a241893c85677a",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "code/tsd/run_f5_corr_v3_control_only.py",
+   "role": "controls-only re-run (calibration record)",
+   "added_in": "v3.0.0",
+   "source_in_repo": "probes/olmo3-f5-think-prefix/run_f5_corr_v3_control_only.py",
+   "sha256_as_run": "3293a550b642034a42a67047f9f9440802bc91fb69d46e8572184273f4429d84",
+   "sha256_released": "401c2ec1eb13a61e159b774b5b5e03cea2b47a9c598be77ee05eab7690cbb5e3",
+   "transformed": true,
+   "changes": [
+    {
+     "kind": "docstring",
+     "from": "<module docstring, ja>",
+     "to": "english rendering",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "path": "frozen/PROVENANCE_v3.md",
+   "role": "freeze evidence for the v3.0.0 re-acquisition (hashes, commit dates)",
+   "added_in": "v3.0.0",
+   "sha256_as_run": "f5d2d35f1421c96e683d841c91707e033a072ea70a39db83745cf61bf06238c3",
+   "sha256_released": "f5d2d35f1421c96e683d841c91707e033a072ea70a39db83745cf61bf06238c3",
+   "transformed": false,
+   "changes": []
+  },
+  {
    "path": "frozen/PROVENANCE.md",
    "role": "freeze evidence: commit hashes, timestamps, sha256 of the Japanese originals",
    "source_in_repo": "FaithfulProse/frozen_en/PROVENANCE.md",
@@ -738,8 +950,8 @@
    "path": "README.md",
    "role": "package documentation",
    "source_in_repo": "FaithfulProse/release_src/README.md",
-   "sha256_as_run": "822dc88c04415a29e7837da6469a3a8e44732a74c956bd52669b5dfee107a59f",
-   "sha256_released": "822dc88c04415a29e7837da6469a3a8e44732a74c956bd52669b5dfee107a59f",
+   "sha256_as_run": "48c964ae5912ed13c3049dcd3df5d7bb692b4e81cce9a5d79a1d3b076a4e9f62",
+   "sha256_released": "48c964ae5912ed13c3049dcd3df5d7bb692b4e81cce9a5d79a1d3b076a4e9f62",
    "transformed": false,
    "changes": []
   },
