@@ -1,5 +1,5 @@
 {
- "built": "2026-08-18T06:34:51.094999+00:00",
+ "built": "2026-09-01T03:30:07.717919+00:00",
  "builder": "lancedb-rag/scripts/build_fidelityeight.py",
  "transform_rule": "released = as-run with the absolute source-tree prefix removed from strings (JSON meta paths only); evaluators are byte-identical (transform: none)",
  "files": [
@@ -73,6 +73,85 @@
    "transform": "abs-path relativized",
    "as_run_md5": "ccfbbe87ca477fbf90f063af7763a248",
    "released_md5": "68cfd8e4209f3dad677118637a4ab909"
+  },
+  {
+   "path": "evaluators/tsd/eval_wgrd_v3.py",
+   "description": "v2 evaluator (joshaku call; both bindings; --sign_flip); the note prints the as-run md5",
+   "transform": "one line: upstream jlens sys.path entry relativized (JLENS_SRC env)",
+   "as_run_md5": "b6be394764959e08fc0de20edaf21b90",
+   "released_md5": "6c4fc067e07391118eca95347adf44e6"
+  },
+  {
+   "path": "outputs/tsd/c_floor_7b.json",
+   "description": "v2 cell 1: chance floor, sign-flipped OLMo-3-7B lens, binding v1 (calibration gate)",
+   "transform": "none",
+   "as_run_md5": "698f475000b8320bae5db9141ef06b05",
+   "released_md5": "698f475000b8320bae5db9141ef06b05"
+  },
+  {
+   "path": "outputs/tsd/c_baseline_7b.json",
+   "description": "v2 cell 2: baseline floor, J=I (vanilla logit-lens), binding v1",
+   "transform": "none",
+   "as_run_md5": "aa5d8468f763ce9935431c6f87978e80",
+   "released_md5": "aa5d8468f763ce9935431c6f87978e80"
+  },
+  {
+   "path": "outputs/tsd/p_7b_v1.json",
+   "description": "v2 cell 3: distributed OLMo-3-7B lens (n=616), binding v1",
+   "transform": "none",
+   "as_run_md5": "a2c69b617709d2cf009b36e3671dc6b7",
+   "released_md5": "a2c69b617709d2cf009b36e3671dc6b7"
+  },
+  {
+   "path": "outputs/tsd/p_7b_v2.json",
+   "description": "v2 cell 4: distributed OLMo-3-7B lens, binding v2 (p>=16)",
+   "transform": "none",
+   "as_run_md5": "89bb0b7982cb636120773e9055b02b8d",
+   "released_md5": "89bb0b7982cb636120773e9055b02b8d"
+  },
+  {
+   "path": "outputs/tsd/p_32b_v1.json",
+   "description": "v2 cell 5: distributed OLMo-3-32B lens (n=470), binding v1",
+   "transform": "none",
+   "as_run_md5": "25dc7bd412337dcffbfebd2f94d89119",
+   "released_md5": "25dc7bd412337dcffbfebd2f94d89119"
+  },
+  {
+   "path": "outputs/tsd/p_32b_v2.json",
+   "description": "v2 cell 6: distributed OLMo-3-32B lens, binding v2 (p>=16)",
+   "transform": "none",
+   "as_run_md5": "29dc7a835b38fea41bb5b7bf68206157",
+   "released_md5": "29dc7a835b38fea41bb5b7bf68206157"
+  },
+  {
+   "path": "outputs/tsd/q_qwen_v1.json",
+   "description": "v2 cell 7: distributed Qwen3-8B lens (n=461), binding v1 (own scale)",
+   "transform": "none",
+   "as_run_md5": "ad526d9c3792040b1d395d89f155dbd7",
+   "released_md5": "ad526d9c3792040b1d395d89f155dbd7"
+  },
+  {
+   "path": "outputs/tsd/q_qwen_v2.json",
+   "description": "v2 cell 8: distributed Qwen3-8B lens, binding v2 (own scale)",
+   "transform": "none",
+   "as_run_md5": "4ebcd66aa885387a136c6b9efd4bf205",
+   "released_md5": "4ebcd66aa885387a136c6b9efd4bf205"
+  },
+  {
+   "path": "outputs/tsd/c_floor_qwen.json",
+   "description": "v2 cell 8': chance floor on the Qwen ground, sign-flipped Qwen3-8B lens, binding v1 (new)",
+   "transform": "none",
+   "as_run_md5": "dce93997ffc37bab74870e86340bcf0c",
+   "released_md5": "dce93997ffc37bab74870e86340bcf0c"
+  },
+  {
+   "path": "outputs/tsd/r3fid_v1.json",
+   "description": "v2 Part III: Qwen3-32B distributed lens, emitted-token fidelity on 20 reasoning traces (separate frame)",
+   "transform": "none",
+   "as_run_md5": "be90fc33e1419a27e239ef19c11d5adb",
+   "released_md5": "be90fc33e1419a27e239ef19c11d5adb"
   }
- ]
+ ],
+ "package_version": "v2.0.0",
+ "revision_id": "TSD-20260826"
 }

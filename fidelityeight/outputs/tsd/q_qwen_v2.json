@@ -1,0 +1,1629 @@
+{
+ "meta": {
+  "revision_id": "TSD-20260826",
+  "readcard": {
+   "path": "conversations/2026-08-26/READCARD_R1_fidelityeight_v1_20260826.md",
+   "md5": "5b59a808a6fe4eadb2e18ec9eaef38b5"
+  },
+  "spec": {
+   "path": "SPEC/SPEC_tokenset_acceptance_v1.md",
+   "md5": "817c728feb56f0ad8ee48bf15d5ad2a0"
+  },
+  "joshaku_md5": "61356a4a8f88c387ca664a9ba4197b7f",
+  "target": "observed next-token id (READCARD (iv)); legacy variant-group min in parallel only",
+  "rank_universe": "wordlike pool, 1-based (READCARD (iii))",
+  "aggregation": "median over band -> median over positions; median over items is outside (READCARD (i))",
+  "wordlike": "^[A-Za-z0-9]{2,}$",
+  "tokenizer_pin": "Qwen/Qwen3-8B@None",
+  "sign_flip": false,
+  "binding": "v2",
+  "skip_first_n_positions": 16,
+  "lens_checkpoint": "exports/qwen3-8b/jlens/public_n461/Qwen3-8B_checkpoint.pt",
+  "items_file": "exports/sfit_eval_prose.jsonl",
+  "items_md5": "285074052bcb4082d8ad50bf7de9079e",
+  "model": "Qwen/Qwen3-8B",
+  "revision": null,
+  "max_seq_len": 128,
+  "n_items": 266,
+  "n_excluded_zero_valid": 0,
+  "mask_size": 69940
+ },
+ "items": [
+  {
+   "idx": 0,
+   "n_valid": 94,
+   "wgrd_item": 2.4199149328,
+   "legacy_wgrd_item": 2.3022858113
+  },
+  {
+   "idx": 1,
+   "n_valid": 94,
+   "wgrd_item": 3.2962083042,
+   "legacy_wgrd_item": 3.107146343
+  },
+  {
+   "idx": 2,
+   "n_valid": 94,
+   "wgrd_item": 2.6489622856,
+   "legacy_wgrd_item": 2.5763398224
+  },
+  {
+   "idx": 3,
+   "n_valid": 83,
+   "wgrd_item": 2.6193695896,
+   "legacy_wgrd_item": 2.564073979
+  },
+  {
+   "idx": 4,
+   "n_valid": 93,
+   "wgrd_item": 2.2174839442,
+   "legacy_wgrd_item": 2.2174839442
+  },
+  {
+   "idx": 5,
+   "n_valid": 78,
+   "wgrd_item": 2.7419176972,
+   "legacy_wgrd_item": 2.7419176972
+  },
+  {
+   "idx": 6,
+   "n_valid": 91,
+   "wgrd_item": 2.6062917737,
+   "legacy_wgrd_item": 2.5998830721
+  },
+  {
+   "idx": 7,
+   "n_valid": 78,
+   "wgrd_item": 2.7391764515,
+   "legacy_wgrd_item": 2.6973553896
+  },
+  {
+   "idx": 8,
+   "n_valid": 74,
+   "wgrd_item": 2.3533208803,
+   "legacy_wgrd_item": 2.3533208803
+  },
+  {
+   "idx": 9,
+   "n_valid": 90,
+   "wgrd_item": 2.3573324964,
+   "legacy_wgrd_item": 2.3433181346
+  },
+  {
+   "idx": 10,
+   "n_valid": 69,
+   "wgrd_item": 2.7730546934,
+   "legacy_wgrd_item": 2.7524326093
+  },
+  {
+   "idx": 11,
+   "n_valid": 94,
+   "wgrd_item": 2.5599000332,
+   "legacy_wgrd_item": 2.5530097291
+  },
+  {
+   "idx": 12,
+   "n_valid": 92,
+   "wgrd_item": 2.6830528978,
+   "legacy_wgrd_item": 2.6771253092
+  },
+  {
+   "idx": 13,
+   "n_valid": 83,
+   "wgrd_item": 2.4027388916,
+   "legacy_wgrd_item": 2.3283796034
+  },
+  {
+   "idx": 14,
+   "n_valid": 82,
+   "wgrd_item": 2.6036286294,
+   "legacy_wgrd_item": 2.6036286294
+  },
+  {
+   "idx": 15,
+   "n_valid": 77,
+   "wgrd_item": 2.7036352376,
+   "legacy_wgrd_item": 2.5899496013
+  },
+  {
+   "idx": 16,
+   "n_valid": 64,
+   "wgrd_item": 2.2901160679,
+   "legacy_wgrd_item": 2.2901160679
+  },
+  {
+   "idx": 17,
+   "n_valid": 88,
+   "wgrd_item": 2.5822953801,
+   "legacy_wgrd_item": 2.4147791303
+  },
+  {
+   "idx": 18,
+   "n_valid": 96,
+   "wgrd_item": 2.4020172127,
+   "legacy_wgrd_item": 2.368749384
+  },
+  {
+   "idx": 19,
+   "n_valid": 64,
+   "wgrd_item": 2.5511197985,
+   "legacy_wgrd_item": 2.4759125286
+  },
+  {
+   "idx": 20,
+   "n_valid": 90,
+   "wgrd_item": 2.5648958843,
+   "legacy_wgrd_item": 2.3803368693
+  },
+  {
+   "idx": 21,
+   "n_valid": 77,
+   "wgrd_item": 2.4653828514,
+   "legacy_wgrd_item": 2.4653828514
+  },
+  {
+   "idx": 22,
+   "n_valid": 86,
+   "wgrd_item": 2.5424739304,
+   "legacy_wgrd_item": 2.5424739304
+  },
+  {
+   "idx": 23,
+   "n_valid": 84,
+   "wgrd_item": 3.0004858659,
+   "legacy_wgrd_item": 2.9330075479
+  },
+  {
+   "idx": 24,
+   "n_valid": 99,
+   "wgrd_item": 2.5171958979,
+   "legacy_wgrd_item": 2.4923351758
+  },
+  {
+   "idx": 25,
+   "n_valid": 93,
+   "wgrd_item": 2.3903462331,
+   "legacy_wgrd_item": 2.3525683862
+  },
+  {
+   "idx": 26,
+   "n_valid": 102,
+   "wgrd_item": 2.3918160302,
+   "legacy_wgrd_item": 2.380866392
+  },
+  {
+   "idx": 27,
+   "n_valid": 98,
+   "wgrd_item": 2.4261590812,
+   "legacy_wgrd_item": 2.3236739734
+  },
+  {
+   "idx": 28,
+   "n_valid": 72,
+   "wgrd_item": 3.0259412683,
+   "legacy_wgrd_item": 2.9442860178
+  },
+  {
+   "idx": 29,
+   "n_valid": 79,
+   "wgrd_item": 2.791690649,
+   "legacy_wgrd_item": 2.791690649
+  },
+  {
+   "idx": 30,
+   "n_valid": 82,
+   "wgrd_item": 2.8321630051,
+   "legacy_wgrd_item": 2.708275322
+  },
+  {
+   "idx": 31,
+   "n_valid": 93,
+   "wgrd_item": 2.9398519179,
+   "legacy_wgrd_item": 2.8979018743
+  },
+  {
+   "idx": 32,
+   "n_valid": 94,
+   "wgrd_item": 2.5172029193,
+   "legacy_wgrd_item": 2.3799056635
+  },
+  {
+   "idx": 33,
+   "n_valid": 89,
+   "wgrd_item": 2.4246775029,
+   "legacy_wgrd_item": 2.4224256764
+  },
+  {
+   "idx": 34,
+   "n_valid": 78,
+   "wgrd_item": 2.2968561985,
+   "legacy_wgrd_item": 2.276982452
+  },
+  {
+   "idx": 35,
+   "n_valid": 92,
+   "wgrd_item": 2.2992639408,
+   "legacy_wgrd_item": 2.2206861556
+  },
+  {
+   "idx": 36,
+   "n_valid": 92,
+   "wgrd_item": 2.7383895565,
+   "legacy_wgrd_item": 2.668435534
+  },
+  {
+   "idx": 37,
+   "n_valid": 82,
+   "wgrd_item": 2.9038295714,
+   "legacy_wgrd_item": 2.8630251942
+  },
+  {
+   "idx": 38,
+   "n_valid": 87,
+   "wgrd_item": 2.2830749747,
+   "legacy_wgrd_item": 2.2392994791
+  },
+  {
+   "idx": 39,
+   "n_valid": 84,
+   "wgrd_item": 2.547160432,
+   "legacy_wgrd_item": 2.3409413655
+  },
+  {
+   "idx": 40,
+   "n_valid": 77,
+   "wgrd_item": 2.4913616938,
+   "legacy_wgrd_item": 2.4393326938
+  },
+  {
+   "idx": 41,
+   "n_valid": 90,
+   "wgrd_item": 2.313821162,
+   "legacy_wgrd_item": 2.313821162
+  },
+  {
+   "idx": 42,
+   "n_valid": 75,
+   "wgrd_item": 2.6745271323,
+   "legacy_wgrd_item": 2.6448859929
+  },
+  {
+   "idx": 43,
+   "n_valid": 85,
+   "wgrd_item": 2.4913616938,
+   "legacy_wgrd_item": 2.4913616938
+  },
+  {
+   "idx": 44,
+   "n_valid": 78,
+   "wgrd_item": 2.6475785102,
+   "legacy_wgrd_item": 2.5514071592
+  },
+  {
+   "idx": 45,
+   "n_valid": 67,
+   "wgrd_item": 1.9951474972,
+   "legacy_wgrd_item": 1.9444826722
+  },
+  {
+   "idx": 46,
+   "n_valid": 70,
+   "wgrd_item": 2.5976117251,
+   "legacy_wgrd_item": 2.4999131237
+  },
+  {
+   "idx": 47,
+   "n_valid": 85,
+   "wgrd_item": 2.6197887583,
+   "legacy_wgrd_item": 2.5037906831
+  },
+  {
+   "idx": 48,
+   "n_valid": 76,
+   "wgrd_item": 2.5486261513,
+   "legacy_wgrd_item": 2.5465234942
+  },
+  {
+   "idx": 49,
+   "n_valid": 81,
+   "wgrd_item": 2.7363965023,
+   "legacy_wgrd_item": 2.6122539061
+  },
+  {
+   "idx": 50,
+   "n_valid": 91,
+   "wgrd_item": 2.5717088318,
+   "legacy_wgrd_item": 2.4828735836
+  },
+  {
+   "idx": 51,
+   "n_valid": 94,
+   "wgrd_item": 2.7298353962,
+   "legacy_wgrd_item": 2.6882884785
+  },
+  {
+   "idx": 52,
+   "n_valid": 94,
+   "wgrd_item": 2.808654846,
+   "legacy_wgrd_item": 2.7062680717
+  },
+  {
+   "idx": 53,
+   "n_valid": 97,
+   "wgrd_item": 2.9003671287,
+   "legacy_wgrd_item": 2.8823822163
+  },
+  {
+   "idx": 54,
+   "n_valid": 98,
+   "wgrd_item": 2.5014625839,
+   "legacy_wgrd_item": 2.4790701855
+  },
+  {
+   "idx": 55,
+   "n_valid": 85,
+   "wgrd_item": 2.5899496013,
+   "legacy_wgrd_item": 2.5763413502
+  },
+  {
+   "idx": 56,
+   "n_valid": 87,
+   "wgrd_item": 2.7616271846,
+   "legacy_wgrd_item": 2.7371926427
+  },
+  {
+   "idx": 57,
+   "n_valid": 98,
+   "wgrd_item": 2.6935782987,
+   "legacy_wgrd_item": 2.6935782987
+  },
+  {
+   "idx": 58,
+   "n_valid": 88,
+   "wgrd_item": 2.957207348,
+   "legacy_wgrd_item": 2.8485603778
+  },
+  {
+   "idx": 59,
+   "n_valid": 92,
+   "wgrd_item": 2.5072886505,
+   "legacy_wgrd_item": 2.4757794908
+  },
+  {
+   "idx": 60,
+   "n_valid": 97,
+   "wgrd_item": 2.4265112614,
+   "legacy_wgrd_item": 2.3728462755
+  },
+  {
+   "idx": 61,
+   "n_valid": 80,
+   "wgrd_item": 2.8669267144,
+   "legacy_wgrd_item": 2.850564792
+  },
+  {
+   "idx": 62,
+   "n_valid": 79,
+   "wgrd_item": 2.5860843024,
+   "legacy_wgrd_item": 2.4854374811
+  },
+  {
+   "idx": 63,
+   "n_valid": 89,
+   "wgrd_item": 2.1989901349,
+   "legacy_wgrd_item": 2.1383026982
+  },
+  {
+   "idx": 64,
+   "n_valid": 72,
+   "wgrd_item": 2.7342807352,
+   "legacy_wgrd_item": 2.6237509558
+  },
+  {
+   "idx": 65,
+   "n_valid": 86,
+   "wgrd_item": 2.4321487205,
+   "legacy_wgrd_item": 2.4321487205
+  },
+  {
+   "idx": 66,
+   "n_valid": 89,
+   "wgrd_item": 2.1846914308,
+   "legacy_wgrd_item": 2.0718820073
+  },
+  {
+   "idx": 67,
+   "n_valid": 91,
+   "wgrd_item": 2.709269961,
+   "legacy_wgrd_item": 2.709269961
+  },
+  {
+   "idx": 68,
+   "n_valid": 81,
+   "wgrd_item": 2.5591082894,
+   "legacy_wgrd_item": 2.5591082894
+  },
+  {
+   "idx": 69,
+   "n_valid": 101,
+   "wgrd_item": 2.3404441148,
+   "legacy_wgrd_item": 2.3404441148
+  },
+  {
+   "idx": 70,
+   "n_valid": 85,
+   "wgrd_item": 2.3201462861,
+   "legacy_wgrd_item": 2.3034960467
+  },
+  {
+   "idx": 71,
+   "n_valid": 89,
+   "wgrd_item": 2.3074960379,
+   "legacy_wgrd_item": 2.3074960379
+  },
+  {
+   "idx": 72,
+   "n_valid": 98,
+   "wgrd_item": 2.5731771032,
+   "legacy_wgrd_item": 2.5543670543
+  },
+  {
+   "idx": 73,
+   "n_valid": 98,
+   "wgrd_item": 2.0524010425,
+   "legacy_wgrd_item": 2.0426718639
+  },
+  {
+   "idx": 74,
+   "n_valid": 92,
+   "wgrd_item": 1.8714560387,
+   "legacy_wgrd_item": 1.8305247842
+  },
+  {
+   "idx": 75,
+   "n_valid": 101,
+   "wgrd_item": 2.2338418643,
+   "legacy_wgrd_item": 2.2338418643
+  },
+  {
+   "idx": 76,
+   "n_valid": 66,
+   "wgrd_item": 2.4432278407,
+   "legacy_wgrd_item": 2.4189324465
+  },
+  {
+   "idx": 77,
+   "n_valid": 77,
+   "wgrd_item": 2.6449307079,
+   "legacy_wgrd_item": 2.622214023
+  },
+  {
+   "idx": 78,
+   "n_valid": 75,
+   "wgrd_item": 2.640481437,
+   "legacy_wgrd_item": 2.3324384599
+  },
+  {
+   "idx": 79,
+   "n_valid": 81,
+   "wgrd_item": 2.5575072019,
+   "legacy_wgrd_item": 2.5575072019
+  },
+  {
+   "idx": 80,
+   "n_valid": 76,
+   "wgrd_item": 2.4792494507,
+   "legacy_wgrd_item": 2.4727860454
+  },
+  {
+   "idx": 81,
+   "n_valid": 86,
+   "wgrd_item": 2.828897373,
+   "legacy_wgrd_item": 2.796187211
+  },
+  {
+   "idx": 82,
+   "n_valid": 78,
+   "wgrd_item": 2.8936688275,
+   "legacy_wgrd_item": 2.86917461
+  },
+  {
+   "idx": 83,
+   "n_valid": 82,
+   "wgrd_item": 2.5239918713,
+   "legacy_wgrd_item": 2.5239918713
+  },
+  {
+   "idx": 84,
+   "n_valid": 77,
+   "wgrd_item": 2.4874212114,
+   "legacy_wgrd_item": 2.4593924878
+  },
+  {
+   "idx": 85,
+   "n_valid": 87,
+   "wgrd_item": 2.6151982867,
+   "legacy_wgrd_item": 2.6112351592
+  },
+  {
+   "idx": 86,
+   "n_valid": 80,
+   "wgrd_item": 2.7138519824,
+   "legacy_wgrd_item": 2.6666392307
+  },
+  {
+   "idx": 87,
+   "n_valid": 45,
+   "wgrd_item": 2.8176094358,
+   "legacy_wgrd_item": 2.8176094358
+  },
+  {
+   "idx": 88,
+   "n_valid": 70,
+   "wgrd_item": 2.8642803664,
+   "legacy_wgrd_item": 2.8139772091
+  },
+  {
+   "idx": 89,
+   "n_valid": 79,
+   "wgrd_item": 2.8267225202,
+   "legacy_wgrd_item": 2.8188854146
+  },
+  {
+   "idx": 90,
+   "n_valid": 89,
+   "wgrd_item": 2.652246341,
+   "legacy_wgrd_item": 2.591064607
+  },
+  {
+   "idx": 91,
+   "n_valid": 70,
+   "wgrd_item": 2.4033928583,
+   "legacy_wgrd_item": 2.3226026128
+  },
+  {
+   "idx": 92,
+   "n_valid": 67,
+   "wgrd_item": 2.8466463286,
+   "legacy_wgrd_item": 2.8466463286
+  },
+  {
+   "idx": 93,
+   "n_valid": 74,
+   "wgrd_item": 2.5112141856,
+   "legacy_wgrd_item": 2.5112141856
+  },
+  {
+   "idx": 94,
+   "n_valid": 65,
+   "wgrd_item": 2.7041505168,
+   "legacy_wgrd_item": 2.5502283531
+  },
+  {
+   "idx": 95,
+   "n_valid": 75,
+   "wgrd_item": 2.6888645681,
+   "legacy_wgrd_item": 2.6888645681
+  },
+  {
+   "idx": 96,
+   "n_valid": 67,
+   "wgrd_item": 2.8296753556,
+   "legacy_wgrd_item": 2.7419390777
+  },
+  {
+   "idx": 97,
+   "n_valid": 78,
+   "wgrd_item": 2.8691706044,
+   "legacy_wgrd_item": 2.8691706044
+  },
+  {
+   "idx": 98,
+   "n_valid": 84,
+   "wgrd_item": 2.1472976266,
+   "legacy_wgrd_item": 2.128539446
+  },
+  {
+   "idx": 99,
+   "n_valid": 54,
+   "wgrd_item": 2.5858539308,
+   "legacy_wgrd_item": 2.551346885
+  },
+  {
+   "idx": 100,
+   "n_valid": 61,
+   "wgrd_item": 2.5607034959,
+   "legacy_wgrd_item": 2.5607034959
+  },
+  {
+   "idx": 101,
+   "n_valid": 70,
+   "wgrd_item": 2.4961583228,
+   "legacy_wgrd_item": 2.4921295015
+  },
+  {
+   "idx": 102,
+   "n_valid": 69,
+   "wgrd_item": 2.2405492483,
+   "legacy_wgrd_item": 2.2304489214
+  },
+  {
+   "idx": 103,
+   "n_valid": 63,
+   "wgrd_item": 2.4516058557,
+   "legacy_wgrd_item": 2.3832167519
+  },
+  {
+   "idx": 104,
+   "n_valid": 69,
+   "wgrd_item": 2.1875207208,
+   "legacy_wgrd_item": 2.1314047789
+  },
+  {
+   "idx": 105,
+   "n_valid": 78,
+   "wgrd_item": 2.8459878476,
+   "legacy_wgrd_item": 2.8087664584
+  },
+  {
+   "idx": 106,
+   "n_valid": 95,
+   "wgrd_item": 2.9378687966,
+   "legacy_wgrd_item": 2.8898617213
+  },
+  {
+   "idx": 107,
+   "n_valid": 72,
+   "wgrd_item": 2.4665593759,
+   "legacy_wgrd_item": 2.4204581865
+  },
+  {
+   "idx": 108,
+   "n_valid": 87,
+   "wgrd_item": 2.9159272117,
+   "legacy_wgrd_item": 2.9159272117
+  },
+  {
+   "idx": 109,
+   "n_valid": 85,
+   "wgrd_item": 2.6468936242,
+   "legacy_wgrd_item": 2.6242726317
+  },
+  {
+   "idx": 110,
+   "n_valid": 87,
+   "wgrd_item": 2.7067177823,
+   "legacy_wgrd_item": 2.7067177823
+  },
+  {
+   "idx": 111,
+   "n_valid": 93,
+   "wgrd_item": 2.797152083,
+   "legacy_wgrd_item": 2.7745169657
+  },
+  {
+   "idx": 112,
+   "n_valid": 91,
+   "wgrd_item": 2.2698047108,
+   "legacy_wgrd_item": 2.2698047108
+  },
+  {
+   "idx": 113,
+   "n_valid": 88,
+   "wgrd_item": 1.9857015479,
+   "legacy_wgrd_item": 1.9693628492
+  },
+  {
+   "idx": 114,
+   "n_valid": 71,
+   "wgrd_item": 2.2355284469,
+   "legacy_wgrd_item": 2.1903316982
+  },
+  {
+   "idx": 115,
+   "n_valid": 68,
+   "wgrd_item": 2.2637311683,
+   "legacy_wgrd_item": 2.2637311683
+  },
+  {
+   "idx": 116,
+   "n_valid": 84,
+   "wgrd_item": 2.1797090278,
+   "legacy_wgrd_item": 2.1797090278
+  },
+  {
+   "idx": 117,
+   "n_valid": 84,
+   "wgrd_item": 2.2934709196,
+   "legacy_wgrd_item": 2.2934709196
+  },
+  {
+   "idx": 118,
+   "n_valid": 89,
+   "wgrd_item": 1.6434526765,
+   "legacy_wgrd_item": 1.6434526765
+  },
+  {
+   "idx": 119,
+   "n_valid": 93,
+   "wgrd_item": 2.3074960379,
+   "legacy_wgrd_item": 2.2255829105
+  },
+  {
+   "idx": 120,
+   "n_valid": 73,
+   "wgrd_item": 2.587710965,
+   "legacy_wgrd_item": 2.5276299009
+  },
+  {
+   "idx": 121,
+   "n_valid": 83,
+   "wgrd_item": 2.723455672,
+   "legacy_wgrd_item": 2.6196150057
+  },
+  {
+   "idx": 122,
+   "n_valid": 85,
+   "wgrd_item": 2.7497363156,
+   "legacy_wgrd_item": 2.7497363156
+  },
+  {
+   "idx": 123,
+   "n_valid": 83,
+   "wgrd_item": 2.3242824553,
+   "legacy_wgrd_item": 2.3242824553
+  },
+  {
+   "idx": 124,
+   "n_valid": 85,
+   "wgrd_item": 2.3482439991,
+   "legacy_wgrd_item": 2.3482439991
+  },
+  {
+   "idx": 125,
+   "n_valid": 90,
+   "wgrd_item": 3.043008547,
+   "legacy_wgrd_item": 2.965437399
+  },
+  {
+   "idx": 126,
+   "n_valid": 87,
+   "wgrd_item": 3.0015173768,
+   "legacy_wgrd_item": 2.9447293603
+  },
+  {
+   "idx": 127,
+   "n_valid": 86,
+   "wgrd_item": 3.0930817171,
+   "legacy_wgrd_item": 2.8827776553
+  },
+  {
+   "idx": 128,
+   "n_valid": 87,
+   "wgrd_item": 2.3193900047,
+   "legacy_wgrd_item": 2.2936976729
+  },
+  {
+   "idx": 129,
+   "n_valid": 82,
+   "wgrd_item": 2.8627432626,
+   "legacy_wgrd_item": 2.6300166033
+  },
+  {
+   "idx": 130,
+   "n_valid": 77,
+   "wgrd_item": 2.2552725051,
+   "legacy_wgrd_item": 2.2552725051
+  },
+  {
+   "idx": 131,
+   "n_valid": 69,
+   "wgrd_item": 2.2174839442,
+   "legacy_wgrd_item": 2.2174839442
+  },
+  {
+   "idx": 132,
+   "n_valid": 79,
+   "wgrd_item": 2.5361374106,
+   "legacy_wgrd_item": 2.5361374106
+  },
+  {
+   "idx": 133,
+   "n_valid": 92,
+   "wgrd_item": 2.8893009116,
+   "legacy_wgrd_item": 2.8383953147
+  },
+  {
+   "idx": 134,
+   "n_valid": 88,
+   "wgrd_item": 2.8681305066,
+   "legacy_wgrd_item": 2.8681305066
+  },
+  {
+   "idx": 135,
+   "n_valid": 69,
+   "wgrd_item": 2.6334684556,
+   "legacy_wgrd_item": 2.4742162641
+  },
+  {
+   "idx": 136,
+   "n_valid": 87,
+   "wgrd_item": 2.3263358609,
+   "legacy_wgrd_item": 2.1818435879
+  },
+  {
+   "idx": 137,
+   "n_valid": 89,
+   "wgrd_item": 2.5976951859,
+   "legacy_wgrd_item": 2.5370316162
+  },
+  {
+   "idx": 138,
+   "n_valid": 88,
+   "wgrd_item": 2.1325169862,
+   "legacy_wgrd_item": 2.1325169862
+  },
+  {
+   "idx": 139,
+   "n_valid": 72,
+   "wgrd_item": 2.7445922593,
+   "legacy_wgrd_item": 2.7445922593
+  },
+  {
+   "idx": 140,
+   "n_valid": 92,
+   "wgrd_item": 1.9162493057,
+   "legacy_wgrd_item": 1.9162493057
+  },
+  {
+   "idx": 141,
+   "n_valid": 65,
+   "wgrd_item": 2.6739820018,
+   "legacy_wgrd_item": 2.6739820018
+  },
+  {
+   "idx": 142,
+   "n_valid": 85,
+   "wgrd_item": 2.1989623906,
+   "legacy_wgrd_item": 2.1731862684
+  },
+  {
+   "idx": 143,
+   "n_valid": 61,
+   "wgrd_item": 2.7551122664,
+   "legacy_wgrd_item": 2.7033378615
+  },
+  {
+   "idx": 144,
+   "n_valid": 85,
+   "wgrd_item": 2.198657087,
+   "legacy_wgrd_item": 2.061326797
+  },
+  {
+   "idx": 145,
+   "n_valid": 89,
+   "wgrd_item": 2.2507895203,
+   "legacy_wgrd_item": 2.2507895203
+  },
+  {
+   "idx": 146,
+   "n_valid": 89,
+   "wgrd_item": 2.367355921,
+   "legacy_wgrd_item": 2.367355921
+  },
+  {
+   "idx": 147,
+   "n_valid": 82,
+   "wgrd_item": 2.1940394944,
+   "legacy_wgrd_item": 2.1940394944
+  },
+  {
+   "idx": 148,
+   "n_valid": 86,
+   "wgrd_item": 2.2140241793,
+   "legacy_wgrd_item": 2.2354109748
+  },
+  {
+   "idx": 149,
+   "n_valid": 102,
+   "wgrd_item": 1.7500445832,
+   "legacy_wgrd_item": 1.7409958594
+  },
+  {
+   "idx": 150,
+   "n_valid": 94,
+   "wgrd_item": 2.3592162421,
+   "legacy_wgrd_item": 2.3566052217
+  },
+  {
+   "idx": 151,
+   "n_valid": 92,
+   "wgrd_item": 2.4232335049,
+   "legacy_wgrd_item": 2.4174645482
+  },
+  {
+   "idx": 152,
+   "n_valid": 95,
+   "wgrd_item": 2.2576785749,
+   "legacy_wgrd_item": 2.2576785749
+  },
+  {
+   "idx": 153,
+   "n_valid": 93,
+   "wgrd_item": 2.0863598307,
+   "legacy_wgrd_item": 2.0863598307
+  },
+  {
+   "idx": 154,
+   "n_valid": 68,
+   "wgrd_item": 2.6228611808,
+   "legacy_wgrd_item": 2.4877159043
+  },
+  {
+   "idx": 155,
+   "n_valid": 63,
+   "wgrd_item": 3.333245699,
+   "legacy_wgrd_item": 3.2163858539
+  },
+  {
+   "idx": 156,
+   "n_valid": 64,
+   "wgrd_item": 2.8480153032,
+   "legacy_wgrd_item": 2.6155694604
+  },
+  {
+   "idx": 157,
+   "n_valid": 86,
+   "wgrd_item": 2.575244299,
+   "legacy_wgrd_item": 2.5630559283
+  },
+  {
+   "idx": 158,
+   "n_valid": 59,
+   "wgrd_item": 2.9129656207,
+   "legacy_wgrd_item": 2.8243118273
+  },
+  {
+   "idx": 159,
+   "n_valid": 65,
+   "wgrd_item": 3.1192558893,
+   "legacy_wgrd_item": 2.9138138524
+  },
+  {
+   "idx": 160,
+   "n_valid": 77,
+   "wgrd_item": 2.9944051467,
+   "legacy_wgrd_item": 2.8721562727
+  },
+  {
+   "idx": 161,
+   "n_valid": 73,
+   "wgrd_item": 3.0681858617,
+   "legacy_wgrd_item": 2.9111576087
+  },
+  {
+   "idx": 162,
+   "n_valid": 83,
+   "wgrd_item": 2.585992497,
+   "legacy_wgrd_item": 2.5180418941
+  },
+  {
+   "idx": 163,
+   "n_valid": 80,
+   "wgrd_item": 2.6227742231,
+   "legacy_wgrd_item": 2.5538830266
+  },
+  {
+   "idx": 164,
+   "n_valid": 67,
+   "wgrd_item": 2.6089536993,
+   "legacy_wgrd_item": 2.5502283531
+  },
+  {
+   "idx": 165,
+   "n_valid": 76,
+   "wgrd_item": 2.7560218431,
+   "legacy_wgrd_item": 2.7361617006
+  },
+  {
+   "idx": 166,
+   "n_valid": 74,
+   "wgrd_item": 2.9858565854,
+   "legacy_wgrd_item": 2.966485394
+  },
+  {
+   "idx": 167,
+   "n_valid": 51,
+   "wgrd_item": 2.7708520116,
+   "legacy_wgrd_item": 2.5314155734
+  },
+  {
+   "idx": 168,
+   "n_valid": 67,
+   "wgrd_item": 2.9190780924,
+   "legacy_wgrd_item": 2.9190780924
+  },
+  {
+   "idx": 169,
+   "n_valid": 84,
+   "wgrd_item": 2.6019155016,
+   "legacy_wgrd_item": 2.6019155016
+  },
+  {
+   "idx": 170,
+   "n_valid": 81,
+   "wgrd_item": 2.9537596917,
+   "legacy_wgrd_item": 2.8912187679
+  },
+  {
+   "idx": 171,
+   "n_valid": 64,
+   "wgrd_item": 2.5153429335,
+   "legacy_wgrd_item": 2.4534644424
+  },
+  {
+   "idx": 172,
+   "n_valid": 87,
+   "wgrd_item": 2.8715729355,
+   "legacy_wgrd_item": 2.6447667304
+  },
+  {
+   "idx": 173,
+   "n_valid": 75,
+   "wgrd_item": 2.8191249923,
+   "legacy_wgrd_item": 2.6762362168
+  },
+  {
+   "idx": 174,
+   "n_valid": 71,
+   "wgrd_item": 3.0084582223,
+   "legacy_wgrd_item": 2.9956351946
+  },
+  {
+   "idx": 175,
+   "n_valid": 84,
+   "wgrd_item": 2.7249072983,
+   "legacy_wgrd_item": 2.626955049
+  },
+  {
+   "idx": 176,
+   "n_valid": 68,
+   "wgrd_item": 2.2831025935,
+   "legacy_wgrd_item": 2.2239664328
+  },
+  {
+   "idx": 177,
+   "n_valid": 73,
+   "wgrd_item": 2.6794278966,
+   "legacy_wgrd_item": 2.6794278966
+  },
+  {
+   "idx": 178,
+   "n_valid": 89,
+   "wgrd_item": 2.625312451,
+   "legacy_wgrd_item": 2.6069185259
+  },
+  {
+   "idx": 179,
+   "n_valid": 88,
+   "wgrd_item": 2.6893249017,
+   "legacy_wgrd_item": 2.5762345899
+  },
+  {
+   "idx": 180,
+   "n_valid": 85,
+   "wgrd_item": 2.3480946494,
+   "legacy_wgrd_item": 2.3156705218
+  },
+  {
+   "idx": 181,
+   "n_valid": 86,
+   "wgrd_item": 2.6327862309,
+   "legacy_wgrd_item": 2.6327862309
+  },
+  {
+   "idx": 182,
+   "n_valid": 93,
+   "wgrd_item": 2.5970413389,
+   "legacy_wgrd_item": 2.4565684542
+  },
+  {
+   "idx": 183,
+   "n_valid": 71,
+   "wgrd_item": 2.616176622,
+   "legacy_wgrd_item": 2.5477747054
+  },
+  {
+   "idx": 184,
+   "n_valid": 65,
+   "wgrd_item": 2.2695129442,
+   "legacy_wgrd_item": 2.2695129442
+  },
+  {
+   "idx": 185,
+   "n_valid": 88,
+   "wgrd_item": 2.026022717,
+   "legacy_wgrd_item": 1.9767495836
+  },
+  {
+   "idx": 186,
+   "n_valid": 84,
+   "wgrd_item": 2.3918160302,
+   "legacy_wgrd_item": 2.2725545512
+  },
+  {
+   "idx": 187,
+   "n_valid": 89,
+   "wgrd_item": 2.810232518,
+   "legacy_wgrd_item": 2.7067177823
+  },
+  {
+   "idx": 188,
+   "n_valid": 85,
+   "wgrd_item": 2.1756084413,
+   "legacy_wgrd_item": 2.1398790864
+  },
+  {
+   "idx": 189,
+   "n_valid": 80,
+   "wgrd_item": 2.5404682933,
+   "legacy_wgrd_item": 2.4333013764
+  },
+  {
+   "idx": 190,
+   "n_valid": 49,
+   "wgrd_item": 2.5582584467,
+   "legacy_wgrd_item": 2.5582584467
+  },
+  {
+   "idx": 191,
+   "n_valid": 91,
+   "wgrd_item": 2.1461280357,
+   "legacy_wgrd_item": 2.1303337685
+  },
+  {
+   "idx": 192,
+   "n_valid": 74,
+   "wgrd_item": 2.2932373893,
+   "legacy_wgrd_item": 2.2019589989
+  },
+  {
+   "idx": 193,
+   "n_valid": 83,
+   "wgrd_item": 2.4641913706,
+   "legacy_wgrd_item": 2.3905566369
+  },
+  {
+   "idx": 194,
+   "n_valid": 77,
+   "wgrd_item": 2.2922560714,
+   "legacy_wgrd_item": 2.2922560714
+  },
+  {
+   "idx": 195,
+   "n_valid": 45,
+   "wgrd_item": 2.318063335,
+   "legacy_wgrd_item": 2.160993449
+  },
+  {
+   "idx": 196,
+   "n_valid": 85,
+   "wgrd_item": 2.6085260336,
+   "legacy_wgrd_item": 2.55448916
+  },
+  {
+   "idx": 197,
+   "n_valid": 80,
+   "wgrd_item": 2.1798223835,
+   "legacy_wgrd_item": 2.0680351119
+  },
+  {
+   "idx": 198,
+   "n_valid": 63,
+   "wgrd_item": 2.8766713688,
+   "legacy_wgrd_item": 2.8438554226
+  },
+  {
+   "idx": 199,
+   "n_valid": 86,
+   "wgrd_item": 2.2389216232,
+   "legacy_wgrd_item": 2.2147483481
+  },
+  {
+   "idx": 200,
+   "n_valid": 77,
+   "wgrd_item": 2.278753601,
+   "legacy_wgrd_item": 2.2381297742
+  },
+  {
+   "idx": 201,
+   "n_valid": 80,
+   "wgrd_item": 2.5977622815,
+   "legacy_wgrd_item": 2.554621898
+  },
+  {
+   "idx": 202,
+   "n_valid": 95,
+   "wgrd_item": 2.3900514965,
+   "legacy_wgrd_item": 2.2883610275
+  },
+  {
+   "idx": 203,
+   "n_valid": 80,
+   "wgrd_item": 2.8182258936,
+   "legacy_wgrd_item": 2.8182258936
+  },
+  {
+   "idx": 204,
+   "n_valid": 86,
+   "wgrd_item": 2.4183708746,
+   "legacy_wgrd_item": 2.4183708746
+  },
+  {
+   "idx": 205,
+   "n_valid": 68,
+   "wgrd_item": 2.2126203396,
+   "legacy_wgrd_item": 2.2126203396
+  },
+  {
+   "idx": 206,
+   "n_valid": 81,
+   "wgrd_item": 2.5483894181,
+   "legacy_wgrd_item": 2.5477747054
+  },
+  {
+   "idx": 207,
+   "n_valid": 67,
+   "wgrd_item": 2.9026858041,
+   "legacy_wgrd_item": 2.8226910108
+  },
+  {
+   "idx": 208,
+   "n_valid": 85,
+   "wgrd_item": 3.0881360887,
+   "legacy_wgrd_item": 3.0322157033
+  },
+  {
+   "idx": 209,
+   "n_valid": 76,
+   "wgrd_item": 3.1809589699,
+   "legacy_wgrd_item": 3.0940723206
+  },
+  {
+   "idx": 210,
+   "n_valid": 96,
+   "wgrd_item": 2.5357237478,
+   "legacy_wgrd_item": 2.5357237478
+  },
+  {
+   "idx": 211,
+   "n_valid": 70,
+   "wgrd_item": 2.6885365051,
+   "legacy_wgrd_item": 2.6734075315
+  },
+  {
+   "idx": 212,
+   "n_valid": 91,
+   "wgrd_item": 2.796227314,
+   "legacy_wgrd_item": 2.7242758696
+  },
+  {
+   "idx": 213,
+   "n_valid": 78,
+   "wgrd_item": 2.7817417293,
+   "legacy_wgrd_item": 2.6944963271
+  },
+  {
+   "idx": 214,
+   "n_valid": 73,
+   "wgrd_item": 2.2741578493,
+   "legacy_wgrd_item": 2.1789769473
+  },
+  {
+   "idx": 215,
+   "n_valid": 84,
+   "wgrd_item": 2.798847593,
+   "legacy_wgrd_item": 2.6823186414
+  },
+  {
+   "idx": 216,
+   "n_valid": 77,
+   "wgrd_item": 2.3409846183,
+   "legacy_wgrd_item": 2.3304137733
+  },
+  {
+   "idx": 217,
+   "n_valid": 91,
+   "wgrd_item": 2.8463371121,
+   "legacy_wgrd_item": 2.6665179806
+  },
+  {
+   "idx": 218,
+   "n_valid": 85,
+   "wgrd_item": 2.608831552,
+   "legacy_wgrd_item": 2.5865873047
+  },
+  {
+   "idx": 219,
+   "n_valid": 96,
+   "wgrd_item": 2.3144303886,
+   "legacy_wgrd_item": 2.2842802767
+  },
+  {
+   "idx": 220,
+   "n_valid": 92,
+   "wgrd_item": 2.6617621758,
+   "legacy_wgrd_item": 2.6049379415
+  },
+  {
+   "idx": 221,
+   "n_valid": 91,
+   "wgrd_item": 2.7196074679,
+   "legacy_wgrd_item": 2.5888317256
+  },
+  {
+   "idx": 222,
+   "n_valid": 95,
+   "wgrd_item": 2.1397573598,
+   "legacy_wgrd_item": 2.1397573598
+  },
+  {
+   "idx": 223,
+   "n_valid": 90,
+   "wgrd_item": 2.2437758699,
+   "legacy_wgrd_item": 2.1606847122
+  },
+  {
+   "idx": 224,
+   "n_valid": 66,
+   "wgrd_item": 2.3125774181,
+   "legacy_wgrd_item": 2.3125774181
+  },
+  {
+   "idx": 225,
+   "n_valid": 84,
+   "wgrd_item": 2.2671146186,
+   "legacy_wgrd_item": 2.245400476
+  },
+  {
+   "idx": 226,
+   "n_valid": 94,
+   "wgrd_item": 2.3524075912,
+   "legacy_wgrd_item": 2.3069605327
+  },
+  {
+   "idx": 227,
+   "n_valid": 90,
+   "wgrd_item": 2.6939266209,
+   "legacy_wgrd_item": 2.6752142422
+  },
+  {
+   "idx": 228,
+   "n_valid": 90,
+   "wgrd_item": 2.1998236362,
+   "legacy_wgrd_item": 2.188023726
+  },
+  {
+   "idx": 229,
+   "n_valid": 101,
+   "wgrd_item": 2.4895776607,
+   "legacy_wgrd_item": 2.4377505628
+  },
+  {
+   "idx": 230,
+   "n_valid": 89,
+   "wgrd_item": 2.1156105117,
+   "legacy_wgrd_item": 2.0986437258
+  },
+  {
+   "idx": 231,
+   "n_valid": 82,
+   "wgrd_item": 2.3653250344,
+   "legacy_wgrd_item": 2.3239554226
+  },
+  {
+   "idx": 232,
+   "n_valid": 82,
+   "wgrd_item": 2.1346513754,
+   "legacy_wgrd_item": 2.1346513754
+  },
+  {
+   "idx": 233,
+   "n_valid": 78,
+   "wgrd_item": 2.2533126954,
+   "legacy_wgrd_item": 2.2533126954
+  },
+  {
+   "idx": 234,
+   "n_valid": 86,
+   "wgrd_item": 2.3711036971,
+   "legacy_wgrd_item": 2.3711036971
+  },
+  {
+   "idx": 235,
+   "n_valid": 93,
+   "wgrd_item": 2.4023275304,
+   "legacy_wgrd_item": 2.3645509954
+  },
+  {
+   "idx": 236,
+   "n_valid": 77,
+   "wgrd_item": 2.6599162001,
+   "legacy_wgrd_item": 2.6035199548
+  },
+  {
+   "idx": 237,
+   "n_valid": 49,
+   "wgrd_item": 2.7691036858,
+   "legacy_wgrd_item": 2.7307822757
+  },
+  {
+   "idx": 238,
+   "n_valid": 81,
+   "wgrd_item": 2.4502491083,
+   "legacy_wgrd_item": 2.3463529745
+  },
+  {
+   "idx": 239,
+   "n_valid": 84,
+   "wgrd_item": 2.3127076761,
+   "legacy_wgrd_item": 2.2954988937
+  },
+  {
+   "idx": 240,
+   "n_valid": 56,
+   "wgrd_item": 2.8337769048,
+   "legacy_wgrd_item": 2.7306186657
+  },
+  {
+   "idx": 241,
+   "n_valid": 76,
+   "wgrd_item": 2.5413708617,
+   "legacy_wgrd_item": 2.4133932958
+  },
+  {
+   "idx": 242,
+   "n_valid": 54,
+   "wgrd_item": 2.7946703579,
+   "legacy_wgrd_item": 2.6849745422
+  },
+  {
+   "idx": 243,
+   "n_valid": 63,
+   "wgrd_item": 2.7185016889,
+   "legacy_wgrd_item": 2.6503075231
+  },
+  {
+   "idx": 244,
+   "n_valid": 67,
+   "wgrd_item": 2.6263403674,
+   "legacy_wgrd_item": 2.5743905352
+  },
+  {
+   "idx": 245,
+   "n_valid": 68,
+   "wgrd_item": 2.3102814247,
+   "legacy_wgrd_item": 2.3102814247
+  },
+  {
+   "idx": 246,
+   "n_valid": 58,
+   "wgrd_item": 2.5552022533,
+   "legacy_wgrd_item": 2.5552022533
+  },
+  {
+   "idx": 247,
+   "n_valid": 82,
+   "wgrd_item": 2.2766504962,
+   "legacy_wgrd_item": 2.2766504962
+  },
+  {
+   "idx": 248,
+   "n_valid": 87,
+   "wgrd_item": 2.6541765419,
+   "legacy_wgrd_item": 2.6541765419
+  },
+  {
+   "idx": 249,
+   "n_valid": 91,
+   "wgrd_item": 2.0170333393,
+   "legacy_wgrd_item": 1.9948368589
+  },
+  {
+   "idx": 250,
+   "n_valid": 71,
+   "wgrd_item": 2.8828090414,
+   "legacy_wgrd_item": 2.8380800368
+  },
+  {
+   "idx": 251,
+   "n_valid": 90,
+   "wgrd_item": 3.0437213958,
+   "legacy_wgrd_item": 2.8438811603
+  },
+  {
+   "idx": 252,
+   "n_valid": 60,
+   "wgrd_item": 2.5976065454,
+   "legacy_wgrd_item": 2.5976065454
+  },
+  {
+   "idx": 253,
+   "n_valid": 78,
+   "wgrd_item": 2.9377598182,
+   "legacy_wgrd_item": 2.9377598182
+  },
+  {
+   "idx": 254,
+   "n_valid": 84,
+   "wgrd_item": 2.4624976407,
+   "legacy_wgrd_item": 2.4624976407
+  },
+  {
+   "idx": 255,
+   "n_valid": 79,
+   "wgrd_item": 2.9811841374,
+   "legacy_wgrd_item": 2.9122220565
+  },
+  {
+   "idx": 256,
+   "n_valid": 71,
+   "wgrd_item": 2.1425682249,
+   "legacy_wgrd_item": 2.1425682249
+  },
+  {
+   "idx": 257,
+   "n_valid": 82,
+   "wgrd_item": 2.8706507962,
+   "legacy_wgrd_item": 2.8706507962
+  },
+  {
+   "idx": 258,
+   "n_valid": 65,
+   "wgrd_item": 2.5997375554,
+   "legacy_wgrd_item": 2.5587085705
+  },
+  {
+   "idx": 259,
+   "n_valid": 80,
+   "wgrd_item": 2.3663409267,
+   "legacy_wgrd_item": 2.3663409267
+  },
+  {
+   "idx": 260,
+   "n_valid": 61,
+   "wgrd_item": 3.0293837777,
+   "legacy_wgrd_item": 2.9143431571
+  },
+  {
+   "idx": 261,
+   "n_valid": 86,
+   "wgrd_item": 2.7562785461,
+   "legacy_wgrd_item": 2.72156497
+  },
+  {
+   "idx": 262,
+   "n_valid": 90,
+   "wgrd_item": 2.9671330208,
+   "legacy_wgrd_item": 2.9086975279
+  },
+  {
+   "idx": 263,
+   "n_valid": 69,
+   "wgrd_item": 2.6981005456,
+   "legacy_wgrd_item": 2.5686905193
+  },
+  {
+   "idx": 264,
+   "n_valid": 61,
+   "wgrd_item": 3.0557604647,
+   "legacy_wgrd_item": 3.0557604647
+  },
+  {
+   "idx": 265,
+   "n_valid": 85,
+   "wgrd_item": 2.2642273478,
+   "legacy_wgrd_item": 2.2139602374
+  }
+ ]
+}
