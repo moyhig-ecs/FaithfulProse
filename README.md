@@ -239,11 +239,11 @@ end it.
 
 | | |
 |---|---|
-| this release (v3.0.0) | version DOI minted by Zenodo at the GitHub release `v3.0.0` (see the Versions panel of the concept DOI below); the paper v3 cites it |
+| this release (v3.0.0) | [`10.5281/zenodo.22219123`](https://doi.org/10.5281/zenodo.22219123) --- **version DOI**, pins these exact bytes; the paper v3 cites it |
 | v2.0.0 | [`10.5281/zenodo.22041132`](https://doi.org/10.5281/zenodo.22041132) --- **version DOI**, pins the bytes that accompanied paper v2 |
 | v1.0.0 | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins the bytes that accompanied paper v1.0 / v1.1 |
 | all versions | [`10.5281/zenodo.21768364`](https://doi.org/10.5281/zenodo.21768364) --- concept DOI, always resolves to the latest |
-| the paper (v3) | version DOI of the v3.0 record (published after this package; see the paper's Versions panel). Cite this one |
+| the paper (v3) | [`10.5281/zenodo.22219346`](https://doi.org/10.5281/zenodo.22219346) --- version DOI of the v3.0 record (2026-09-01). Cite this one |
 | the paper (v2) | [`10.5281/zenodo.22041724`](https://doi.org/10.5281/zenodo.22041724) --- **version DOI**, pins that exact PDF (16 pages, 2026-08-21); its readout-side values are superseded by v3 |
 | the paper (v1.1) | [`10.5281/zenodo.21867046`](https://doi.org/10.5281/zenodo.21867046) --- **version DOI**, superseded by v2 |
 | the paper (v1) | [`10.5281/zenodo.21800315`](https://doi.org/10.5281/zenodo.21800315) --- **version DOI**, superseded by v1.1 |
