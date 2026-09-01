@@ -6,7 +6,8 @@ Distributed Jacobian-Lens Checkpoints"** — Zenodo, FaithfulProse track:
 2026-08-18; all versions [10.5281/zenodo.21990389](https://doi.org/10.5281/zenodo.21990389);
 the record links back to this tree via `isSupplementedBy`).
 
-**v2.0.0 (2026-09-01, REVISION-ID: TSD-20260826)** accompanies note v2: the eight cells were
+**v2.0.0 (2026-09-01, REVISION-ID: TSD-20260826)** accompanies note v2 — **DOI
+[10.5281/zenodo.22220541](https://doi.org/10.5281/zenodo.22220541)**: the eight cells were
 re-acquired under a repaired token-set acceptance and a ninth measurement was added in a
 separate frame. Nothing from v1.0.0 was changed or removed (the three v1 evaluators are
 checked byte-identical at build time); the additions live under `evaluators/tsd/` and
