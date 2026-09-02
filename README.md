@@ -37,6 +37,12 @@ time); the additions are:
   [`10.5281/zenodo.22218669`](https://doi.org/10.5281/zenodo.22218669) (seven modules, combined
   md5 `89b194be...`, 20 tests; SPEC v1.2 included). Unpack it next to this package or install it
   from the archive; the runners import `joshaku.pgrain` and `joshaku.ranks`.
+  *Disclosure (2026-09-02).* The five arm/ladder/null outputs (`arm_a_v3`, `arm_c_v3`, `cii_l1_v3`,
+  `cii_l2_v3`, `cii_nulls_v3.json`) record in their `meta` the joshaku state they actually ran under:
+  combined md5 `2bb7fe6c...` (commit `ad24326a`, 2026-08-26, SPEC v1.1 era), not the archived v1.2.0
+  `89b194be...`. The two states differ only by three alias helpers *added* to `ranks.py`; `pgrain`,
+  `masks`, `scores` and `boundary` are byte-identical and no existing function changed, so no recorded
+  value is affected. The paper's Revision History cites `89b194be...` only; a v3.1 line will carry this.
 * `frozen/PROVENANCE_v3.md` --- the hashes and commit timestamps of the three frozen reading cards
   of the re-acquisition (Japanese originals, not reproduced) and of SPEC v1.2.
 
