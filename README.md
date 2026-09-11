@@ -40,9 +40,10 @@ time); the additions are:
   *Disclosure (2026-09-02).* The five arm/ladder/null outputs (`arm_a_v3`, `arm_c_v3`, `cii_l1_v3`,
   `cii_l2_v3`, `cii_nulls_v3.json`) record in their `meta` the joshaku state they actually ran under:
   combined md5 `2bb7fe6c...` (commit `ad24326a`, 2026-08-26, SPEC v1.1 era), not the archived v1.2.0
-  `89b194be...`. The two states differ only by three alias helpers *added* to `ranks.py`; `pgrain`,
+  `89b194be...`. The two states differ only by two alias helpers *added* to `ranks.py` (`alias_best_of`, `alias_pair`,
+  with their exception class); `pgrain`,
   `masks`, `scores` and `boundary` are byte-identical and no existing function changed, so no recorded
-  value is affected. The paper's Revision History cites `89b194be...` only; a v3.1 line will carry this.
+  value is affected. Stated in the paper's Revision History from v3.1 (doi: 10.5281/zenodo.22701008).
 * `frozen/PROVENANCE_v3.md` --- the hashes and commit timestamps of the three frozen reading cards
   of the re-acquisition (Japanese originals, not reproduced) and of SPEC v1.2.
 
@@ -249,7 +250,8 @@ end it.
 | v2.0.0 | [`10.5281/zenodo.22041132`](https://doi.org/10.5281/zenodo.22041132) --- **version DOI**, pins the bytes that accompanied paper v2 |
 | v1.0.0 | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins the bytes that accompanied paper v1.0 / v1.1 |
 | all versions | [`10.5281/zenodo.21768364`](https://doi.org/10.5281/zenodo.21768364) --- concept DOI, always resolves to the latest |
-| the paper (v3) | [`10.5281/zenodo.22219346`](https://doi.org/10.5281/zenodo.22219346) --- version DOI of the v3.0 record (2026-09-01). Cite this one |
+| the paper (v3.1) | [`10.5281/zenodo.22701008`](https://doi.org/10.5281/zenodo.22701008) --- version DOI of the v3.1 record (2026-09-11): declares the as-run instrument fingerprint; no value changed. Cite this one |
+| the paper (v3.0) | [`10.5281/zenodo.22219346`](https://doi.org/10.5281/zenodo.22219346) --- version DOI of the v3.0 record (2026-09-01); values identical to v3.1 |
 | the paper (v2) | [`10.5281/zenodo.22041724`](https://doi.org/10.5281/zenodo.22041724) --- **version DOI**, pins that exact PDF (16 pages, 2026-08-21); its readout-side values are superseded by v3 |
 | the paper (v1.1) | [`10.5281/zenodo.21867046`](https://doi.org/10.5281/zenodo.21867046) --- **version DOI**, superseded by v2 |
 | the paper (v1) | [`10.5281/zenodo.21800315`](https://doi.org/10.5281/zenodo.21800315) --- **version DOI**, superseded by v1.1 |
