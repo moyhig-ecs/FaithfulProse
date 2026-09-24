@@ -28,10 +28,14 @@
 % Archive DOI. Until it is minted, leave the macro at its placeholder AND keep
 % \DOICLAUSE empty: `make check` then refuses to pass, while the placeholder is
 % never rendered into the PDF. (An earlier build published the placeholder.)
-% Filled 2026-08-03. This is the VERSION DOI, which pins the bytes of v1.0.0.
+% v1.0.0: 10.5281/zenodo.21768365 (filled 2026-08-03). v2: the VERSION DOI of the
+% v2.0.0: 10.5281/zenodo.22041132 (filled 2026-08-21). VERSION DOI, pins the bytes of v2.0.0.
 % The concept DOI --- all versions, always resolving to the latest --- is
 % 10.5281/zenodo.21768364 and is deliberately not the one cited here.
-\newcommand{\REPODOI}{10.5281/zenodo.21768365}
+% v3.0.0: 10.5281/zenodo.22219123 (filled 2026-09-01). VERSION DOI, pins the bytes of v3.0.0
+% v3.1.0: <pending: minted by Zenodo when the GitHub release v3.1.0 is created>. VERSION DOI, pins the bytes of v3.1.0 (refitted-lens re-reads)
+% (the TSD-20260826 re-acquisition). Concept DOI 21768364 is deliberately not the one cited here.
+\newcommand{\REPODOI}{10.5281/zenodo.22219123}
 \newcommand{\DOICLAUSE}{, archived at \href{https://doi.org/\REPODOI}{\texttt{\REPODOI}}}
 \captionsetup{font=small,labelfont=bf}
 
@@ -42,7 +46,7 @@ A Position-Domain Calibration of the Jacobian Lens}
 \small D3 Center, The University of Osaka, Osaka, Japan\\
 \small \texttt{manabu.higashida.cmc@osaka-u.ac.jp} \quad ORCID: 0009-0004-7393-2957}
 
-\date{}
+\date{\small Version 3.2 (REVISION-ID: TSD-20260826), 2026-09-23}
 
 \begin{document}
 \maketitle
@@ -53,7 +57,9 @@ The Jacobian lens (J-lens) reads which tokens a language model is
 positioned to verbalize, and its released artifacts are being inherited
 as defaults. Those artifacts are fitted with a maximum sequence length of
 128 tokens, a setting that appears in the distributed configuration files
-and not in the main text of the canonical write-up; readers are applying the lens
+and not in the main text of the canonical write-up --- and 128 is also the
+default of the published fitting script, so it propagates to independently
+fitted lenses as well; readers are applying the lens
 thousands of tokens deep. We calibrate fidelity against position on
 OLMo-3-32B, with the decision table, the thresholds, and the axes of both
 figures committed before any measurement existed. On prose --- the lens's
@@ -67,12 +73,23 @@ one prompt to three, we find the deep-prompt degradation reproduces in
 all three, and that in two of them the decision is carried by a
 deep-rank measure alone while head-of-distribution rank correlation
 stays flat --- the failure mode we had named at design time in order to
-guard against it. We give the resulting problem a name: \emph{the
+guard against it. A second campaign holds a short two-hop prompt fixed and translates it in depth behind a content-free corridor of filler, so that one read-out can be followed across the fit boundary without changing what is read. Across corridor lengths from 88 to 484 tokens, the landmark-relative onset of the read-out is unchanged in every cell that passes a frozen behavioral-invariance gate. We state this as a scope-qualified absence, not a calibration: an instrument that did not break out of its domain has not thereby been calibrated there. We give the resulting problem a name: \emph{the
 calibration was anchored neither outside nor inside the instrument} ---
 no external oracle to check it against, and no internal origin to
-measure from. This is not a property of one lens. Anyone who inherits a
-disposition-reading instrument with its default settings inherits the
-same problem. Give us a ruler for the order of reasoning.
+measure from. The two halves differ in kind. The missing external oracle
+is structural: an instrument that reads disposition can only be checked
+against next-token logits, which differ by construction from what it
+reads, and that carries to any disposition-reading instrument checked the
+same way. The
+missing internal origin is a single measured instance, on this lens and
+this axis, and we do not claim it generalizes. We also do not claim the
+lens is unusable: on prose it is faithful. The claim is narrower and, we
+think, more useful: readings taken deep inside a reasoning trace have no
+verifiable anchor. That absence of an anchor is not specific to this
+lens --- anyone
+who inherits a disposition-reading instrument together with its default
+settings inherits the same problem. Give us a ruler for the order of
+reasoning.
 \end{abstract}
 
 \vspace{0.4em}
@@ -137,6 +154,8 @@ only approximately and incompletely captures the model's underlying
 workspace structure''~\cite{gurnee2026workspace}. This work is in the
 same direction as that sentence.
 
+This version adds a second campaign (Sections~\ref{sec:campaign2}, \ref{sec:arms} and \ref{sec:results2}) and records a second edge of the fit domain (Section~\ref{sec:method}). Nothing from version 1.1 is withdrawn; the new material is additive, and the version history is kept with the archive. Version 3.0 (REVISION-ID: TSD-20260826) re-acquires every reading-set measurement of the second campaign under a repaired token-set acceptance; what changed, what was re-measured and what is newly registered are listed in the Revision History section, and the superseded readings are marked inline. Version 3.1 changes no value: it declares, in the Revision History, the instrument state under which the re-acquisition actually ran. Version 3.2 withdraws no value either: it adds an instrument-provenance note (Section~\ref{sec:provenance-note}) and places the readings of the refitted lens beside the June readings.
+
 % =====================================================================
 \section{Method}
 \label{sec:method}
@@ -145,16 +164,20 @@ same direction as that sentence.
 
 \begin{center}
 \small
-\begin{tabular}{@{}ll@{}}
+\begin{tabular}{@{}lp{12.6cm}@{}}
 \toprule
-Lens & J-lens, public artifact (md5 \texttt{c73a32d1\ldots}) \\
+Lens & J-lens, public artifact, 2026-06-16 fit (md5 \texttt{c73a32d1\ldots}); fitted under transformers 5.11.0 --- see \S\ref{sec:provenance-note} \\
+Read-out forward & transformers 5.14.1 (post huggingface/transformers\#46911) \\
 Model & OLMo-3-1125-32B, bfloat16, no chat template \\
 Read-out band & layers 26--56 (31 layers: 8 full-attention, 23 sliding) \\
 Fit setting & \texttt{max\_seq\_len} $=128$; \texttt{wikitext-103-raw-v1} \\
+Fit positions & $[16, 128)$: the fitting script skips the first 16 positions (\texttt{SKIP\_FIRST\_N\_POSITIONS} $=16$) \\
 Prior use & our earlier runs applied it at \texttt{max\_seq\_len} $=8192$ \\
 \bottomrule
 \end{tabular}
 \end{center}
+
+The fit domain has two edges, and both live in the same file. The fitting script skips the first sixteen positions of every sequence --- its comment reads ``early positions act as attention sinks and have atypical residual statistics'' --- and caps the sequence at 128; neither number is in the main text of the canonical write-up. Version 1.1 treated only the upper edge. The lower edge matters for two of the checks below, and we mark where it does. A companion note under the same frozen protocol (FidelityEight~\cite{fidelityeight2026}) measures the distributed 32B lens against its model on a fixed 266-item prose set: a median word-group rank deviation of 1.57 dex, against a chance floor of 4.47 dex and a vanilla-logit-lens baseline of 1.84 dex on the 7B ground; binding the read-out to the lens's own fit positions ($\geq 16$) moves these by at most 0.10 dex. Those are absolute readings of the instrument. This paper remains about their dependence on position.
 
 \subsection{Quantities: calibrate on what the instrument consumes}
 
@@ -273,6 +296,23 @@ configuration, with prompt and prefix identical, we observed a median of
 0.009 dex and a maximum of 0.031 dex, one tenth of the decision threshold
 ($n = 15$ positions, single prompt pair). We do not identify a mechanism.
 
+\subsection{Second campaign: instrument checks and a depth translation}
+
+\label{sec:campaign2}
+
+Version 1.1 measured fidelity against the model's logits along the position axis, and that comparison has no external anchor (Section~\ref{sec:contribution}). The second campaign asks a different question, one that needs no ground truth: if the content of a prompt is held fixed and only its depth in the sequence is changed, does a read-out taken from it move? We call the resulting series MapFirst (the map of the instrument comes first; any claim about the model is made on top of it). The prompts come from a companion program, SilentHop (the silent hop: the unverbalized intermediate of a multi-hop query, read at prompt positions with a calibrated lens --- that is, inside the domain this paper measures), whose substantive findings are not reported here; we use its first three arms --- Arm A (a positive control read at the head of the sequence, below position 16), Arm B and Arm C --- only as instrument checks, and MapFirst as their extension across the fit boundary, where everything is descriptive (Section~\ref{sec:results2}). Every arm was pre-registered with its predicates, thresholds and stopping rules frozen and committed before it ran, as in Section~\ref{sec:freeze}; all runs are single forward passes on the same lens (md5 \texttt{c73a32d1\ldots}), the same read-out band and the same model as version 1.1.
+
+\paragraph{Read-out.} Each prompt is a two-hop question whose intermediate entity is never verbalized; there are five prompts of 10--14 tokens, each with two distractor entities (for the row whose intermediate is Canada, the answer is Ottawa and the distractors are Toronto and Washington). The read-out is the band-median rank (layers 26--56) of the intermediate's token at each position. A row \emph{rises} when the intermediate ranks above both distractors for three consecutive positions ($k = 3$); its \emph{onset} is the first position of that window, reported relative to a landmark --- the first token of the question proper --- so that prompts at different depths can be compared. The onset is the position at which the intermediate becomes readable by this lens; we do not read it as the time at which anything is computed.
+
+\paragraph{Gate and controls.} Three frozen devices carry the campaign. (i) A \emph{behavioral-invariance gate}: a variant of a prompt is compared with its reference at the model's output logits at the final position, and passes only if the top-1 token is identical and the probability of the answer token moves by at most $\varepsilon_B = 0.02$. Arm B exists to test whether this gate is needed. (ii) A \emph{null control} per cell: the same read-out taken where the target is absent must stay above rank $10^3$; before any measurement the sign-flipped null series also set the pass threshold of the in-domain degradation control ($\tau_{98} = 1{,}666$, from $n = 402$ pooled null readings). (iii) \emph{Determinism}: every measurement is applied twice and must agree bitwise.
+
+\paragraph{Depth translation.} Arm C translates a prompt by prefixing a corridor of filler --- an 11-token unit repeated, identical for every prompt --- so that the landmark moves from position 0 (no corridor) to 33 and to 88; the two corridor conditions lie within the fit domain, the no-corridor condition below its lower edge. MapFirst extends the ladder: corridor lengths $\{88, 110, 121, 132, 154, 242\}$ tokens (total length at most 256), then $\{286, 352, 418, 484\}$ (total length at most 498); the rung at 88 is the reference for the gate. The rungs at 110 and 121 keep the read-out window within the fit domain; from 132 on the landmark itself lies beyond 128, and everything read there is descriptive by construction --- the frozen reading rule (branch B4) records an unchanged onset beyond the fit domain side by side and states that it does not substitute for calibration.
+
+\subsection{Instrument provenance note (v3.2)}
+\label{sec:provenance-note}
+
+Added in v3.2 (2026-09-23). Every OLMo-3-32B reading in this paper was taken with the lens artifact distributed on 2026-06-16 (md5 \texttt{c73a32d1\ldots}). On 2026-09-21 the distributor refitted that artifact (commit \texttt{496cf110}; sha256 \texttt{c6ee7d22\ldots}, md5 \texttt{b76610b9\ldots}, 456 prompts, identity distance 0.129729) because the June fit had been produced under transformers 5.11.0, which applied the YaRN \texttt{rope\_scaling} to OLMo-3's sliding-window layers as well as to its full-attention layers (huggingface/transformers\#39847; corrected in 5.13.0 by \#46911). Our read-outs ran on transformers 5.14.1, i.e.\ on the corrected forward: the lens encoded one forward and was read on another. The artifacts of this paper pinned the lens hash and the transformers version, so the state is fully described; what they did not pin was the fit environment of the lens, which the refitted artifacts now carry in a \texttt{provenance} field. We re-ran the calibration with the refitted lens on the same forward (and, on the same day, with the June lens as a control for platform drift). Nothing in the pre-registered decision table changes; the values shift. The June values stand as measurements of the June artifact; the refitted values are placed beside them in the tables of Sections~\ref{sec:coords} and~\ref{sec:pdepth} and in the released data (\texttt{results/lens\_c6ee7d22/}).
+
 % =====================================================================
 \section{Results}
 \label{sec:results}
@@ -348,8 +388,10 @@ between the two figures is the choice of baseline cell, and nothing else.
 \toprule
  & B4 / O4 & B5 / O5 \\
 \midrule
-Absolute coordinates (baseline B1, start of prompt) & $+0.618$ dex & $+0.820$ dex \\
-Relative coordinates (baseline O1, first generated tokens) & $+0.063$ dex & $-0.144$ dex \\
+Absolute coordinates (baseline B1, start of prompt) --- June lens & $+0.618$ dex & $+0.820$ dex \\
+Absolute coordinates --- refitted lens & $+0.875$ dex & $+0.823$ dex \\
+Relative coordinates (baseline O1, first generated tokens) --- June lens & $+0.063$ dex & $-0.144$ dex \\
+Relative coordinates --- refitted lens & $-0.062$ dex & $-0.260$ dex \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -358,6 +400,19 @@ Relative coordinates (baseline O1, first generated tokens) & $+0.063$ dex & $-0.
 \itshape The same points read as a degradation of $+0.82$ dex or an
 improvement of $-0.14$ dex depending on where the origin is placed.
 \end{quote}
+
+\noindent\emph{Refitted lens (v3.2; Section~\ref{sec:provenance-note}).}
+On the refitted lens the same points read as $+0.82$ dex against B1 and
+$-0.26$ dex against O1; the step at the prompt/generation boundary grows
+from $+0.77$ to $+1.02$ dex (B1 $0.621 \to$ O1 $1.637$), and the generated
+region stays near-flat (O4 $-0.06$, O5 $-0.26$). The coordinate
+dependence --- the primary result of this section --- is therefore not a
+property of one fit. Rank-correlation degradation against B1 (reasoning
+traces, eager) reads $+0.161$ at B4 and $+0.196$ at B5 on the refitted
+lens (June lens: $+0.116$ and $+0.183$, as fractions of the B1 median);
+the same cells cross the 10\% line and none crosses the 30\% line, so
+the branch of the frozen table is unchanged. On prose, neither lens shows
+decay (all differences negative).
 
 There is consequently no option to report only one coordinate: a
 single-coordinate report is refuted by one re-analysis. We do not decide
@@ -423,15 +478,15 @@ the thresholds of Figure~\ref{fig:c1}, applied mechanically.
 
 \begin{center}
 \small
-\begin{tabular}{@{}llcccc@{}}
+\begin{tabular}{@{}llccccc@{}}
 \toprule
-& & \multicolumn{2}{c}{Rank correlation} & \multicolumn{2}{c}{Word-group rank deviation} \\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}
-Prompt & Length & P2 & \textbf{P3} & P2 & \textbf{P3} \\
+& & \multicolumn{2}{c}{Rank correlation} & \multicolumn{3}{c}{Word-group rank deviation} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-7}
+Prompt & Length & P2 & \textbf{P3} & P2 & \textbf{P3} & P3, refitted \\
 \midrule
-1 & 458 & $-72.1\%$ & $\mathbf{+0.4\%}$ & $+2.000$ & $\mathbf{+1.152}$ \\
-2 & 470 & $-72.1\%$ & $\mathbf{+0.4\%}$ & $+2.000$ & $\mathbf{+0.530}$ \\
-3 & 501 & $-12.0\%$ & $\mathbf{+51.6\%}$ & $+0.389$ & $\mathbf{+0.812}$ \\
+1 & 458 & $-72.1\%$ & $\mathbf{+0.4\%}$ & $+2.000$ & $\mathbf{+1.152}$ & $+1.206$ \\
+2 & 470 & $-72.1\%$ & $\mathbf{+0.4\%}$ & $+2.000$ & $\mathbf{+0.530}$ & $+0.552$ \\
+3 & 501 & $-12.0\%$ & $\mathbf{+51.6\%}$ & $+0.389$ & $\mathbf{+0.812}$ & $+1.011$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -442,6 +497,11 @@ independent replicates} (see Limitation~3). The repeated ``$-72.1\%$ /
 $+2.000$'' across the two rows is the visible symptom of this. The
 pre-registered comparison --- P3 against P1 --- is unaffected: P3 spans
 the divergence point at token 354, so all three rows differ there.
+The last column (added in v3.2) is the pre-registered P3-against-P1
+reading on the refitted lens (Section~\ref{sec:provenance-note}), on the
+same frozen grid and threshold; all three rows stay in the degraded
+branch, and Controls A and B read identical on both lenses. The bold
+columns are the June-lens values and are unchanged.
 
 The pre-registered comparison is P3 versus P1 (bold). The P2 column is
 reported as an observation \emph{outside} the pre-registered comparison:
@@ -476,6 +536,36 @@ In two of the three prompts the largest deviation lies in the
 do not use any localization slogan about degradation living at the
 prompt's tail; that shape belongs to one prompt. No mechanism is claimed.
 
+\subsection{Instrument checks inside the fit domain}
+
+\label{sec:arms}
+
+\paragraph{Arm A: a positive control.} Five prompts of at most 14 tokens, read on the distributed lens at the head of the sequence --- below the upper edge of the fit domain but, as a later audit of the fitting script showed, entirely inside the band it excludes (60 of 60 read-out positions lie below position 16). Four of the five rows rise under the frozen ordinal predicate (the row whose intermediate is Mars does not, although its rank reaches 4); the sign-flipped control stays above rank $10^4$ (minimum 59{,}337) and the two applications agree.\footnote{Re-acquired in v3.0 (TSD-20260826): the repaired instrument newly observed the same integers (rise 4/5, sign-flip, determinism); the legacy sign-flip minimum 59{,}337 matched bitwise and is kept as an inspection record. See Revision History.} The lens can see a large signal at the head of the sequence; as a positive control, its validity rests on the null and determinism controls that passed in the same run, not on the fit. This was a design premise of version 1.1 and is now a measured control, with that qualification.
+
+\paragraph{Arm B: the filler is not inert.} Each prompt was prefixed with a fixed preface, \emph{Here is a \{ADJ\} question for you to answer:}, for five adjectives, giving 25 forward passes of identical total length. Against the reference adjective, 14 of the 20 variants \emph{fail} the behavioral-invariance gate (11 by a change of the top-1 token, 3 by an answer-probability shift above 0.02). A one-word change in a preface that says nothing about the question is not behaviorally neutral, and so could not have been assumed neutral for the lens either: the gate is not a formality. On the six variants that pass, the per-position spread of the read-out between variants ($\varepsilon_{\mathrm{fill}}$) has a pooled median of 0.057--0.074 dex across the four word groups, a third quartile near 0.14 and a maximum of 0.76--0.79 dex; the tail is why every downstream predicate uses a three-position window rather than a single position. The read-out region of this arm straddles position 16; the gate itself is read at the final position, outside the excluded band.
+
+\paragraph{Arm C: same content, two depths.} The four rising rows were read with the landmark at position 33 and at position 88 (total length at most 102 tokens; both landmarks lie within the fit domain, the no-corridor condition below its lower edge), after a calibration pass that set the degradation-control threshold from the null series ($\tau_{98} = 1{,}666$; the control read 3{,}648 and passed). The landmark-relative onset is identical at the two depths in all four rows --- 3, 2, 3 and 3 positions after the landmark for the rows whose intermediates are spider, Canada, France and Shakespeare --- while the absolute onset moves by exactly the 55 tokens of the translation. We name this landmark-relative onset invariance SameSeat (the read-out keeps its seat relative to the landmark when the prompt is moved), and its qualifiers travel with it: it concerns the onset of read-out only; it was established within the fit domain; on four rows, one filler family and, after the extension below, four in-domain ladder points; and it is an ordinal reading.\footnote{Converted in v3.0 (TSD-20260826) from a supporting clause to a limitation. Version 2 bounded the resolution by ``the lens's order agreement with the model (0.643--0.902, median 0.801)''; that value was measured on fragment-contaminated sets and is not counted.} On the repaired sets (single-token canonical variants; alias best-of over the two two-word sets; point labels excluded by design; word-like pool $N = 70{,}812$; band 26--56), the lens's order agreement with the model over the same 18 reasoning traces, measured separately under a frozen protocol at depths far beyond this campaign's, is 0.456--0.692 (median 0.544); 0.5 is the value a sign-independent reference would give, and the per-trace effective $n$ after tie exclusion ranges from 13 to 7{,}603. The $n = 13$ trace is F5a-2 seed 2 (B-flail; 14 thinking tokens; $\eta = 0.692$, the upper end of the range) and is read together with that $n$; without it the range is 0.456--0.668 (median 0.543; 17 traces). The lower end, 0.456, is F5b-1 seed 2 (B-bind; $n = 7{,}603$) --- a different trace despite the shared seed number. The onset invariance itself rests on its own controls (the Arm C calibration and the population-null bound of the Revision History), not on this agreement. The no-corridor condition differs from the corridor conditions in its first token and lies entirely below position 16, so its comparison is recorded as descriptive and is not part of the statement. Two rows also show a rising window \emph{inside} the corridor, before the landmark (at absolute positions 2 and 18); we register these early windows (CorridorWindow) as an anomaly flag with zero weight and do not read them.
+
+\subsection{Crossing the fit boundary with content held fixed}
+
+\label{sec:results2}
+
+MapFirst ran in two ladders. The first, six rungs from 88 to 242 tokens of corridor (30 measurement passes and 26 new null-control passes, 279 seconds of compute), crosses the upper edge of the fit domain between the rungs at 121 and 132. The second, four rungs from 286 to 484 (20 passes plus 20 controls, 384 seconds), continues to a total length of 498. Every null-control cell in both ladders stayed above rank $10^3$, with a minimum margin of 0.21 dex, and the determinism checks passed. What follows is descriptive wherever the landmark lies beyond 128; we say so once here and again at the table, because the table has the shape of a claim it does not make.
+
+\paragraph{The onset did not move.} In all ten rungs the same four rows rise and the fifth (Mars) does not, as in Arms A and C. In every cell that passes the behavioral-invariance gate against the rung at 88, the landmark-relative onset is unchanged --- 3, 2, 3 and 3 positions for spider, Canada, France and Shakespeare --- from a total length of about 100 tokens to 498 (Table~\ref{tab:mapfirst})\footnote{Re-read in v3.0 (TSD-20260826) in two stages: under the frozen coherence constant 4 --- fitted to the compressed floor of the fragment sets --- the re-run stops at calibration and the row is unreadable there; under a population-null bound derived for the repaired sets ($B_A = 10{,}482$; non-discriminating as a fence, which is registered) the onset 3, 2, 3, 3 is newly observed at both depths and all ten ladder rungs, integer-identical in both lanes. See Revision History.}; the absolute onset follows the landmark by exactly the corridor length. Counting only the four rows that rise, 16 of 20 cells pass the gate in the first ladder and 5 of 16 in the second\footnote{v3.0: the same counts, 16/20 and 5/16, are obtained under the accepted-variant mass (wmass); agreement with the version-2 counts is recorded descriptively only.} (with the non-rising row included, 21 of 25 and 9 of 20); the comparison in the second ladder therefore rests on 5 cells. The cells that fail the gate show the same onset; they are listed in the table but not counted. Inside the fit domain (rungs 110 and 121) this extends SameSeat to four in-domain ladder points; beyond it, the unchanged onset is recorded under branch B4 --- side by side, descriptive, not a calibration.
+
+\paragraph{The behavior drifted.} The gate failures are not noise at the edge of a threshold. All of them in both ladders (4 and 11) are shifts of the answer probability with the top-1 token unchanged; none is a change of top-1. For Shakespeare the shift grows monotonically with depth in the second ladder, $-0.1031$ at 286, $-0.1178$ at 352, $-0.1523$ at 418 and $-0.1676$ at 484, after $+0.0335$ at 110 and $-0.0621$ at 242 in the first; for France it reaches $-0.0616$ at 484; Mars, which never rises, passes at every rung ($|\Delta p| \leq 0.0097$). Under one and the same operation the read-out's onset stayed put while the model's answer probability moved. We record the two side by side and do not identify a mechanism; the predicates and scales of the two observations differ, and neither is evidence about the other.
+
+\paragraph{The instrument's floor thickened.} Two read-outs of the same content at different total lengths need not agree bitwise, because the tensor shapes differ; we measured that floor (ShapeJitter, a shape-dependent difference, not a stochastic one) rather than assuming it. Inside the fit domain (33 against 88) its maximum is 0.045 dex. Across the first ladder the floor stayed thin: 88 against 110 agreed bitwise ($n = 360$), and 88 against 121 and against 132 had median 0 and maximum 0.0974 dex. In the second ladder 286 against 352 again agreed bitwise ($n = 1{,}350$), but every pair involving the rung at 484 read a median near 0.0066 and a maximum of 0.3135 dex\footnote{Re-registered in v3.0 (TSD-20260826): the floor keeps its shape --- in-ladder pairs agree bitwise at the same pairs and the same $n$ (360; 1{,}350); the pairs involving the deepest rung read max 0.3372 dex (L1 max 0.1007); the legacy lane reproduces the version-2 floor exactly. Any comparison at that depth carries the floor.} --- about seven times the in-domain value, and above the 0.30-dex line of version 1.1. The floor itself is a result: any comparison at that depth must carry it, and the in-domain value must not be extrapolated to it.
+
+\paragraph{What the boundary did and did not mark.} The fit boundary at 128 left no seam in the onset, in the null floor (the per-row null minimum is integer-identical from 88 through 154 and changes only at 242, and again only at 484), or in the shape floor up to 242. It did leave a mark in two descriptive statistics that we register without reading: a knee in the phase profile at the deepest rungs (Shakespeare at 242 and at 484; spider at 484, exactly at threshold), and the drift above. Contrasts between adjacent deep bands far from the boundary are small (median 0.007--0.020 dex), so the boundary contrast, where it appears, is not a contrast that appears everywhere. None of this is a guarantee; it is the map on which a next campaign would be planned.
+
+\paragraph{Scope-qualified absence.} We state the outcome in the form we use internally, because the form is the content. Observable: the landmark-relative onset of a three-position window. Depth: up to 484 tokens of corridor (total length 498). Family: one 11-token corridor unit, one model, one lens. Cells: those passing the behavioral-invariance gate, counted above. Within this scope no position-axis degradation was detected. This does not substitute for calibration, and it says nothing about the fidelity of the read-out to the model at that depth.
+
+\begin{table}[t]\centering\small\caption{\textbf{MapFirst: landmark-relative onset across the fit boundary.} Corridor = tokens of filler before the landmark; the rung at 88 is the gate reference. Onset is given for the four rising rows (spider, Canada, France, Shakespeare); the fifth row (Mars) rises at no rung. Gate failures are shifts of the answer probability beyond $0.02$ with the top-1 token unchanged; failing cells show the same onset but are not counted. Rows at or beyond 132 are descriptive by the frozen reading rule (branch B4): an unchanged onset there does not substitute for calibration. (v3.0: rows re-acquired under repaired sets; see Revision History.)}\label{tab:mapfirst}
+
+\begin{tabular}{@{}rp{2.3cm}p{2.1cm}p{7.6cm}@{}}\toprule Corridor & Landmark vs.\ fit domain & Onset (rel.) & Gate failures vs.\ 88 \\ \midrule 88 & inside & 3 / 2 / 3 / 3 & reference \\ 110 & inside & 3 / 2 / 3 / 3 & Shakespeare ($+0.0335$) \\ 121 & inside (window) & 3 / 2 / 3 / 3 & none \\ 132 & beyond & 3 / 2 / 3 / 3 & none \\ 154 & beyond & 3 / 2 / 3 / 3 & France ($+0.0220$) \\ 242 & beyond & 3 / 2 / 3 / 3 & France ($+0.0302$), Shakespeare ($-0.0621$) \\ 286 & beyond & 3 / 2 / 3 / 3 & Shakespeare ($-0.1031$) \\ 352 & beyond & 3 / 2 / 3 / 3 & spider, Canada ($+0.0255$), Shakespeare ($-0.1178$) \\ 418 & beyond & 3 / 2 / 3 / 3 & spider, France ($-0.0248$), Shakespeare ($-0.1523$) \\ 484 & beyond & 3 / 2 / 3 / 3 & spider, Canada ($-0.0350$), France ($-0.0616$), Shakespeare ($-0.1676$) \\ \bottomrule\end{tabular}\end{table}
+
 % =====================================================================
 \section{The contribution: a calibration with no anchor}
 \label{sec:contribution}
@@ -506,6 +596,16 @@ exist in which head correlation is flat while deep ranks alone move the
 verdict. Where to place the origin, and at what depth to look, are not
 settled from inside the calibration.
 
+This is stronger than an origin one has merely failed to measure. When a
+reference has simply been left unmeasured, a matched control recovers it:
+one runs the same system without the intervention and reads the
+difference. On the position axis there is no such run. There is no
+unintervened position, and the prompt head and the generation head are
+equally legitimate zeros; no experiment inside this frame chooses between
+them. The claim is therefore not that the quantity depends on a
+reference --- that much is a familiar property --- but that on this axis
+the experiment that would fix the reference cannot be constructed.
+
 \subsection{The statement}
 
 \begin{quote}\Large\itshape
@@ -520,6 +620,8 @@ This structure is not specific to this lens. Anyone who inherits a
 disposition-reading instrument together with its default settings
 inherits the same problem. The contribution of this paper is not a
 number; it is a name for that problem.
+
+The second campaign does not supply the missing origin, and we want to be exact about why, since its table invites the opposite reading. An onset that stays put when the prompt is moved is a statement about one observable under one operation. It narrows where a position-axis gap could live --- not in this observable, at these depths, in this family --- and it does so without any external oracle, which is its virtue. But invariance is not fidelity: the same campaign watched the model's own answer probability drift and the instrument's floor thicken under the same operation, and it has no way to say which of the three quantities is telling the truth about depth. The map comes first; the instrument's correctness at depth is still not on it.
 
 We do not claim the lens is unusable. On prose it is faithful
 (\S\ref{sec:pillars}). The claim is narrower and, we think, more useful:
@@ -582,6 +684,13 @@ Give us a ruler for the order of reasoning.
 \item Traces for the multi-prompt extension were selected by a length
   rule ($>512$ tokens); the distribution over generation-side offsets is
   therefore not an unbiased sample, and we do not read it.
+\item The second campaign reads five prompts, one filler family (an 11-token unit repeated) and one kind of operation (translation by prefixing); its in-domain support is four ladder points. Nothing in it is a sample of prompts, fillers or operations, and the onset it reports is the position at which a token becomes readable by this lens, not the time at which anything is computed.
+\item Beyond the fit domain the unchanged onset is recorded under a frozen rule (branch B4) as descriptive only. An instrument that did not break out of its domain has not been calibrated there; the scope-qualified absence of Section~\ref{sec:results2} is the strongest form we permit ourselves.
+\item The fit domain has a lower edge as well as an upper one: the fitting script excludes positions below 16. Every read-out of Arm A, and part of the read-out region of Arm B, lies inside that excluded band; the first bucket of version 1.1 (tokens 1--128) also contains it. The companion fidelity note bounds the effect of binding to the fit positions at 0.10 dex on prose; we have not measured it on reasoning traces.
+\item The behavioral-invariance gate removes cells as depth grows (from 4 of 25 in the first ladder to 11 of 20 in the second). We did not relax the gate to keep cells: the map of which cells remain is itself a result, and a relaxed gate would have hidden the drift it in fact detected.
+\item \emph{Revision v3.0 (TSD-20260826):} all rank statements are pool-internal ($N = 70{,}812$) under band 26--56; set-level mass comparisons across sets are not made (the band median of a set mass is nonlinear over subset sums). The word groups of version 2 inherited a first-token rule and are superseded; the values re-acquired under the repaired acceptance are listed in the Revision History section.
+\item \emph{Fit environment of the instrument (v3.2).} A lens artifact encodes the forward it was fitted on. The June artifact encoded a forward that the library had already corrected by the time we read it, and nothing in the artifact said so; the hash we pinned identified the file, not the forward. Our provenance discipline now records the fit environment of every instrument (\texttt{provenance} in the refitted artifacts; the transformers version and commit of the fitting run), and we recommend the same to any reader inheriting a distributed lens (Section~\ref{sec:provenance-note}).
+\item On the refitted lens the \texttt{sdpa} cells of the reasoning-trace corpus rest on $n = 16$ positions from two texts (June lens: $n = 32$ from four), because two of the four long traces (about 16k tokens) could not be measured under \texttt{sdpa} on the current platform (macOS 27.0, Metal: the process terminates), so \texttt{sdpa} values of the refitted lens --- such as the B4 rank-correlation degradation of $+0.382$ --- are two-text values and are reported beside the \texttt{eager} values, which remain primary.
 \end{enumerate}
 
 % =====================================================================
@@ -616,6 +725,130 @@ restored in review after collision with the ledger. The sharper counting
 predicate in Limitation~3 was identified only after the run, and is
 disclosed as such rather than presented as pre-registered.
 
+The second campaign followed the same protocol, with the same separation between execution and judgment, and its errors are likewise reported rather than removed. One run was halted by its own calibration control before measurement and re-run after the control threshold was re-derived from the null series; the halt and the re-derivation are both on record. One registered prediction failed: the pre-registration of the first ladder predicted that behavior would pass the gate at every rung, and it did not in four cells; the miss is charged to the judgment layer and kept. One headline count in the second ladder was written by hand as 12 of 20 and corrected to 11 of 20 when the judgment layer's review forced a recount from the output file; the correction is recorded in place with the sweep that found it, and the number in this paper is the recounted one.
+
+
+% =====================================================================
+\section*{Revision History (v3.0 / v3.1 / v3.2, REVISION-ID: TSD-20260826)}
+\label{sec:revision}
+
+\noindent\textbf{Registered:} 2026-08-26. \textbf{Values:} 2026-08-26/27/28.
+\textbf{Instrument (archived):} joshaku v1.2.0~\cite{joshaku2026} (seven
+modules, combined md5 \texttt{89b194be...}; 20 tests; archived at doi:
+10.5281/zenodo.22218669), SPEC v1.2 (md5 \texttt{e95f4661...}, included in
+that record); calibration tests as in the registry.
+\textbf{Instrument (as run; declared in v3.1):} the five arm, ladder and
+null outputs (\texttt{arm\_a\_v3}, \texttt{arm\_c\_v3}, \texttt{cii\_l1\_v3},
+\texttt{cii\_l2\_v3}, \texttt{cii\_nulls\_v3}) record in their \texttt{meta}
+the joshaku state they ran under: combined md5 \texttt{2bb7fe6c...} (source
+commit \texttt{ad24326a}, 2026-08-26; 19 tests; SPEC v1.1, md5
+\texttt{85715fe0...}), the state one commit before the v1.2.0 freeze
+(2026-08-27). The two states differ in one module only, \texttt{ranks.py},
+to which v1.2.0 added two alias helpers (\texttt{alias\_best\_of},
+\texttt{alias\_pair}) and their exception class; the modules these runners import (\texttt{pgrain},
+\texttt{masks}) are byte-identical between the two states and no existing
+function changed, so no recorded value depends on the difference. The
+shape-floor and order-agreement outputs (\texttt{r211\_v3},
+\texttt{f5\_corr\_v3\_*}) do not record a fingerprint --- a provenance gap,
+registered as such; both post-date the freeze by commit date, and the
+order-agreement runner imports \texttt{alias\_pair}, which exists only from
+v1.2.0. Tokenizer pin:
+\texttt{allenai/}\allowbreak\texttt{Olmo-3-1125-32B}\allowbreak\texttt{@c2b61dae...}; lens
+\texttt{Olmo-3-1125-32B\_jacobian\_lens.pt}; word-like pool $N = 70{,}812$;
+layer band 26--56 (one layer narrower than the CommitStage band --- the two
+are not interchangeable).
+\textbf{What happened:} the reading sets used here contained sub-word
+fragments (spider $\to$ `sp', Shakespeare $\to$ `Sh', insect $\to$ `in'),
+an instance of the pre-registered first-token rule now registered as a
+defect (T1). All sets were rebuilt (single-token canonical variants; drops
+registered) and the affected measurements re-acquired. During
+re-acquisition the runner's universe assertion caught a wrongly declared
+model before any measurement (Qwen declared, OLMo intended); the corrected
+run is the one reported.
+
+\subsection*{Part I --- Readings}
+
+\begin{center}\small
+\captionof{table}{Revised readings (v3.0). (a)-type = old values excluded from
+evidence and the same integers newly observed; (c) = unreadable as frozen.}
+\label{tab:revision}
+\begin{tabular}{@{}p{3.1cm}p{2.4cm}p{8.6cm}@{}}\toprule
+Row & Reading & Note text \\ \midrule
+Arm A (rise 4/5, sign-flip, determinism) & (a)-type & Old values are excluded from evidence; the repaired instrument newly observed the same integers (the legacy sign-flip value 59{,}337 matched bitwise and is kept as an inspection record). \\
+SameSeat onset (3, 2, 3, 3) & two-stage & Stage one: under the frozen coherence constant 4 --- a constant fitted to the compressed floor of the fragment sets --- the re-run stops at calibration and the row is unreadable there. Stage two: under a population-null bound derived for the repaired sets ($B_A = 10{,}482$; as a fence it is non-discriminating, which is registered), the onset (3, 2, 3, 3) is newly observed at both depths and all ten ladder rungs, integer-identical in both lanes. \\
+Gate passages & new scale & 16/20 and 5/16 under the accepted-variant mass (wmass); agreement with the old counts is recorded in the descriptive column only. \\
+MapFirst onset rows & (a)-type, readable rows only & At the second ladder the readable rows are P3 and B1 (P2 has one eligible cell; P5 none --- (c)). \\
+Null controls, $\tau_{98}$ & re-derived & Values are not compared across instruments. \\
+ShapeJitter floor & new registration & The floor keeps its shape: in-ladder pairs agree bitwise at the same pairs and the same $n$ as before (360; 1{,}350); the pairs involving the deepest rung read max 0.3372 dex (L1 max 0.1007); the legacy lane reproduces the old floor exactly. Any comparison at that depth carries the floor. \\
+\bottomrule\end{tabular}
+\end{center}
+
+\subsection*{The order-agreement clause (conversion from support to limitation)}
+
+The sentence of version 2 that bounded SameSeat's ordinal resolution by
+``order agreement 0.643--0.902 (median 0.801)'' is converted in
+Section~\ref{sec:arms} (Arm C) from a supporting clause to a limitation:
+on the repaired sets the agreement over the same 18 traces is 0.456--0.692
+(median 0.544), against 0.5 for a sign-independent reference; the per-trace
+effective $n$ after tie exclusion is 13 to 7{,}603, with the $n = 13$ trace
+(F5a-2 seed 2; $\eta = 0.692$, the upper end) named in place and the range
+without it (0.456--0.668; median 0.543; 17 traces) given beside it. The
+previously printed value was measured on fragment-contaminated sets and is
+not counted. \textbf{Dependency table (machine-checked):} the old clause is
+cited by exactly one sentence in the paper (the SameSeat resolution
+qualifier); no verdict elsewhere stands on it; the registration of SameSeat
+under the population-null bound contains no reference to the agreement.
+Legacy replication: all 18 per-trace legacy values reproduced the registered
+ones at $\Delta = 0.0$.
+
+\subsection*{Instrument section}
+
+\begin{itemize}\itemsep2pt
+\item Set repair: fragments `sp' / `Sh' / `in' removed by acceptance, not
+by filtering; every dropped variant is registered.
+\item Universe correction history: one mis-declared universe was caught by
+the $N$ assertion before measurement; the inspection card prints the
+universe and the tokenizer sha.
+\item Calibration record for the order-agreement values: controls for the
+F5a-2 half were re-run after the fact (determinism; per-trace replication
+$\Delta = 0.0$; sign-flip identity on single-id sets, exact for both
+variants, 4/4 each). The two-id identity control originally specified is
+non-informative by construction (best-of over two ids turns a minimum into
+a maximum under negation) and is replaced in the calibration record; the
+values themselves are unchanged.
+\item Coherence door: under a population null, four-word-set floors span
+two to four orders of magnitude, so a common $\tau_{98}$ across sets is a
+design question for a separate program (flag).
+\item Environment: integer rank series reproduce across environments
+(bitwise ladder pairs; 18/18 order-agreement legacy values at
+$\Delta = 0.0$); the lens's $10^{-6}$-scale masses do not. Mass-lane
+citations carry this line.
+\end{itemize}
+
+\noindent\textbf{Limitations (one line):} all rank statements are
+pool-internal ($N = 70{,}812$) under band 26--56; set-level mass comparisons
+across sets are not made (nonlinearity of band medians over subset sums).
+\textbf{Revision history:} v2 (2026-08-21, doi: 10.5281/zenodo.22041724) ---
+superseded readings marked inline; v3.0 (2026-09-01, doi:
+10.5281/zenodo.22219346) --- TSD-20260826; v3.1 (2026-09-11, doi:
+10.5281/zenodo.22701008) --- declares the as-run instrument fingerprint; no
+value changed; v3.2 (this version) --- see below.
+% v3.2 DOI: 10.5281/zenodo.22928237 (reserved on the paper record 2026-09-24; live on publication)
+Inspection records: READCARD md5s R2v2 \texttt{64b7ea9d} / R2b
+\texttt{5980f44c} / R4 \texttt{14123f9c}; scope table and equivalence check
+(R4-a) in the registry. The re-acquisition runners and their outputs
+(Arms A/C, both ladders, the shape floor and the order-agreement lanes) are
+released with the package (\REPOURL{}; concept DOI 10.5281/zenodo.21768364,
+version 3.1.0 or later).
+
+\noindent\textbf{v3.2 (2026-09-23).} Adds the instrument-provenance note
+(Section~\ref{sec:provenance-note}; the June lens was fitted under
+transformers 5.11.0 with YaRN applied to sliding-window layers; read-outs
+ran on 5.14.1) and places the readings of the refitted lens (2026-09-21,
+sha256 \texttt{c6ee7d22\ldots}) beside the June readings in the coordinate
+table, the multi-prompt table (Section~\ref{sec:pdepth}) and the released data. No value is withdrawn; no
+verdict of the frozen decision table changes.
+
 % =====================================================================
 \section*{Data and code availability}
 
@@ -624,13 +857,14 @@ run (700 measurements), the control re-measurement, the relative-coordinate
 re-aggregation (no new run), and the multi-prompt extension (224
 measurements), together with the determinism and neutrality checks. The
 measurement code imports the lens, the word groups, the rank computation
-and the token mask verbatim from the upstream implementation. The frozen
+and the token mask verbatim from the upstream implementation.\footnote{The inherited word groups represented a multi-token word by its first token (spider $\to$ `sp', Shakespeare $\to$ `Sh', insect $\to$ `in'); registered as defect T1 in v3.0 and replaced by the acceptance instrument joshaku~\cite{joshaku2026} (Revision History).} The frozen
 documents --- the decision table and the two pre-registrations --- are
 released with their commit timestamps, which are the evidence that the
 freeze preceded the measurement --- as post-hoc English renderings, with the
 Japanese originals fixed by \texttt{sha256} (see \texttt{PROVENANCE.md} in the
 release). Figure scripts are included and produce an empty frame when no data
 file is present.
+The second campaign's artifacts --- the per-cell read-outs of Arms A, B and C and of both MapFirst ladders, the null ledgers, the gate tables and the pre-registrations with their commit timestamps --- are released with this version in the same package, under the same manifest discipline.
 
 The package is available at \REPOURL{}\DOICLAUSE{}. Every file is listed in
 \texttt{MANIFEST.json} with its \texttt{sha256} both as it ran and as
@@ -641,6 +875,9 @@ release.
 \section*{Acknowledgment}
 
 This work was supported by JSPS KAKENHI Grant Number JP26K06399.
+A participant in the public discussion of the released artifacts
+independently identified the fitting-script default path (Aug.~2026),
+which the revised text incorporates.
 Manuscript text was drafted within the two-layer workflow described in
 \S\ref{sec:workflow}~\cite{anthropic2026claude}; all claims, thresholds
 and final wording are the author's.
@@ -668,6 +905,10 @@ nostalgebraist, ``Interpreting GPT: the logit lens,'' LessWrong, 2020.
 \bibitem{olmo3}
 Allen Institute for AI, ``OLMo-3-1125-32B,'' 2025. [Online]. Available:
 \url{https://huggingface.co/allenai/Olmo-3-1125-32B}
+
+\bibitem{fidelityeight2026} M.~Higashida, ``FidelityEight: Frozen-protocol fidelity measurements of the distributed Jacobian-lens checkpoints,'' Zenodo, Aug.~2026. doi: 10.5281/zenodo.21990390.
+
+\bibitem{joshaku2026} M.~Higashida, ``joshaku: token-set acceptance for lens readouts, fixed before any run (v1.2.0),'' Zenodo, Sep.~2026. doi: 10.5281/zenodo.22218669.
 
 \bibitem{anthropic2026claude}
 Anthropic, ``Claude (large language model family),'' 2026. [Online].

@@ -301,7 +301,7 @@ end it.
 | v2.0.0 | [`10.5281/zenodo.22041132`](https://doi.org/10.5281/zenodo.22041132) --- **version DOI**, pins the bytes that accompanied paper v2 |
 | v1.0.0 | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins the bytes that accompanied paper v1.0 / v1.1 |
 | all versions | [`10.5281/zenodo.21768364`](https://doi.org/10.5281/zenodo.21768364) --- concept DOI, always resolves to the latest |
-| the paper (v3.2) | version DOI minted on publication (2026-09): instrument-provenance note; refitted-lens readings placed beside the June readings; no value withdrawn |
+| the paper (v3.2) | [`10.5281/zenodo.22928237`](https://doi.org/10.5281/zenodo.22928237) --- version DOI of the v3.2 record (2026-09-24): instrument-provenance note; refitted-lens readings placed beside the June readings; no value withdrawn |
 | the paper (v3.1) | [`10.5281/zenodo.22701008`](https://doi.org/10.5281/zenodo.22701008) --- version DOI of the v3.1 record (2026-09-11): declares the as-run instrument fingerprint; no value changed. Cite this one |
 | the paper (v3.0) | [`10.5281/zenodo.22219346`](https://doi.org/10.5281/zenodo.22219346) --- version DOI of the v3.0 record (2026-09-01); values identical to v3.1 |
 | the paper (v2) | [`10.5281/zenodo.22041724`](https://doi.org/10.5281/zenodo.22041724) --- **version DOI**, pins that exact PDF (16 pages, 2026-08-21); its readout-side values are superseded by v3 |
