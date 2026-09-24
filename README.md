@@ -296,7 +296,7 @@ end it.
 
 | | |
 |---|---|
-| this release (v3.1.0) | version DOI minted by Zenodo on release (2026-09-24); the paper v3.2 cites it |
+| this release (v3.1.0) | [`10.5281/zenodo.22928427`](https://doi.org/10.5281/zenodo.22928427) --- **version DOI**, pins these exact bytes (zip md5 `496d1eec...`); the paper v3.2 cites it |
 | v3.0.0 | [`10.5281/zenodo.22219123`](https://doi.org/10.5281/zenodo.22219123) --- **version DOI**, pins the bytes that accompanied paper v3.0 / v3.1 |
 | v2.0.0 | [`10.5281/zenodo.22041132`](https://doi.org/10.5281/zenodo.22041132) --- **version DOI**, pins the bytes that accompanied paper v2 |
 | v1.0.0 | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins the bytes that accompanied paper v1.0 / v1.1 |
