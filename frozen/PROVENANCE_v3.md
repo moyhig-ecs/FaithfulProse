@@ -11,6 +11,10 @@ date of the commit that froze each one precedes the measurement it governs.
 | `READCARD_R4_sal_series_v1_20260828.md` | READCARD R4 (order-agreement re-acquisition; frozen 2026-08-28) | `14123f9c` | `66ba17e5fc5175d9dd6db0479170192d8c477c934fc628dc10fe4532e5fc7808` | 881c2f5412a8667ce8d1e00a060223ed8c538120 2026-08-28T10:56:26+09:00 |
 | `SPEC_tokenset_acceptance_v1_2.md` | SPEC token-set acceptance v1.2 (also included in the joshaku record) | `e95f4661` | `ea1b4d5f695932e5a1496a37f5907a93e41844c5b64f6a227828f3c48c3b587c` | 2bcdc9ad6f89d42da96915c2ce77a83596cb2d6a 2026-08-27T09:49:25+09:00 |
 
-Instrument: joshaku v1.2.0 (seven modules, combined md5 89b194be...; 20 tests), archived at
-doi:10.5281/zenodo.22218669 together with SPEC v1.2 (md5 e95f4661...). The paper's Revision History
-section cites the same fingerprints.
+Instrument (archived): joshaku v1.2.0 (seven modules, combined md5 89b194be...; 20 tests), archived at
+doi:10.5281/zenodo.22218669 together with SPEC v1.2 (md5 e95f4661...).
+Instrument (as run): the five arm/ladder/null outputs (arm_a_v3, arm_c_v3, cii_l1_v3, cii_l2_v3, cii_nulls_v3)
+record in their meta joshaku at combined md5 2bb7fe6c... (source commit ad24326a, 2026-08-26; 19 tests; SPEC v1.1,
+md5 85715fe0...), one commit before the v1.2.0 freeze; the states differ only in ranks.py (two alias helpers and their exception class added),
+and the modules these runners import (pgrain, masks) are byte-identical, so no recorded value depends on it.
+The paper's Revision History (v3.1) states the same.

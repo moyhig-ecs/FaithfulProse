@@ -1,0 +1,946 @@
+{
+ "meta": {
+  "revision_id": "TSD-20260826",
+  "readcard": {
+   "path": "READCARD_R2_faithfulprose_v1_20260826.md",
+   "md5": "a25e03fd2efad4cae6adb2a2341f4b34"
+  },
+  "spec_v1_1": {
+   "path": "SPEC_tokenset_acceptance_v1_1.md",
+   "md5": "85715fe01b96db9a1f0aa4535d138a4a"
+  },
+  "joshaku_md5": "89b194be8255bcb5f667480b0c808002",
+  "lens_md5": "b76610b9e0e989cd689cc5c0c7f6d354",
+  "model": "allenai/Olmo-3-1125-32B",
+  "band": [
+   26,
+   56
+  ],
+  "k_hold": 3,
+  "eps_b": 0.02,
+  "mask_size": 70812,
+  "wordlike": "^[A-Za-z0-9]{2,}$",
+  "gate_md5": {
+   "gate_tokenizer": "7ff8c6f16cf25b8ce7c778af9795a219",
+   "gate_filler_c": "4e84ac5f3ead21eeebba4d1beb89f67c",
+   "gate_cii": "64b3e5644f6484c0983f74d586055216",
+   "gate_cii_c2": "2ca8fa9957c8c0a713b2749410e1d7a6"
+  },
+  "c_rows": [],
+  "provenance": {
+   "commit": "57a391c865d942c9f37d8dfbd7337a526ebbfcf4",
+   "dirty": true,
+   "dirty_files": [
+    "M TODO.md",
+    "?? conversations/2026-09-21/PLAN_week_20260921_ggblab_v2_release_e6_v3.md",
+    "?? conversations/2026-09-21/RECORD_jlens_olmo3_yarn_misfit_and_refit_20260921.md",
+    "?? probes/graspthink-arms/compare_lensdelta.py",
+    "?? probes/graspthink-arms/results/tsd_r2_lens_c6ee7d22/",
+    "?? probes/graspthink-arms/run_arms_v3_lensdelta.py"
+   ],
+   "dirty_check_excluded": [],
+   "dirty_check_exclusion_rule": "untracked under probes/olmo3-f5-think-prefix/results/ only",
+   "resume": false,
+   "run_kind": "main",
+   "stage": "lens",
+   "variant": "GT-v3-lensdelta-c6ee7d22",
+   "adjudication": "ADJUDICATION_f5a2_wave1_received_20260801.md §3",
+   "started_utc": "2026-09-21T08:34:10+00:00",
+   "versions": {
+    "python": "3.14.3",
+    "torch": "2.11.0",
+    "transformers": "5.14.1",
+    "numpy": "2.4.4"
+   }
+  },
+  "tokenizer_pin": "allenai/Olmo-3-1125-32B@c2b61dae89a1ad10e4ad5653d0e46b590902607b"
+ },
+ "stage": "cii_l1_v3",
+ "rows": [
+  {
+   "id": "P1",
+   "rungs": {
+    "r8": {
+     "n_tok": 98,
+     "landmark_start": 88,
+     "top1": 6307,
+     "top1_str": " green",
+     "p_word_v3": 0.112386,
+     "p_ans_legacy": 0.108657,
+     "v3": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "legacy": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     }
+    },
+    "r10": {
+     "n_tok": 120,
+     "landmark_start": 110,
+     "top1": 6307,
+     "top1_str": " green",
+     "p_word_v3": 0.117755,
+     "p_ans_legacy": 0.114294,
+     "v3": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "legacy": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r11": {
+     "n_tok": 131,
+     "landmark_start": 121,
+     "top1": 6307,
+     "top1_str": " green",
+     "p_word_v3": 0.12319,
+     "p_ans_legacy": 0.119983,
+     "v3": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "legacy": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r12": {
+     "n_tok": 142,
+     "landmark_start": 132,
+     "top1": 6307,
+     "top1_str": " green",
+     "p_word_v3": 0.112955,
+     "p_ans_legacy": 0.110015,
+     "v3": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "legacy": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r14": {
+     "n_tok": 164,
+     "landmark_start": 154,
+     "top1": 6307,
+     "top1_str": " green",
+     "p_word_v3": 0.111266,
+     "p_ans_legacy": 0.10819,
+     "v3": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "legacy": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r22": {
+     "n_tok": 252,
+     "landmark_start": 242,
+     "top1": 6307,
+     "top1_str": " green",
+     "p_word_v3": 0.113303,
+     "p_ans_legacy": 0.110528,
+     "v3": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "legacy": {
+      "emerged_full": false,
+      "onset_abs_full": null,
+      "emerged_landmark": false,
+      "onset_abs_landmark": null,
+      "onset_rel_landmark": null
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    }
+   }
+  },
+  {
+   "id": "P2",
+   "rungs": {
+    "r8": {
+     "n_tok": 99,
+     "landmark_start": 88,
+     "top1": 220,
+     "top1_str": " ",
+     "p_word_v3": 0.07838,
+     "p_ans_legacy": 0.078042,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 2,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 91,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 91,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 91,
+      "onset_rel_landmark": 3
+     }
+    },
+    "r10": {
+     "n_tok": 121,
+     "landmark_start": 110,
+     "top1": 220,
+     "top1_str": " ",
+     "p_word_v3": 0.081567,
+     "p_ans_legacy": 0.081238,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 2,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 113,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 113,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 113,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r11": {
+     "n_tok": 132,
+     "landmark_start": 121,
+     "top1": 220,
+     "top1_str": " ",
+     "p_word_v3": 0.080065,
+     "p_ans_legacy": 0.079752,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 2,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 124,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 124,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 124,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r12": {
+     "n_tok": 143,
+     "landmark_start": 132,
+     "top1": 220,
+     "top1_str": " ",
+     "p_word_v3": 0.072656,
+     "p_ans_legacy": 0.072363,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 2,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 135,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 135,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 135,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r14": {
+     "n_tok": 165,
+     "landmark_start": 154,
+     "top1": 220,
+     "top1_str": " ",
+     "p_word_v3": 0.077681,
+     "p_ans_legacy": 0.077396,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 2,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 157,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 157,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 157,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r22": {
+     "n_tok": 253,
+     "landmark_start": 242,
+     "top1": 220,
+     "top1_str": " ",
+     "p_word_v3": 0.068765,
+     "p_ans_legacy": 0.068451,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 2,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 245,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 245,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 245,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    }
+   }
+  },
+  {
+   "id": "P3",
+   "rungs": {
+    "r8": {
+     "n_tok": 101,
+     "landmark_start": 88,
+     "top1": 33266,
+     "top1_str": " Ottawa",
+     "p_word_v3": 0.556321,
+     "p_ans_legacy": 0.556321,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 90,
+      "onset_rel_landmark": 2
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 90,
+      "onset_rel_landmark": 2
+     }
+    },
+    "r10": {
+     "n_tok": 123,
+     "landmark_start": 110,
+     "top1": 33266,
+     "top1_str": " Ottawa",
+     "p_word_v3": 0.578043,
+     "p_ans_legacy": 0.578043,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 112,
+      "onset_rel_landmark": 2
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 112,
+      "onset_rel_landmark": 2
+     },
+     "gate_v3": {
+      "pass": false,
+      "why": "|dp|=0.0217 > 0.02"
+     },
+     "gate_legacy": {
+      "pass": false,
+      "why": "|dp|=0.0217 > 0.02"
+     }
+    },
+    "r11": {
+     "n_tok": 134,
+     "landmark_start": 121,
+     "top1": 33266,
+     "top1_str": " Ottawa",
+     "p_word_v3": 0.580512,
+     "p_ans_legacy": 0.580512,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 123,
+      "onset_rel_landmark": 2
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 123,
+      "onset_rel_landmark": 2
+     },
+     "gate_v3": {
+      "pass": false,
+      "why": "|dp|=0.0242 > 0.02"
+     },
+     "gate_legacy": {
+      "pass": false,
+      "why": "|dp|=0.0242 > 0.02"
+     }
+    },
+    "r12": {
+     "n_tok": 145,
+     "landmark_start": 132,
+     "top1": 33266,
+     "top1_str": " Ottawa",
+     "p_word_v3": 0.555561,
+     "p_ans_legacy": 0.555561,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 134,
+      "onset_rel_landmark": 2
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 134,
+      "onset_rel_landmark": 2
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r14": {
+     "n_tok": 167,
+     "landmark_start": 154,
+     "top1": 33266,
+     "top1_str": " Ottawa",
+     "p_word_v3": 0.559289,
+     "p_ans_legacy": 0.559289,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 156,
+      "onset_rel_landmark": 2
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 156,
+      "onset_rel_landmark": 2
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r22": {
+     "n_tok": 255,
+     "landmark_start": 242,
+     "top1": 33266,
+     "top1_str": " Ottawa",
+     "p_word_v3": 0.584107,
+     "p_ans_legacy": 0.584107,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 244,
+      "onset_rel_landmark": 2
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 5,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 244,
+      "onset_rel_landmark": 2
+     },
+     "gate_v3": {
+      "pass": false,
+      "why": "|dp|=0.0278 > 0.02"
+     },
+     "gate_legacy": {
+      "pass": false,
+      "why": "|dp|=0.0278 > 0.02"
+     }
+    }
+   }
+  },
+  {
+   "id": "B1",
+   "rungs": {
+    "r8": {
+     "n_tok": 102,
+     "landmark_start": 88,
+     "top1": 12366,
+     "top1_str": " Paris",
+     "p_word_v3": 0.273274,
+     "p_ans_legacy": 0.273274,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 91,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 91,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 91,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 91,
+      "onset_rel_landmark": 3
+     }
+    },
+    "r10": {
+     "n_tok": 124,
+     "landmark_start": 110,
+     "top1": 12366,
+     "top1_str": " Paris",
+     "p_word_v3": 0.291213,
+     "p_ans_legacy": 0.291213,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 113,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 113,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 113,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 113,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r11": {
+     "n_tok": 135,
+     "landmark_start": 121,
+     "top1": 12366,
+     "top1_str": " Paris",
+     "p_word_v3": 0.298719,
+     "p_ans_legacy": 0.298719,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 124,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 124,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 124,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 124,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": false,
+      "why": "|dp|=0.0254 > 0.02"
+     },
+     "gate_legacy": {
+      "pass": false,
+      "why": "|dp|=0.0254 > 0.02"
+     }
+    },
+    "r12": {
+     "n_tok": 146,
+     "landmark_start": 132,
+     "top1": 12366,
+     "top1_str": " Paris",
+     "p_word_v3": 0.294507,
+     "p_ans_legacy": 0.294507,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 135,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 135,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 135,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 135,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": false,
+      "why": "|dp|=0.0212 > 0.02"
+     },
+     "gate_legacy": {
+      "pass": false,
+      "why": "|dp|=0.0212 > 0.02"
+     }
+    },
+    "r14": {
+     "n_tok": 168,
+     "landmark_start": 154,
+     "top1": 12366,
+     "top1_str": " Paris",
+     "p_word_v3": 0.309102,
+     "p_ans_legacy": 0.309102,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 157,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 157,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 157,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 157,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": false,
+      "why": "|dp|=0.0358 > 0.02"
+     },
+     "gate_legacy": {
+      "pass": false,
+      "why": "|dp|=0.0358 > 0.02"
+     }
+    },
+    "r22": {
+     "n_tok": 256,
+     "landmark_start": 242,
+     "top1": 12366,
+     "top1_str": " Paris",
+     "p_word_v3": 0.305835,
+     "p_ans_legacy": 0.305835,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 245,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 245,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 245,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 245,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": false,
+      "why": "|dp|=0.0326 > 0.02"
+     },
+     "gate_legacy": {
+      "pass": false,
+      "why": "|dp|=0.0326 > 0.02"
+     }
+    }
+   }
+  },
+  {
+   "id": "P5",
+   "rungs": {
+    "r8": {
+     "n_tok": 100,
+     "landmark_start": 88,
+     "top1": 12656,
+     "top1_str": " William",
+     "p_word_v3": 0.468591,
+     "p_ans_legacy": 0.468591,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 91,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 91,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 7,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 91,
+      "onset_rel_landmark": 3
+     }
+    },
+    "r10": {
+     "n_tok": 122,
+     "landmark_start": 110,
+     "top1": 12656,
+     "top1_str": " William",
+     "p_word_v3": 0.496106,
+     "p_ans_legacy": 0.496106,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 113,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 113,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 7,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 113,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": false,
+      "why": "|dp|=0.0275 > 0.02"
+     },
+     "gate_legacy": {
+      "pass": false,
+      "why": "|dp|=0.0275 > 0.02"
+     }
+    },
+    "r11": {
+     "n_tok": 133,
+     "landmark_start": 121,
+     "top1": 12656,
+     "top1_str": " William",
+     "p_word_v3": 0.483284,
+     "p_ans_legacy": 0.483284,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 124,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 124,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 7,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 124,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r12": {
+     "n_tok": 144,
+     "landmark_start": 132,
+     "top1": 12656,
+     "top1_str": " William",
+     "p_word_v3": 0.468525,
+     "p_ans_legacy": 0.468525,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 135,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 135,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 7,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 135,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r14": {
+     "n_tok": 166,
+     "landmark_start": 154,
+     "top1": 12656,
+     "top1_str": " William",
+     "p_word_v3": 0.472439,
+     "p_ans_legacy": 0.472439,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 157,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 157,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 7,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 157,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": true,
+      "why": ""
+     },
+     "gate_legacy": {
+      "pass": true,
+      "why": ""
+     }
+    },
+    "r22": {
+     "n_tok": 254,
+     "landmark_start": 242,
+     "top1": 12656,
+     "top1_str": " William",
+     "p_word_v3": 0.398178,
+     "p_ans_legacy": 0.398178,
+     "v3": {
+      "emerged_full": true,
+      "onset_abs_full": 245,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 245,
+      "onset_rel_landmark": 3
+     },
+     "legacy": {
+      "emerged_full": true,
+      "onset_abs_full": 7,
+      "emerged_landmark": true,
+      "onset_abs_landmark": 245,
+      "onset_rel_landmark": 3
+     },
+     "gate_v3": {
+      "pass": false,
+      "why": "|dp|=0.0704 > 0.02"
+     },
+     "gate_legacy": {
+      "pass": false,
+      "why": "|dp|=0.0704 > 0.02"
+     }
+    }
+   }
+  }
+ ]
+}

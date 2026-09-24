@@ -15,6 +15,50 @@ that the decision table, the thresholds, and both figure frames were frozen
 and committed **before** any measurement existed. This package is what makes
 that claim checkable.
 
+## What is new in v3.1.0 (2026-09-24) --- the refitted lens (paper v3.2)
+
+The lens artifact every previous reading used (`Olmo-3-1125-32B_jacobian_lens.pt`, distributed
+2026-06-16, md5 `c73a32d1...`) had been fitted under transformers 5.11.0, a version that applied
+the YaRN `rope_scaling` to OLMo-3's sliding-window layers as well as to its full-attention
+layers (huggingface/transformers#39847; corrected in 5.13.0 by #46911). Our read-outs ran on
+transformers 5.14.1 --- the corrected forward --- so the lens encoded one forward and was read on
+another. Upstream refitted the artifact on 2026-09-21 (neuronpedia/jacobian-lens commit
+`496cf110`; sha256 `c6ee7d22...`, md5 `b76610b9...`; 456 prompts; the fit environment now travels
+in the `.pt` as a `provenance` field). Paper v3.2 adds an instrument-provenance note and places
+the readings of the refitted lens beside the June readings; this release adds those readings.
+Nothing from v1.0.0--v3.0.0 was changed or removed (all three are checked byte for byte at build
+time); the additions are:
+
+* `data/lens/` --- every arm, ladder and series of this package re-read with the refitted lens on
+  the same forward: the position calibration (`c_lens_pos.json`, 604 of 700 measurements --- two
+  of the four long reasoning traces could not be measured under `sdpa` on the current platform,
+  so the `sdpa` cells of the reasoning group rest on two texts; `c_lens_pos_r2.json`,
+  re-derived with `run_r3.py`'s own aggregator; `c_lens_pos_r3.json`, 224 measurements with
+  controls A and B IDENTICAL), Arms A/B/C, both MapFirst ladders, the null ledgers and the
+  ShapeJitter floor.
+* `data/lens/control/` --- the June lens re-read on the same day as the files above, so that
+  platform drift (June frozen files vs. these controls) and the lens effect (controls vs.
+  `data/lens/`) can be read separately. Data is never transformed.
+* `code/lens/` --- the wrapper that runs each frozen runner unchanged with the lens swapped in
+  memory (`lens_swap.py`; outputs redirected to `results/lens_<tag>/`, provenance suffixed), the
+  first wrappers for the arms (`run_arms_v3_lensdelta.py`, `run_arms_v3_lenscontrol.py`), the
+  relative-coordinate re-derivation (`derive_r2_newlens.py`) and the three-way comparison
+  scripts. No frozen runner was edited.
+* `frozen/PROVENANCE_v4.md` --- the two lens artifacts (Hub revisions, hashes, bytes, prompts,
+  fit environments), the read-out forward, the invocations, and the hashes and commit dates of
+  the campaign records (Japanese originals, not reproduced).
+
+**What moved.** No verdict of the frozen decision table changes on the refitted lens: Arm A
+surfaces 4/5, the behavioral-invariance gate keeps 6 of 20, SameSeat is identical in every
+eligible cell, the position calibration keeps its shape (prose flat with depth, reasoning traces
+degrading at the tail of the prompt), and the multi-prompt extension stays in its branch (P3
+deltas +1.206 / +0.552 / +1.011 against +1.152 / +0.530 / +0.812). The levels shift: band KL
++0.17 nats median, the word-group rank deviation +0.1 to +0.3 dex on the reasoning-trace cells,
+the Arm C null threshold 1,666 -> 1,310, the null margin 0.21 -> 0.11 dex; the coordinate table
+reads +0.875 / +0.823 dex against B1 and -0.062 / -0.260 dex against O1 (June: +0.618 / +0.820
+and +0.063 / -0.144). The June values stand as measurements of the June artifact and are not
+withdrawn; the paper's Revision History (v3.2) is the full statement.
+
 ## What is new in v3.0.0 (2026-09-01) --- REVISION-ID: TSD-20260826
 
 Version 3 of the paper re-acquires every reading-set measurement of the second campaign under a
@@ -37,13 +81,14 @@ time); the additions are:
   [`10.5281/zenodo.22218669`](https://doi.org/10.5281/zenodo.22218669) (seven modules, combined
   md5 `89b194be...`, 20 tests; SPEC v1.2 included). Unpack it next to this package or install it
   from the archive; the runners import `joshaku.pgrain` and `joshaku.ranks`.
-  *Disclosure (2026-09-02).* The five arm/ladder/null outputs (`arm_a_v3`, `arm_c_v3`, `cii_l1_v3`,
+  *Disclosure (2026-09-02; stated in the paper from v3.1, doi: 10.5281/zenodo.22701008).* The five arm/ladder/null outputs (`arm_a_v3`, `arm_c_v3`, `cii_l1_v3`,
   `cii_l2_v3`, `cii_nulls_v3.json`) record in their `meta` the joshaku state they actually ran under:
-  combined md5 `2bb7fe6c...` (commit `ad24326a`, 2026-08-26, SPEC v1.1 era), not the archived v1.2.0
-  `89b194be...`. The two states differ only by two alias helpers *added* to `ranks.py` (`alias_best_of`, `alias_pair`,
-  with their exception class); `pgrain`,
-  `masks`, `scores` and `boundary` are byte-identical and no existing function changed, so no recorded
-  value is affected. Stated in the paper's Revision History from v3.1 (doi: 10.5281/zenodo.22701008).
+  combined md5 `2bb7fe6c...` (commit `ad24326a`, 2026-08-26, SPEC v1.1 era, 19 tests), not the archived v1.2.0
+  `89b194be...`. The two states differ only by two alias helpers *added* to `ranks.py` (`alias_best_of`,
+  `alias_pair`, with their exception class); `pgrain`, `masks`, `scores` and `boundary` are byte-identical and no existing function changed,
+  so no recorded value is affected. `r211_v3.json` and the `f5_corr_v3_*` outputs record no fingerprint (a
+  provenance gap, registered); both post-date the v1.2.0 freeze (2026-08-27) by commit date, and the
+  order-agreement runner imports `alias_pair`, which exists only from v1.2.0.
 * `frozen/PROVENANCE_v3.md` --- the hashes and commit timestamps of the three frozen reading cards
   of the re-acquisition (Japanese originals, not reproduced) and of SPEC v1.2.
 
@@ -173,7 +218,7 @@ Requires the model weights and the fitted lens, which are not redistributed
 here:
 
 * model: `allenai/Olmo-3-1125-32B`
-* lens: the released Jacobian lens artifact, md5 `c73a32d1f72968bd73c104c06445a482`
+* lens: the released Jacobian lens artifact, md5 `c73a32d1f72968bd73c104c06445a482` (June 2026 fit; transformers 5.11.0) for `data/`, `data/arms/`, `data/tsd/` and `data/lens/control/`; the refitted artifact (Hub commit `496cf110`, sha256 `c6ee7d22...`, md5 `b76610b9...`) for `data/lens/` --- see `frozen/PROVENANCE_v4.md`
 
 Paths are resolved from environment variables:
 
@@ -224,6 +269,11 @@ The two hashes let anyone holding the original verify that nothing else moved.
    extension traces were selected by a length rule. We do not read it, and
    neither should you.
 4. The prose corpus is the lens's own fit dataset, which favours it.
+5. **A lens artifact encodes the forward it was fitted on.** The June artifact was fitted
+   under transformers 5.11.0 and read on 5.14.1 (see "What is new in v3.1.0"); the hash pinned
+   the file, not the forward. Pin the fit environment of any lens you inherit (the refitted
+   artifacts carry it in a `provenance` field), and expect level shifts of the order reported
+   above --- not a change of sign --- between the two.
 
 ## Licensing
 
@@ -246,10 +296,12 @@ end it.
 
 | | |
 |---|---|
-| this release (v3.0.0) | [`10.5281/zenodo.22219123`](https://doi.org/10.5281/zenodo.22219123) --- **version DOI**, pins these exact bytes; the paper v3 cites it |
+| this release (v3.1.0) | version DOI minted by Zenodo on release (2026-09-24); the paper v3.2 cites it |
+| v3.0.0 | [`10.5281/zenodo.22219123`](https://doi.org/10.5281/zenodo.22219123) --- **version DOI**, pins the bytes that accompanied paper v3.0 / v3.1 |
 | v2.0.0 | [`10.5281/zenodo.22041132`](https://doi.org/10.5281/zenodo.22041132) --- **version DOI**, pins the bytes that accompanied paper v2 |
 | v1.0.0 | [`10.5281/zenodo.21768365`](https://doi.org/10.5281/zenodo.21768365) --- **version DOI**, pins the bytes that accompanied paper v1.0 / v1.1 |
 | all versions | [`10.5281/zenodo.21768364`](https://doi.org/10.5281/zenodo.21768364) --- concept DOI, always resolves to the latest |
+| the paper (v3.2) | version DOI minted on publication (2026-09): instrument-provenance note; refitted-lens readings placed beside the June readings; no value withdrawn |
 | the paper (v3.1) | [`10.5281/zenodo.22701008`](https://doi.org/10.5281/zenodo.22701008) --- version DOI of the v3.1 record (2026-09-11): declares the as-run instrument fingerprint; no value changed. Cite this one |
 | the paper (v3.0) | [`10.5281/zenodo.22219346`](https://doi.org/10.5281/zenodo.22219346) --- version DOI of the v3.0 record (2026-09-01); values identical to v3.1 |
 | the paper (v2) | [`10.5281/zenodo.22041724`](https://doi.org/10.5281/zenodo.22041724) --- **version DOI**, pins that exact PDF (16 pages, 2026-08-21); its readout-side values are superseded by v3 |
@@ -265,7 +317,9 @@ v2 (paper) and v2.0.0 add the second campaign --- see "What is new in v2.0.0"
 above. v3 (paper) and v3.0.0 (this package) add the TSD-20260826 re-acquisition
 --- see "What is new in v3.0.0" above. Everything from v1.0.0 and v2.0.0 is still
 here, byte for byte; the v3 additions are under `data/tsd/`, `code/tsd/` and
-`frozen/PROVENANCE_v3.md`.
+`frozen/PROVENANCE_v3.md`. v3.2 (paper) and v3.1.0 (this package) add the refitted-lens re-reads
+--- see "What is new in v3.1.0" above; everything from v3.0.0 is still here, byte for byte; the
+v3.1.0 additions are under `data/lens/`, `code/lens/` and `frozen/PROVENANCE_v4.md`.
 
 The paper cites the version DOI, because what it needs to point at is the
 snapshot the numbers came from. Cite the paper the same way, for the same
